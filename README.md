@@ -12,10 +12,10 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 
 * Daniel de Oliveira
 * Danilo de Oliveira
-* Luiz Fernando Ribeiro Almeida
 * Humberto Roosevelt
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Luiz Fernando Ribeiro Almeida
+* Saul Netto
+* Matheus Antão
 
 ## Professor
 
