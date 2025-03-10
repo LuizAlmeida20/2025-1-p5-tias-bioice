@@ -1,4 +1,4 @@
-# Nome do projeto
+# BioIce
 
 `CURSO: Sistemas de Informação`
 
@@ -10,16 +10,16 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Daniel de Oliveira
+* Danilo de Oliveira
+* Luiz Fernando Ribeiro Almeida
+* Humberto Roosevelt
 * Nome completo do aluno 5
 * Nome completo do aluno 6
 
 ## Professor
 
-* Nome completo do(a) professor(a)
+* Amália Vasconcelos
 
 ## Instruções de utilização
 
