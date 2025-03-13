@@ -6,7 +6,9 @@
 
 `5º semestre/ANO`
 
-Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
+O projeto "BioIce" tem como principal objetivo desenvolver um sistema que auxilie a sorveteria Ice Delícias a adotar práticas mais sustentáveis em sua operação diária. A proposta visa implementar um sistema de gestão empresarial que otimize o controle de estoque, prevenindo o desperdício de produtos perecíveis, e ofereça suporte à gestão financeira, permitindo a redução de gastos desnecessários e a manutenção de uma saúde financeira equilibrada. Além disso, o sistema contará com um módulo de incentivo à sustentabilidade, onde clientes que comprovarem a reciclagem de itens descartáveis adquiridos na sorveteria poderão receber descontos e promoções exclusivas.
+
+Ao integrar funcionalidades voltadas para a sustentabilidade e a eficiência operacional, o sistema busca não apenas melhorar o desempenho da empresa, mas também promover a conscientização ambiental entre os clientes e colaboradores. Com essa iniciativa, a Ice Delícias poderá reduzir seu impacto ambiental, aumentar a fidelização de clientes engajados com a causa ecológica e fortalecer sua imagem como um estabelecimento comprometido com a responsabilidade social e ambiental.
 
 ## Integrantes
 
