@@ -1,6 +1,10 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto. Visando contextualizar melhor o projeto e destacar sua importância para a disciplina, que é **extensionista**, acrescente todas as informações relevantes que julgar necessárias.
+O presente projeto, desenvolvido no âmbito da disciplina "Trabalho Interdisciplinar: Aplicações para Sustentabilidade" do curso de Sistemas de Informação da PUC Minas - Campus Betim, tem como objetivo principal auxiliar a sorveteria "Ice Delícias" a adotar práticas mais sustentáveis em sua gestão cotidiana. Com foco na sustentabilidade, o projeto visa integrar a gestão de estoque, evitando o desperdício de insumos perecíveis, e oferecer suporte financeiro, prevenindo gastos desnecessários e promovendo uma administração financeira saudável.
+
+O contexto do município de Betim, que apresenta índices baixos de desenvolvimento sustentável, especialmente nos quesitos de proteção da vida terrestre, trabalho digno e crescimento econômico, e produção e consumo sustentáveis, motiva a equipe a buscar soluções tecnológicas que impactem positivamente a comunidade local. A parceria com a sorveteria "Ice Delícias" permitirá não apenas a implementação de um sistema eficiente, mas também o engajamento da população do entorno para elevar os índices de desenvolvimento sustentável da região. Este projeto, de natureza extensionista, busca promover a interação transformadora entre a academia e a sociedade, por meio da produção e aplicação do conhecimento em articulação com o ensino e a pesquisa.
+
+
 
 ## Cliente 
 Nesta seção, devem ser apresentadas informações essenciais sobre o cliente (parceiro) para garantir um entendimento mais preciso do projeto como uma iniciativa extensionista.  
