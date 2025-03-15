@@ -2,43 +2,69 @@
 
 <span style="color:red">Pré-requisitos: <a href="01-Contexto.md"> Documentação de contexto</a></span>
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
+Esta seção apresenta a especificação detalhada do projeto para a sorveteria "Ice Delícias". A definição do problema e a solução proposta são descritas a partir da perspectiva dos usuários.
 
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto.
+Os principais elementos abordados incluem:
 
+> - Definição de personas
+
+> - Histórias de usuários
+
+> - Requisitos funcionais e não funcionais
+
+> - Restrições do projeto
+
+> - Diagrama de casos de uso
+> - 
 ## Personas
 
-Exemplo: _Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente por meio de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros._
+1- Carla Martins
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+Idade: 35 anos
 
-> **Links úteis**:
-> - [Rock content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+Profissão: Proprietária da sorveteria "Ice Delícias"
 
+Perfil: Carla administra a sorveteria há 10 anos e deseja melhorar a eficiência operacional, reduzir desperdícios e adotar práticas sustentáveis.
+
+Necessidades: Melhorar o controle financeiro e de estoque, reduzir custos e adotar práticas ecológicas.
+
+2- João Silva
+
+Idade: 28 anos
+
+Profissão: Gerente da sorveteria
+
+Perfil: Responsável pelo estoque e organização financeira. Utiliza sistemas básicos para registrar insumos, mas sente dificuldades em manter um controle preciso.
+
+Necessidades: Um sistema eficiente para gerenciamento de estoque e finanças.
+
+3- Ana Oliveira
+
+Idade: 22 anos
+
+Profissão: Atendente
+
+Perfil: Trabalha na sorveteria e precisa registrar vendas e acompanhar o estoque.
+
+Necessidades: Interface simples para registrar produtos vendidos e visualizar estoque.
+
+4- Clientes da Sorveteria
+
+Perfil: Frequentam a sorveteria regularmente.
+
+Necessidades: Informações sobre promoções e incentivos à reciclagem.
 ## Histórias de usuários
 
 Com base na análise das personas, foram identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+| EU COMO... `PERSONA`   | QUERO/PRECISO ... `FUNCIONALIDADE`   | PARA ... `MOTIVO/VALOR`                 |
+|------------------------|--------------------------------------|-----------------------------------------|
+| Administrador          | Cadastrar insumos no sistema         | Controlar melhor o estoque              |
+| Administrador          | Alterar permissões                   | Permitir que outros administrem         |
+| Funcionário            | Registrar entrada e saída de insumos | Manter controle atualizado              |
+| Cliente                | Acompanhar pontos de reciclagem      | Saber onde posso descartar embalagens   |
+| Cliente                | Receber descontos por reciclagem     | Ser recompensado por ações sustentáveis |
 
-Apresente aqui as histórias de usuários que são relevantes para o projeto da sua solução. As histórias de usuários consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuários por contexto, para facilitar consultas recorrentes a esta parte do documento.
-
-> **Links úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (user stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 common user story mistakes](https://airfocus.com/blog/user-story-mistakes/)
 
 ## Requisitos
 
