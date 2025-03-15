@@ -14,7 +14,7 @@ Ao integrar funcionalidades voltadas para a sustentabilidade e a eficiência ope
 
 * Daniel de Oliveira
 * Danilo de Oliveira
-* Humberto Roosevelt
+* Humberto Roosevelt Figueredo Junior
 * Luiz Fernando Ribeiro Almeida
 * Saul Netto
 * Matheus Antão
