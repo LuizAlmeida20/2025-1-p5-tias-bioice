@@ -58,7 +58,7 @@ O sistema desenvolvido neste projeto tem como principal público-alvo a Sorveter
 
 Dado o contexto do município, que apresenta índices baixos de desenvolvimento sustentável, a sorveteria tem um papel relevante na implementação de práticas que minimizem desperdícios e incentivem o consumo consciente. Dessa forma, o sistema será direcionado para auxiliar a empresa a superar suas dificuldades operacionais e promover um modelo de negócio mais sustentável e eficiente
 
-👥 Usuários do Sistema
+ Usuários do Sistema
 Dentro da sorveteria, os principais usuários do sistema são:
 
  Administradores
