@@ -41,6 +41,7 @@ Objetivos específicos:
 1- Automatizar a gestão de estoque: Implementar um módulo que permita o controle preciso dos insumos perecíveis, reduzindo desperdícios e otimizando a reposição de produtos.
 
 2- Desenvolver um sistema de gestão financeira sustentável: Criar funcionalidades que auxiliem na análise de despesas e receitas, prevenindo gastos desnecessários e promovendo uma administração financeira saudável.
+
 3 -Integrar indicadores de sustentabilidade: Incluir métricas e relatórios que auxiliem a sorveteria a monitorar seu impacto ambiental e aprimorar suas práticas sustentáveis.
 
 ## Justificativa
