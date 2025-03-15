@@ -6,16 +6,12 @@ Esta seção apresenta a especificação detalhada do projeto para a sorveteria 
 
 Os principais elementos abordados incluem:
 
-> - Definição de personas
+- Definição de personas
+- Histórias de usuários
+- Requisitos funcionais e não funcionais
+- Restrições do projeto
+- Diagrama de casos de uso
 
-> - Histórias de usuários
-
-> - Requisitos funcionais e não funcionais
-
-> - Restrições do projeto
-
-> - Diagrama de casos de uso
-> - 
 ## Personas
 
 1- Carla Martins
@@ -74,33 +70,19 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
-
+|RF-001| Permitir o cadastro e controle de insumos no estoque | ALTA | 
+|RF-002| Emitir relatórios de consumo e desperdício de insumos   | MÉDIA |
+|RF-003| Implementar um módulo de controle financeiro   | ALTA |
+|RF-004| Gerar indicadores de sustentabilidade para análise   | MÉDIA |
+|RF-005| Criar um portal para clientes acompanharem pontos de reciclagem e descontos   | BAIXA |
 ### Requisitos não funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
 |RNF-001| O sistema deve ser responsivo para rodar em dispositivos móveis | MÉDIA | 
 |RNF-002| Deve processar as requisições do usuário em no máximo 3 segundos |  BAIXA | 
-
-Com base nas histórias de usuários, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos não funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-
-Lembre-se de que cada requisito deve corresponder a uma e somente uma característica-alvo da sua solução. Além disso, certifique-se de que todos os aspectos capturados nas histórias de usuários foram cobertos.
-
-> **Links úteis**:
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [Entenda o que são requisitos de software, a diferença entre requisito funcional e não funcional, e como identificar e documentar cada um deles](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+|RNF-003| O sistema deve permitir múltiplos acessos simultâneos sem perda de desempenho |  ALTA | 
+|RNF-004| Os dados financeiros e de estoque devem ser armazenados com segurança e criptografia |  ALTA | 
 
 ## Restrições
 
@@ -110,8 +92,12 @@ O projeto está restrito aos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|001| O projeto deverá ser entregue até o final do semestre |
-|002| O custo total do projeto não deve exceder o orçamento definido       |
+|001| O sistema deve funcionar em navegadores modernos (Chrome, Firefox, Edge), sem necessidade de instalação de software adicional. |
+|002| A implementação deve ser concluída dentro do período letivo definido para a disciplina.      |
+|003| O sistema deve ser desenvolvido utilizando tecnologias acessíveis e de fácil manutenção pela equipe.      |
+|004| O banco de dados deve ser compatível com soluções gratuitas ou de baixo custo para viabilizar a implantação no cliente.      |
+|005| As funcionalidades devem priorizar a simplicidade e usabilidade, garantindo que os funcionários da sorveteria consigam operar o sistema sem necessidade de treinamento avançado |
+      |
 
 ## Diagrama de casos de uso
 
