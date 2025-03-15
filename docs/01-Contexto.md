@@ -88,21 +88,25 @@ No contexto do projeto desenvolvido para a sorveteria Ice Delícias, identificam
 
 Administrador da Sorveteria
 
-Supervisiona o controle de estoque, evitando desperdícios de insumos.
-Gerencia as finanças da empresa, analisando receitas e despesas.
-Toma decisões estratégicas com base em relatórios gerados pelo sistema.
-Implementa ações para engajar clientes e colaboradores na sustentabilidade.
+- Supervisiona o controle de estoque, evitando desperdícios de insumos.
+- Gerencia as finanças da empresa, analisando receitas e despesas.
+- Toma decisões estratégicas com base em relatórios gerados pelo sistema.
+- Implementa ações para engajar clientes e colaboradores na sustentabilidade.
+
 Interação com o sistema:
-Consulta dashboards de controle financeiro e de estoque.
-Ajusta pedidos de insumos conforme necessidade.
-Define promoções e incentivos para clientes conscientes.
+
+- Consulta dashboards de controle financeiro e de estoque.
+- Ajusta pedidos de insumos conforme necessidade.
+- Define promoções e incentivos para clientes conscientes.
 
 Funcionário da Produção
 
-Controla o uso dos ingredientes e atualiza o estoque no sistema.
-Garante que os insumos sejam utilizados antes do vencimento.
-Aplica práticas recomendadas para reduzir desperdícios.
+- Controla o uso dos ingredientes e atualiza o estoque no sistema.
+- Garante que os insumos sejam utilizados antes do vencimento.
+- Aplica práticas recomendadas para reduzir desperdícios.
+
 Interação com o sistema:
-Registra entrada e saída de insumos.
-Recebe notificações sobre estoque baixo ou produtos vencendo.
-Acompanha sugestões de reaproveitamento sustentável de ingredientes.
+
+- Registra entrada e saída de insumos.
+- Recebe notificações sobre estoque baixo ou produtos vencendo.
+- Acompanha sugestões de reaproveitamento sustentável de ingredientes.
