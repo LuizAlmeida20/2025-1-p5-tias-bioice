@@ -56,7 +56,7 @@ A escolha dos objetivos específicos se justifica pela relevância de melhorar a
 
 O sistema desenvolvido neste projeto tem como principal público-alvo a Sorveteria Ice Delícias. Trata-se de um negócio do setor alimentício localizado em Betim, MG, que se destaca pela qualidade dos produtos e atendimento ao cliente, mas que enfrenta desafios na gestão sustentável de seus recursos.
 
-Dado o contexto do município, que apresenta índices baixos de desenvolvimento sustentável, a sorveteria tem um papel relevante na implementação de práticas que minimizem desperdícios e incentivem o consumo consciente. Dessa forma, o sistema será direcionado para auxiliar a empresa a superar suas dificuldades operacionais e promover um modelo de negócio mais sustentável e eficiente
+Dado o contexto do município, que apresenta índices baixos de desenvolvimento sustentável, a sorveteria tem um papel relevante na implementação de práticas que minimizem desperdícios e incentivem o consumo consciente. Dessa forma, o sistema será direcionado para auxiliar a empresa a superar suas dificuldades operacionais e promover um modelo de negócio mais sustentável e eficiente.
 
 Dentro da sorveteria, os principais usuários do sistema são:
 
