@@ -83,8 +83,26 @@ Além de otimizar a gestão interna, o sistema ajudará a sorveteria a se difere
 
 O projeto visa transformar a Ice Delícias em um modelo de negócio sustentável, oferecendo uma solução tecnológica que pode ser replicada por outras empresas com desafios semelhantes.
 
-> **Links úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público-alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+## Stakeholders
+No contexto do projeto desenvolvido para a sorveteria Ice Delícias, identificamos os principais stakeholders e os papéis desempenhados por cada um no sistema. Cada papel desempenha funções distintas no processo, contribuindo para a gestão sustentável da empresa.
+
+Administrador da Sorveteria
+
+Supervisiona o controle de estoque, evitando desperdícios de insumos.
+Gerencia as finanças da empresa, analisando receitas e despesas.
+Toma decisões estratégicas com base em relatórios gerados pelo sistema.
+Implementa ações para engajar clientes e colaboradores na sustentabilidade.
+Interação com o sistema:
+Consulta dashboards de controle financeiro e de estoque.
+Ajusta pedidos de insumos conforme necessidade.
+Define promoções e incentivos para clientes conscientes.
+
+Funcionário da Produção
+
+Controla o uso dos ingredientes e atualiza o estoque no sistema.
+Garante que os insumos sejam utilizados antes do vencimento.
+Aplica práticas recomendadas para reduzir desperdícios.
+Interação com o sistema:
+Registra entrada e saída de insumos.
+Recebe notificações sobre estoque baixo ou produtos vencendo.
+Acompanha sugestões de reaproveitamento sustentável de ingredientes.
