@@ -34,25 +34,22 @@ Atualmente, a sorveteria enfrenta dificuldades em gerenciar seu estoque, o que l
 
 ## Objetivos
 
-Desenvolver um sistema de gestão empresarial para otimizar o controle de estoque, melhorar a gestão financeira e incentivar a sustentabilidade por meio da reciclagem.
+O objetivo geral do projeto é desenvolver um software para auxiliar a sorveteria "Ice Delícias" na adoção de práticas mais sustentáveis em sua gestão diária. O sistema visa otimizar a gestão de estoque, reduzir desperdícios e melhorar o controle financeiro, promovendo uma administração mais eficiente e alinhada aos princípios da sustentabilidade.
 
-Objetivos Específicos
+Objetivos específicos:
 
-1. Criar um módulo de controle de estoque para minimizar o desperdício de insumos perecíveis.
+1- Automatizar a gestão de estoque: Implementar um módulo que permita o controle preciso dos insumos perecíveis, reduzindo desperdícios e otimizando a reposição de produtos.
 
-2. Implementar um sistema de gestão financeira para monitoramento de receitas e despesas.
-
-3. Desenvolver um programa de fidelização com descontos para clientes que participarem da reciclagem de embalagens.
-
-4. Oferecer relatórios analíticos para tomada de decisão baseada em dados.
-
-5. Criar um painel administrativo intuitivo para facilitar o uso da ferramenta.
+2- Desenvolver um sistema de gestão financeira sustentável: Criar funcionalidades que auxiliem na análise de despesas e receitas, prevenindo gastos desnecessários e promovendo uma administração financeira saudável.
+3 -Integrar indicadores de sustentabilidade: Incluir métricas e relatórios que auxiliem a sorveteria a monitorar seu impacto ambiental e aprimorar suas práticas sustentáveis.
 
 ## Justificativa
 
-A necessidade de um sistema de gestão integrado se justifica pelo impacto direto que a falta de controle tem nos custos operacionais e na sustentabilidade do negócio. O desperdício de ingredientes representa prejuízos financeiros e ambientais, enquanto a ausência de uma gestão financeira estruturada dificulta a previsão de gastos e investimentos.
+A implementação deste software terá um impacto significativo tanto para a sorveteria "Ice Delícias" quanto para a sociedade em geral. Ao oferecer uma solução tecnológica que otimiza a gestão de estoque e finanças, o projeto contribuirá para a redução do desperdício de insumos, promovendo um consumo mais consciente e sustentável.
 
-Além disso, a crescente preocupação com a sustentabilidade cria uma oportunidade para engajar os clientes por meio de um sistema de incentivos à reciclagem. Dessa forma, o projeto não apenas resolve problemas internos da sorveteria, mas também promove uma mudança positiva na comunidade.
+Além disso, a cidade de Betim apresenta desafios nos índices de desenvolvimento sustentável, especialmente em aspectos como trabalho digno, crescimento econômico e produção sustentável. Esse contexto reforça a necessidade de soluções que incentivem práticas empresariais responsáveis e que impactem positivamente a economia local.
+
+A escolha dos objetivos específicos se justifica pela relevância de melhorar a administração de pequenos negócios, muitas vezes carentes de ferramentas eficientes para otimizar seus processos. O sistema não apenas ajudará a sorveteria a se tornar mais sustentável, mas também poderá servir como modelo para outros negócios locais que busquem adotar práticas semelhantes, ampliando o impacto positivo na comunidade.
 
 ## Público-alvo
 
