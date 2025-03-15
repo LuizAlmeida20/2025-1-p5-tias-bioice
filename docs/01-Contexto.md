@@ -58,24 +58,24 @@ O sistema desenvolvido neste projeto tem como principal público-alvo a Sorveter
 
 Dado o contexto do município, que apresenta índices baixos de desenvolvimento sustentável, a sorveteria tem um papel relevante na implementação de práticas que minimizem desperdícios e incentivem o consumo consciente. Dessa forma, o sistema será direcionado para auxiliar a empresa a superar suas dificuldades operacionais e promover um modelo de negócio mais sustentável e eficiente
 
- Usuários do Sistema
+ Usuários do Sistema:
 Dentro da sorveteria, os principais usuários do sistema são:
 
- Administradores
+ Administradores:
 Os gestores da sorveteria serão os principais beneficiados pelo sistema, utilizando suas funcionalidades para melhorar o controle dos insumos e das finanças. O sistema permitirá:
 
 - Gestão automatizada de estoque, reduzindo desperdícios e otimizando a reposição de insumos perecíveis.
 - Análise financeira detalhada, auxiliando na identificação de gastos desnecessários e promovendo uma administração sustentável.
 - Monitoramento de indicadores de sustentabilidade, permitindo avaliar e melhorar o impacto ambiental da sorveteria.
 
- Funcionários
+ Funcionários:
 Os colaboradores da sorveteria utilizarão o sistema no dia a dia para auxiliar na operação e controle dos insumos. Suas principais interações incluem:
 
 - Registro de entrada e saída de ingredientes no estoque.
 - Alertas sobre vencimentos de produtos para evitar desperdícios.
 - Consulta de diretrizes e boas práticas para um uso mais sustentável dos recursos.
 
- Impacto e Diferenciação
+ Impacto e Diferenciação:
 Além de otimizar a gestão interna, o sistema ajudará a sorveteria a se diferenciar no mercado por meio de:
 
 - Redução do desperdício de insumos, contribuindo para um consumo mais consciente.
