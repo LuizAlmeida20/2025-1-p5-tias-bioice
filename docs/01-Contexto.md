@@ -54,17 +54,35 @@ A escolha dos objetivos específicos se justifica pela relevância de melhorar a
 
 ## Público-alvo
 
-O sistema será utilizado por diferentes perfis de usuários:
+O sistema desenvolvido neste projeto tem como principal público-alvo a Sorveteria Ice Delícias. Trata-se de um negócio do setor alimentício localizado em Betim, MG, que se destaca pela qualidade dos produtos e atendimento ao cliente, mas que enfrenta desafios na gestão sustentável de seus recursos.
 
-1. Administradores da sorveteria: Responsáveis pela gestão financeira e operacional.
+Dado o contexto do município, que apresenta índices baixos de desenvolvimento sustentável, a sorveteria tem um papel relevante na implementação de práticas que minimizem desperdícios e incentivem o consumo consciente. Dessa forma, o sistema será direcionado para auxiliar a empresa a superar suas dificuldades operacionais e promover um modelo de negócio mais sustentável e eficiente
 
-2. Funcionários: Auxiliam no controle de estoque e uso do sistema.
+👥 Usuários do Sistema
+Dentro da sorveteria, os principais usuários do sistema são:
 
-3. Clientes: Poderão acessar um portal para acompanhar pontos de reciclagem e descontos.
+ Administradores
+Os gestores da sorveteria serão os principais beneficiados pelo sistema, utilizando suas funcionalidades para melhorar o controle dos insumos e das finanças. O sistema permitirá:
 
-FAZER ESSA PARTE ===============================================================================================================
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-FAZER ESSA PARTE ===============================================================================================================
+- Gestão automatizada de estoque, reduzindo desperdícios e otimizando a reposição de insumos perecíveis.
+- Análise financeira detalhada, auxiliando na identificação de gastos desnecessários e promovendo uma administração sustentável.
+- Monitoramento de indicadores de sustentabilidade, permitindo avaliar e melhorar o impacto ambiental da sorveteria.
+
+ Funcionários
+Os colaboradores da sorveteria utilizarão o sistema no dia a dia para auxiliar na operação e controle dos insumos. Suas principais interações incluem:
+
+- Registro de entrada e saída de ingredientes no estoque.
+- Alertas sobre vencimentos de produtos para evitar desperdícios.
+- Consulta de diretrizes e boas práticas para um uso mais sustentável dos recursos.
+
+ Impacto e Diferenciação
+Além de otimizar a gestão interna, o sistema ajudará a sorveteria a se diferenciar no mercado por meio de:
+
+- Redução do desperdício de insumos, contribuindo para um consumo mais consciente.
+- Maior controle financeiro, promovendo um crescimento sustentável.
+- Engajamento da comunidade em práticas ecológicas, como a reciclagem de embalagens.
+
+O projeto visa transformar a Ice Delícias em um modelo de negócio sustentável, oferecendo uma solução tecnológica que pode ser replicada por outras empresas com desafios semelhantes.
 
 > **Links úteis**:
 > - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
