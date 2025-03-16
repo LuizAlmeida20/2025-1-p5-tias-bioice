@@ -57,10 +57,9 @@ Com base na análise das personas, foram identificadas as seguintes histórias d
 |------------------------|--------------------------------------|-----------------------------------------|
 | Administrador          | Cadastrar insumos no sistema         | Controlar melhor o estoque              |
 | Administrador          | Alterar permissões                   | Permitir que outros administrem         |
+| Administrador          | Realizar cadastro de novos usuários  | Permitir acesso ao sistema a novos funcionários   |
+| Administrador          | Excluir usuários no sistema          | Tornar o acesso de ex-funcionários inacessíveis |
 | Funcionário            | Registrar entrada e saída de insumos | Manter controle atualizado              |
-| Cliente                | Acompanhar pontos de reciclagem      | Saber onde posso descartar embalagens   |
-| Cliente                | Receber descontos por reciclagem     | Ser recompensado por ações sustentáveis |
-
 
 ## Requisitos
 
