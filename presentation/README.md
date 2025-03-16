@@ -5,7 +5,7 @@
 
 ## Slides
 
-Coloque aqui o conjunto de slides.
+[Slides BioIce - Apresentação](https://github.com/user-attachments/files/19271820/SLIDES.BioIce.pdf)
 
 > O arquivo deve estar no formato PDF e conter a apresentação completa do projeto, abordando todos os itens trabalhados nos demais artefatos. 
 
