@@ -49,6 +49,9 @@ Necessidades: Interface simples para registrar produtos vendidos e visualizar es
 Perfil: Frequentam a sorveteria regularmente.
 
 Necessidades: Informações sobre promoções e incentivos à reciclagem.
+
+![Diagrama de personas](./images/personas.png "Personas")
+
 ## Histórias de usuários
 
 Com base na análise das personas, foram identificadas as seguintes histórias de usuários:
