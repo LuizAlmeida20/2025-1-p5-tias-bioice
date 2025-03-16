@@ -44,15 +44,6 @@ Perfil: Trabalha na sorveteria e precisa registrar vendas e acompanhar o estoque
 
 Necessidades: Interface simples para registrar produtos vendidos e visualizar estoque.
 
-4- Clientes da Sorveteria
-
-Perfil: Frequentam a sorveteria regularmente.
-
-Necessidades: Informações sobre promoções e incentivos à reciclagem.
-## Histórias de usuários
-
-Com base na análise das personas, foram identificadas as seguintes histórias de usuários:
-
 | EU COMO... `PERSONA`   | QUERO/PRECISO ... `FUNCIONALIDADE`   | PARA ... `MOTIVO/VALOR`                 |
 |------------------------|--------------------------------------|-----------------------------------------|
 | Administrador          | Cadastrar insumos no sistema         | Controlar melhor o estoque              |
