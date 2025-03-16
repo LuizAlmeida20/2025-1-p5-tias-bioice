@@ -68,13 +68,27 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 
 ### Requisitos funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir o cadastro e controle de insumos no estoque | ALTA | 
-|RF-002| Emitir relatórios de consumo e desperdício de insumos   | MÉDIA |
-|RF-003| Implementar um módulo de controle financeiro   | ALTA |
-|RF-004| Gerar indicadores de sustentabilidade para análise   | MÉDIA |
-|RF-005| Criar um portal para clientes acompanharem pontos de reciclagem e descontos   | BAIXA |
+| ID     | Descrição do Requisito  | Prioridade |
+|--------|-----------------------------------------|---------|
+| RF-001 | Permitir o cadastro, edição e exclusão de insumos no estoque | ALTA |
+| RF-002 | Registrar a entrada e saída de insumos no estoque | ALTA |
+| RF-003 | Gerar alertas automáticos para insumos próximos do vencimento | ALTA |
+| RF-004 | Permitir o registro de receitas e despesas da sorveteria | ALTA |
+| RF-005 | Categorizar os gastos para análise financeira detalhada | ALTA |
+| RF-006 | Gerar relatórios financeiros para auxiliar na tomada de decisões | ALTA |
+| RF-007 | Permitir o cadastro e gerenciamento de usuários com diferentes níveis de acesso | ALTA |
+| RF-008 | Permitir que funcionários registrem movimentações de estoque sem acesso a configurações administrativas | ALTA |
+| RF-009 | Enviar notificações sobre estoque baixo e produtos vencendo | ALTA |
+| RF-010 | Monitorar em tempo real a quantidade de insumos disponíveis | MÉDIA |
+| RF-011 | Fornecer relatórios sobre o desperdício de insumos ao longo do tempo | MÉDIA |
+| RF-012 | Emitir alertas sobre despesas excessivas ou fora do padrão | MÉDIA |
+| RF-013 | Permitir a definição de metas financeiras para controle do orçamento | MÉDIA |
+| RF-014 | Fornecer métricas e indicadores sobre o impacto ambiental da sorveteria | MÉDIA |
+| RF-015 | Permitir o cadastro de práticas sustentáveis adotadas pela empresa | MÉDIA |
+| RF-016 | Gerar relatórios periódicos sobre controle de estoque, desempenho financeiro e práticas sustentáveis | MÉDIA |
+
+
+
 ### Requisitos não funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
