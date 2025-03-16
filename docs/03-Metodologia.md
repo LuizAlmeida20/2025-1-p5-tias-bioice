@@ -61,10 +61,19 @@ Atualizado em: 21/04/2024
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| AlunaX        | Introdução | 01/02/2024     | 07/02/2024 | ✔️    | 05/02/2024      |
-| AlunaZ        | Objetivos    | 03/02/2024     | 10/02/2024 | 📝    |                 |
-| AlunoY        | Histórias de usuário  | 01/01/2024     | 07/01/2005 | ⌛     |                 |
-| AlunoK        | Personas 1  |    01/01/2024        | 12/02/2005 | ❌    |       |
+| Luiz        | Introdução | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
+| Luiz        | Criação do repositório    | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
+| Saul        | Documento em PDF  | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
+| Saul        | Objetivos e Justificativa  | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
+| Daniel        | Levantamento dos requisitos	  | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
+| Daniel        | Elaboração do slide  | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
+| Danilo        | Elaboração do slide  | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
+| Danilo        | Mapa de stakeholders	  | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
+| Danilo        |Público-alvo  | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
+| Matheus       | Persona  | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
+| Matheus        | História de usuário  | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
+| Matheus        | Planejamento do projeto	  | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
+| Humberto        | Todos os diagramas	  | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
 
 #### Sprint 2
 
