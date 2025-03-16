@@ -4,10 +4,7 @@
 
 
 ## Slides
-
-[Slides BioIce - Apresentação](https://github.com/user-attachments/files/19271820/SLIDES.BioIce.pdf)
-
-
+[Slides BioIce - Apresentação](https://github.com/user-attachments/files/19274764/Slides.BioIce.pdf)
 
 
 ## Vídeo
