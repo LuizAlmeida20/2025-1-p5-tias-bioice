@@ -59,7 +59,12 @@ Com base na análise das personas, foram identificadas as seguintes histórias d
 | Administrador          | Alterar permissões                   | Permitir que outros administrem         |
 | Administrador          | Realizar cadastro de novos usuários  | Permitir acesso ao sistema a novos funcionários   |
 | Administrador          | Excluir usuários no sistema          | Tornar o acesso de ex-funcionários inacessíveis |
+| Administrador          | Gerar relatórios de vendas           | Identificar pontos fortes e elaborar melhorias |
 | Funcionário            | Registrar entrada e saída de insumos | Manter controle atualizado              |
+| Funcionário            | Registrar vendas de produtos         | Obter rastreabilidade da saída de produtos e registro dos lucros |
+| Funcionário            | Alterar informações de vendas de produtos | Corrigir possíveis erros após registrar vendas |
+| Administrador          | Cadastrar produtos no sistema        | Apoiar funcionários no registro de vendas |
+| Funcionário            | Cadastrar clientes                   | Rastrear maiores consumidores e conceder descontos |
 
 ## Requisitos
 
