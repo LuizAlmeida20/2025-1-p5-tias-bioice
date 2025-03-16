@@ -50,6 +50,8 @@ Perfil: Frequentam a sorveteria regularmente.
 
 Necessidades: Informações sobre promoções e incentivos à reciclagem.
 
+### Diagrama
+
 ![Diagrama de personas](./images/personas.png "Personas")
 
 ## Histórias de usuários
