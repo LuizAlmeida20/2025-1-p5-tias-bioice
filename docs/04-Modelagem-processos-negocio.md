@@ -8,12 +8,18 @@
 
 ## Modelagem da situação atual (Modelagem AS IS)
 
-Apresente uma descrição textual de como os sistemas atuais resolvem o problema que seu projeto se propõe a resolver. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional.
+Os processos descritos a seguir representam o funcionamento atual da sorveteria Ice Delícias, com foco nas atividades de Descarte de Embalagens e Controle de Validade dos Produtos. Atualmente, essas tarefas são realizadas manualmente, sem o apoio de um sistema automatizado, o que as torna suscetíveis a falhas humanas, retrabalho e baixa eficiência operacional.
 
-Com o tema do projeto definido, escolham alguns processos no contexto de negócios. Para ilustrar os potenciais ganhos com a automatização, imaginem processos manuais, ineficientes e/ou com muitas idas e vindas, gerando, assim, retrabalho.
-
+### Descarte de Embalagens
 ![Diagramas BioIce - AsIs](https://github.com/user-attachments/assets/47a211f9-7bce-486e-a07a-c223adceea85)
+
+Este processo é inteiramente manual, não há separação eficiente de resíduos recicláveis, o que dificulta a gestão sustentável de descarte e impacta negativamente o meio ambiente.
+
+
+### Controle de Validade
 ![Diagramas BioIce - AsIs](https://github.com/user-attachments/assets/7984407f-c2fd-4ef3-8d61-01d67c224059)
+
+A verificação de validade é feita visualmente ou por anotações em papel, o que abre margem para erros e uso indevido de produtos vencidos, afetando a segurança alimentar e a qualidade do atendimento.
 
 ## Descrição geral da proposta (Modelagem TO BE)
 
