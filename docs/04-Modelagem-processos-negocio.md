@@ -21,6 +21,11 @@ Tendo identificado os gargalos dos modelos AS-IS, apresentem uma descrição da 
 
 Cole aqui os modelos da solução proposta (modelo TO-BE), elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina. Cada processo identificado deve ter seu modelo TO-BE específico. Descrevam as oportunidades de melhoria de cada processo da solução proposta.
 
+![Diagramas BioIce - TO BE](https://github.com/user-attachments/assets/8c23417c-1e70-4928-8829-732552f4f53f)
+
+![Diagramas BioIce - TO BE (1)](https://github.com/user-attachments/assets/b5eaf3f4-9225-4044-8ae8-b786405b6abf)
+
+
 Apresente aqui uma descrição da sua proposta, abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente também as oportunidades de melhoria.
 
 ## Modelagem dos processos
