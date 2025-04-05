@@ -17,16 +17,56 @@ Com o tema do projeto definido, escolham alguns processos no contexto de negóci
 
 ## Descrição geral da proposta (Modelagem TO BE)
 
-Tendo identificado os gargalos dos modelos AS-IS, apresentem uma descrição da proposta de solução, buscando maior eficiência com a introdução da tecnologia. Abordem também os limites dessa solução e seu alinhamento com as estratégias e objetivos do contexto de negócio escolhido.
+A proposta TO-BE tem como objetivo modernizar e automatizar os processos de descarte de embalagens e controle de validade de produtos, utilizando recursos tecnológicos como QR Code, digitalização e automação de verificação. A transformação digital nestes processos visa reduzir falhas humanas, aumentar a rastreabilidade, minimizar perdas e melhorar a eficiência operacional.
 
-Cole aqui os modelos da solução proposta (modelo TO-BE), elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina. Cada processo identificado deve ter seu modelo TO-BE específico. Descrevam as oportunidades de melhoria de cada processo da solução proposta.
+A introdução de leitura de QR Codes, verificação automática de validade e sinalizações automatizadas sobre prazos de vencimento são os principais elementos inovadores.
 
+### Limites da Solução
+
+Apesar dos ganhos em eficiência, a proposta possui limitações:
+
+- Dependência de infraestrutura tecnológica (leitores de QR Code, sistema de verificação);
+- Necessidade de capacitação dos colaboradores para adaptação aos novos processos;
+- Investimento inicial relativamente alto na implantação dos sistemas automatizados;
+- Possível resistência cultural à mudança nos processos tradicionais.
+
+### Alinhamento com Estratégias e Objetivos do Negócio
+
+Essas propostas se alinham diretamente com os seguintes objetivos estratégicos:
+
+- Redução de perdas operacionais (via descarte tardio ou incorreto);
+- Melhoria na conformidade sanitária (controle rigoroso de validade e descarte correto);
+- Otimização de tempo dos colaboradores com a automatização de verificações e processos;
+- Sustentabilidade: melhoria na gestão de resíduos e descarte;
+- Transformação digital, alinhada à inovação e competitividade do setor.
+
+### Descarte de Embalagens
 ![Diagramas BioIce - TO BE](https://github.com/user-attachments/assets/8c23417c-1e70-4928-8829-732552f4f53f)
 
+Melhorias propostas:
+- Inclusão de QR Code nas embalagens para escaneamento.
+- Coleta automatizada de informações sobre descarte correto.
+- Separação automatizada de itens para reciclagem ou descarte final.
+- Notificação de problemas na cadeia de descarte para correções proativas.
+
+Impacto:
+- Diminuição de erros no descarte.
+- Melhor controle ambiental e logístico.
+- Informações registradas e rastreáveis.
+
+### Controle de Validade
 ![Diagramas BioIce - TO BE (1)](https://github.com/user-attachments/assets/b5eaf3f4-9225-4044-8ae8-b786405b6abf)
 
+Melhorias propostas:
+- Verificação automática de validade dos produtos.
+- Separação automática de itens vencidos e alerta para próximos vencimentos.
+- Armazenamento otimizado de produtos em situação regular.
+- Produção reorganizada de acordo com validade, evitando desperdícios.
 
-Apresente aqui uma descrição da sua proposta, abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente também as oportunidades de melhoria.
+Impacto:
+- Redução significativa de perdas por vencimento.
+- Ações proativas com base em alertas.
+- Garantia de que produtos vencidos não serão disponibilizados ao consumidor.
 
 ## Modelagem dos processos
 
