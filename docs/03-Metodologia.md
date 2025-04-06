@@ -22,7 +22,7 @@ As issues também já foram configuradas, com etiquetas como bug, feature, enhan
 ###  Divisão de papéis
 
 #### Sprint 1
-- Luiz - Introdução e criação do repositório
+- Luiz : Introdução e criação do repositório
 - Saul : Documento em PDF e definição dos objetivos e justificativa
 - Daniel : Levantamento dos requisitos e elaboração dos slides
 - Danilo : Elaboração dos slides, mapa de stakeholders e público-alvo
@@ -50,9 +50,18 @@ Atualizado em: 16/03/2025
 | Matheus        | Planejamento do projeto	  | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
 | Humberto        | Todos os diagramas	  | 03/03/2025     | 15/03/2025 | ✔️    | 15/03/2025     |
 
+
+#### Sprint 2
+- Daniel : Elaboração dos diagramas AS IS e TO BE.
+- Danilo : Apoio na criação do diagrama TO BE.
+- Matheus : Responsável pela descrição dos processos e pela redação da metodologia utilizada no projeto.
+- Luiz : Responsável pela documentação geral e pela elaboração dos slides de apresentação.
+- Saul : Revisão, correção e finalização dos diagramas AS IS, garantindo a consistência com os processos definidos.
+
+
 #### Sprint 2
 
-Atualizado em: 21/04/2024
+Atualizado em: 06/04/2025
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
@@ -66,19 +75,12 @@ Atualizado em: 21/04/2024
 | Saul          | Elaboração e correção Diagramas AS IS   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
 
 
-
-
 Legenda:
 - ✔️: terminado
 - 📝: em execução
 - ⌛: atrasado
 - ❌: não iniciado
 
-
-> **Links úteis**:
-> - [11 passos essenciais para implantar Scrum no seu projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-> - [Os papéis do Scrum e a verdade sobre cargos nessa técnica](https://www.atlassian.com/br/agile/scrum/roles)
 
 ### Processo
 
@@ -96,9 +98,9 @@ Exemplo: os artefatos do projeto são desenvolvidos a partir de diversas platafo
 
 | Ambiente                            | Plataforma                         | Link de acesso                         |
 |-------------------------------------|------------------------------------|----------------------------------------|
-| Repositório de código fonte         | GitHub                             | http://....                            |
-| Documentos do projeto               | GitHub                             | http://....                            |
-| Projeto de interface                | Figma                              | http://....                            |
-| Gerenciamento do projeto            | GitHub Projects                    | http://....                            |
-| Hospedagem                          | Vercel                             | http://....                            |
+| Repositório de código fonte         | GitHub                             | [http://....](https://trello.com/c/n8dUdliz/14-https-githubcom-icei-puc-minas-pbe-ads-si-2025-1-p5-tias-bioice-tree-main) |
+| Gerenciamento do projeto            | GitHub Projects / Trello                             |  [http://....](https://trello.com/b/TEZUqWN3/trabalho-tias)                        |
+| Diagramação               | Lucidchart / Draw.io                            | [http://....](https://app.diagrams.net/)                            |
+| Diagramação            | Visual Paradigma                    | [http://....](https://online.visual-paradigm.com/pt/diagrams/solutions/free-online-diagram-editor/)                            |
+| Comunicação e reuniões	                         | Microsoft Teams	                             | [http://....](https://www.microsoft.com/pt-br/microsoft-teams/free).                            |
  
