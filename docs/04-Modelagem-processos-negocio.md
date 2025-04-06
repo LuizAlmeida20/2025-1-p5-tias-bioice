@@ -76,7 +76,7 @@ Impacto:
 
 ## Modelagem dos processos
 
-[PROCESSO 1 - Controle de descarte](./processes/processo-1-nome-do-processo.md "Detalhamento do processo 1.")
+[PROCESSO 1 - Controle de descarte](./processes/processo-1-Controle-de-Descarte.md "Detalhamento do processo 1.")
 
 [PROCESSO 2 - Controle de validade](./processes/processo-2-nome-do-processo.md "Detalhamento do processo 2.")
 
