@@ -3,35 +3,19 @@
 
 <span style="color:red">Pré-requisitos: <a href="02-Especificacao.md"> Especificação do projeto</a></span>
 
-Descreva aqui a metodologia de trabalho do grupo para abordar o problema. Inclua definições sobre os ambientes de trabalho utilizados pela equipe para desenvolver o projeto. Isso abrange a relação dos ambientes utilizados, a estrutura para a gestão do código-fonte, além da definição do processo e das ferramentas por meio dos quais a equipe se organiza (gestão de equipes).
+A equipe optou por adotar a metodologia ágil Scrum para organizar e conduzir o desenvolvimento do projeto. Essa abordagem permite o desenvolvimento iterativo e incremental da solução, com entregas frequentes, acompanhamento contínuo e foco na colaboração entre os integrantes da equipe. As atividades foram organizadas em Sprints com duração previamente definida, e as tarefas foram distribuídas de acordo com as competências de cada membro.
+
+A organização das tarefas, monitoramento do progresso e definição das prioridades foram realizados por meio do Trello, utilizando listas de atividades para representar as diferentes etapas do processo de desenvolvimento. Essa estrutura permitiu uma visualização clara e objetiva das tarefas pendentes, em andamento e concluídas, promovendo maior controle e alinhamento entre os integrantes.
+
+As reuniões de planejamento e revisão das Sprints foram conduzidas de forma online, utilizando o Microsoft Teams, ferramenta escolhida pela facilidade de comunicação em grupo, compartilhamento de arquivos e integração com o ambiente acadêmico. As decisões importantes tomadas durante as reuniões foram registradas no repositório do projeto, garantindo rastreabilidade e alinhamento contínuo entre os membros.
+
 
 
 ## Controle de versão
 
-A ferramenta de controle de versão adotada no projeto foi o [Git](https://git-scm.com/), sendo que o [GitHub](https://github.com) foi utilizado para hospedagem do repositório.
+A configuração do projeto no GitHub já foi preparada para o início do desenvolvimento. Foram criadas as branches principais (main, dev, testing e unstable) seguindo uma convenção que organiza o fluxo de trabalho. Ainda não iniciamos a fase de codificação, mas a estrutura de versionamento está pronta para receber os commits, merges e novas funcionalidades.
 
-O projeto segue a seguinte convenção para o nome de branches:
-
-- `main`: versão estável já testada do software
-- `unstable`: versão já testada do software, porém instável
-- `testing`: versão em testes do software
-- `dev`: versão de desenvolvimento do software
-
-Quanto à gerência de issues, o projeto adota a seguinte convenção para etiquetas:
-
-- `documentation`: melhorias ou acréscimos à documentação
-- `bug`: uma funcionalidade encontra-se com problemas
-- `enhancement`: uma funcionalidade precisa ser melhorada
-- `feature`: uma nova funcionalidade precisa ser introduzida
-
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gestão de tags, merges, commits e branches é realizada. Discuta também como a gestão de issues foi feita.
-
-> **Links úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e GitHub](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
-> - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
+As issues também já foram configuradas, com etiquetas como bug, feature, enhancement e documentation, que serão usadas para organizar as tarefas durante os Sprints. A gestão do código-fonte será feita por meio de pull requests, garantindo controle e revisão antes de integrar qualquer mudança às branches principais.
 
 ## Planejamento do projeto
 
@@ -72,10 +56,16 @@ Atualizado em: 21/04/2024
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| AlunaX        | Página inicial   | 01/02/2024     | 07/03/2024 | ✔️    | 05/02/2024      |
-| AlunaZ        | CSS unificado    | 03/02/2024     | 10/03/2024 | 📝    |                 |
-| AlunoY        | Página de login  | 01/02/2024     | 07/03/2024 | ⌛     |                 |
-| AlunoK        | Script de login  |  01/01/2024    | 12/03/2024 | ❌    |       |
+| Daniel        | Diagrama AS IS   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
+| Daniel        | Diagrama TO BE   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
+| DaniLO        | Diagrama TO BE   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
+| Matheus       | Processos        | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
+| Matheus       | Metodologia      | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
+| Luiz          | Documentação   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
+| Luiz          | Slide   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
+| Saul          | Elaboração e correção Diagramas AS IS   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
+
+
 
 
 Legenda:
@@ -92,15 +82,7 @@ Legenda:
 
 ### Processo
 
-Coloque informações sobre detalhes da implementação do Scrum seguido pelo grupo. O grupo deverá fazer uso do recurso de gerenciamento de projeto oferecido pelo GitHub, que permite acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
- 
-> **Links úteis**:
-> - [Planejamento e gestão ágil de projetos](https://pucminas.instructure.com/courses/87878/pages/unidade-2-tema-2-utilizacao-de-ferramentas-para-controle-de-versoes-de-software)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards)
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Como criar backlogs no GitHub](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial slack](https://slack.com/intl/en-br/)
-
+O grupo estruturou o projeto em duas Sprints principais e está utilizando o GitHub Projects para acompanhar as tarefas, com colunas para “A fazer”, “Em andamento” e “Concluído”. O backlog foi criado com base nas histórias de usuário definidas na fase de planejamento, e as prioridades foram definidas em conjunto. Cada membro é responsável por atualizar o status das tarefas no quadro, mantendo o time alinhado. As decisões são tomadas em reuniões semanais no Microsoft Teams, e os registros ficam documentados no repositório do projeto. Até o momento, mesmo sem a codificação iniciada, o fluxo de organização está sendo seguido conforme previsto.
 
 ## Relação de ambientes de trabalho
 
