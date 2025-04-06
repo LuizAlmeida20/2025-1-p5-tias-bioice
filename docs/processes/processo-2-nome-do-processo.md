@@ -67,7 +67,6 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | ---             | ---              | ---            | ---               |
 | local_armazenamento	 | Seleção única		  |  câmara fria / estoque seco              |  gerada pelo sistema                 |
 | **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
 | salvar               | Registro de estoque	              | default           |
 
 
@@ -79,7 +78,6 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | insumos_verificados		 |Área de texto			  |  obrigatório	              |                  |
 | observações	 |Área de texto		  |  opcional	              |                 |
 | **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
 | atualizar               | Atualização do status	              | default           |
 
 
@@ -91,5 +89,4 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | data_retirada		 |Data			  | formato dd-mm-aaaa              |   atual               |
 | responsável_retirada		 |Caixa de texto			  |  obrigatório	              |                 |
 | **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
 | registrar              | Relatório de vencimentos	              | default           |
