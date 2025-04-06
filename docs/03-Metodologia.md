@@ -74,7 +74,7 @@ Atualizado em: 06/04/2025
 | Luiz          | Slide   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
 | Saul          | Elaboração e correção Diagramas AS IS   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
 | Humberto          | GitHub Projects   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
-| Humberto          | Organizaçãoo dos afazeres   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
+| Humberto          | Organização dos afazeres   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
 Legenda:
 - ✔️: terminado
 - 📝: em execução
