@@ -57,7 +57,7 @@ Atualizado em: 16/03/2025
 - Matheus : Responsável pela descrição dos processos e pela redação da metodologia utilizada no projeto.
 - Luiz : Responsável pela documentação geral e pela elaboração dos slides de apresentação.
 - Saul : Revisão, correção e finalização dos diagramas AS IS, garantindo a consistência com os processos definidos.
-
+- Humberto: Organização do GitHub Projects e gerenciamento dos afazeres da equipe.
 
 #### Sprint 2
 
@@ -68,13 +68,13 @@ Atualizado em: 06/04/2025
 | Daniel        | Diagrama AS IS   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
 | Daniel        | Diagrama TO BE   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
 | DaniLO        | Diagrama TO BE   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
-| Matheus       | Processos        | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
+| Matheus       | Modelagem dos Processos     | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
 | Matheus       | Metodologia      | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
 | Luiz          | Documentação   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
 | Luiz          | Slide   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
 | Saul          | Elaboração e correção Diagramas AS IS   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
-
-
+| Humberto          | GitHub Projects   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
+| Humberto          | Organizaçãoo dos afazeres   | 25/03/2025     | 05/04/2025 | ✔️    | 05/04/2025      |
 Legenda:
 - ✔️: terminado
 - 📝: em execução
@@ -92,9 +92,15 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas. Tod
 
 ### Ferramentas
 
-Liste todas as ferramentas que foram empregadas no projeto, justificando a escolha delas, sempre que possível.
+Durante o desenvolvimento do projeto, foram utilizadas diversas ferramentas que facilitaram a organização, comunicação e produção dos artefatos. A escolha dessas ferramentas levou em consideração a facilidade de uso, integração com outras plataformas e familiaridade dos membros da equipe.
 
-Exemplo: os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
+- GitHub: Utilizado para controle de versão e armazenamento do código-fonte. Permitiu a organização do projeto em branches, issues e pull requests.
+- Trello com Kanban: Ferramenta de gerenciamento de tarefas adotada para aplicar a metodologia Scrum com quadros Kanban, permitindo a visualização clara do progresso das atividades durante as Sprints.
+- Microsoft Teams: Utilizado como principal meio de comunicação e para a realização de reuniões remotas. Facilitou o alinhamento entre os membros, além de permitir o compartilhamento de arquivos.
+- Draw.io (diagrams.net) / Visual Paradigm / Lucidchart: Usadas na criação dos diagramas AS IS e TO BE, facilitando a modelagem dos processos de negócio de forma visual e colaborativa.
+- GitHub Projects: Utilizado de forma complementar ao Trello para organização técnica das tarefas relacionadas ao versionamento e controle de issues.
+- Google Docs / Word Online: Utilizados para edição e compartilhamento dos documentos do projeto.
+- Figma (se usarem na próxima etapa): Pode ser utilizado para prototipação de interface, se aplicável na próxima fase.
 
 | Ambiente                            | Plataforma                         | Link de acesso                         |
 |-------------------------------------|------------------------------------|----------------------------------------|
@@ -103,4 +109,6 @@ Exemplo: os artefatos do projeto são desenvolvidos a partir de diversas platafo
 | Diagramação               | Lucidchart / Draw.io                            | [http://....](https://app.diagrams.net/)                            |
 | Diagramação            | Visual Paradigma                    | [http://....](https://online.visual-paradigm.com/pt/diagrams/solutions/free-online-diagram-editor/)                            |
 | Comunicação e reuniões	                         | Microsoft Teams	                             | [http://....](https://www.microsoft.com/pt-br/microsoft-teams/free).                            |
+| Documentos do projeto                        | Google Drive / Word	                             | [http://....]([https://www.microsoft.com/pt-br/microsoft-teams/free](https://word.cloud.microsoft/)).                            |
+
  
