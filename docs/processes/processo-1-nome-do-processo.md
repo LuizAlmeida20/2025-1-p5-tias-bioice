@@ -41,7 +41,6 @@
 |  data_descarte	               |  Data                |       formato dd-mm-aaaa	         |                   |
 |  hora_descarte	               |  Hora                |       formato hh:mm:ss		         |                   |
 | **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
 | registrar | Funcionário realiza triagem  | default |
 
 
@@ -53,7 +52,6 @@
 |  quantidade               |  Número                |      mínimo 1	        |                   |
 |  observações	               |  Área de texto	                |       opcional		         |                   |
 | **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
 | salvar | Registro do descarte	  | default |
 
 
@@ -65,5 +63,4 @@
 |  responsável              | Caixa de texto	                |     obrigatório		        |                   |
 |  observações	               |  Área de texto	                |       opcional		         |                   |
 | **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
 | finalizar	 | Fim do processo		  | default |
