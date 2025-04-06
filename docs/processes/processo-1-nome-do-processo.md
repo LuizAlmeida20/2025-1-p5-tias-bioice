@@ -20,7 +20,7 @@
 
 
 
-**Cliente consome produto**
+**Atividade 1 : Cliente consome produto**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -32,7 +32,7 @@
 
 
 
-**Cliente descarta embalagem**
+**Atividade 2 : Cliente descarta embalagem**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -44,7 +44,7 @@
 | registrar | Funcionário realiza triagem  | default |
 
 
-**Funcionário realiza triagem e separa recicláveis**
+**Atividade 3 : Funcionário realiza triagem e separa recicláveis**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -55,7 +55,7 @@
 | salvar | Registro do descarte	  | default |
 
 
-**Registro do descarte no sistema**
+**Atividade 4 : Registro do descarte no sistema**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
