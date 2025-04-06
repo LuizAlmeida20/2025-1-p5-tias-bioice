@@ -2,10 +2,6 @@
 
 <span style="color:red">Pré-requisitos: <a href="02-Especificacao.md"> Especificação do projeto</a></span>
 
-> **Links úteis**:
-> - [Modelagem de processos AS-IS x TO-BE](https://dheka.com.br/modelagem-as-is-to-be/)
-> - [20 dicas práticas de modelagem de processos](https://dheka.com.br/20-dicas-praticas-de-modelagem-de-processos/)
-
 ## Modelagem da situação atual (Modelagem AS IS)
 
 Os processos descritos a seguir representam o funcionamento atual da sorveteria Ice Delícias, com foco nas atividades de Descarte de Embalagens e Controle de Validade dos Produtos. Atualmente, essas tarefas são realizadas manualmente, sem o apoio de um sistema automatizado, o que as torna suscetíveis a falhas humanas, retrabalho e baixa eficiência operacional.
