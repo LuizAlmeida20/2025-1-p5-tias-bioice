@@ -1,7 +1,17 @@
-### 3.3.2 Processo 2 – NOME DO PROCESSO
+### 3.3.2 Processo 2 – Controle de Validade
  
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 2. 
-Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
+Oportunidades de Melhoria:
+Implantar um sistema digital de controle de validade com notificações automáticas.
+
+Criar uma rotina padronizada para conferência periódica dos insumos.
+
+Capacitar os funcionários para realizar a checagem com maior agilidade e precisão.
+
+Estabelecer etiquetas padronizadas com data de validade e data de abertura do insumo.
+
+Automatizar alertas para insumos próximos do vencimento.
+
+Reduzir o desperdício com o uso inteligente do estoque (FIFO – First In, First Out).
 
 ![Exemplo de um Modelo BPMN do PROCESSO 2](../images/process.png "Modelo BPMN do Processo 2.")
 
