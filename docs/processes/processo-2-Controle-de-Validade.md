@@ -14,7 +14,7 @@ Oportunidades de Melhoria:
 
 - Reduzir o desperdício com o uso inteligente do estoque (FIFO – First In, First Out).
 
-![Exemplo de um Modelo BPMN do PROCESSO 2](../images/process.png "Modelo BPMN do Processo 2.")
+![Exemplo de um Modelo BPMN do PROCESSO 2](../images/processo2.png "Modelo BPMN do Processo 2.")
 
 
 #### Detalhamento das atividades
