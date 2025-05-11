@@ -110,7 +110,8 @@ Para o desenvolvimento do software de gestão sustentável da sorveteria Ice Del
 
 ### Interação entre as tecnologias
 
-![Diagrama sem nome drawio(1)](https://github.com/user-attachments/assets/2ffb5317-ed51-4ab6-87a0-d8e869b1cd29)
+![1 drawio](https://github.com/user-attachments/assets/b87011a5-6c43-4a12-ad72-cba7652599ad)
+
 
 
 | **Dimensão**   | **Tecnologia**  |
