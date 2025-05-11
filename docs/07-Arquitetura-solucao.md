@@ -108,6 +108,11 @@ Para o desenvolvimento do software de gestão sustentável da sorveteria Ice Del
 - WebStorm: IDE focada no desenvolvimento de aplicações Web, especialmente em JavaScript e TypeScript desenvolvido pela JetBrains.
 - Figma: Utilizado para o protótipo de telas e planejamento de interface do usuário (UI/UX).
 
+### Interação entre as tecnologias
+
+![Diagrama sem nome drawio(1)](https://github.com/user-attachments/assets/2ffb5317-ed51-4ab6-87a0-d8e869b1cd29)
+
+
 | **Dimensão**   | **Tecnologia**  |
 | ---            | ---             |
 | Front-end      | HTML + CSS + JS + Framework FrontEnd |
