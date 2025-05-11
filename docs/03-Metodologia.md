@@ -81,6 +81,36 @@ Legenda:
 - ⌛: atrasado
 - ❌: não iniciado
 
+#### Sprint 3
+- Daniel : Responsável pelos projetos de interface.
+- Danilo : Responsável pela redação da metodologia utilizada no projeto, divisão das tarefas, organização, documentação e revisão.
+- Matheus : Responsável pelo projeto da solução e tecnologias.
+- Luiz : Responsável pelo projeto do banco de dados e arquitetura da solução.
+- Saul : Responsável pelo projeto do banco de dados e arquitetura da solução.
+- Humberto: Responsável pelo protótipo de telas e template padrão da aplicação.
+
+#### Sprint 3
+
+Atualizado em: 06/04/2025
+
+| Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
+| :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
+| Daniel        | Projetos de interface   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Danilo        | Projeto X   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Danilo        | Organização de tarefas e Sprint   | 28/04/2025     | 11/05/2025 | ✔️    | 05/05/2025      |
+| Matheus       | Projeto da solução     | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Matheus       | Tecnologias     | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Luiz          | Projeto do banco de dados   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Luiz          | Arquitetura da solução   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Saul          | Projeto do banco de dados   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Saul          | Arquitetura da solução   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Humberto          | Protótipo de telas   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Humberto          | Template padrão  | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+Legenda:
+- ✔️: terminado
+- 📝: em execução
+- ⌛: atrasado
+- ❌: não iniciado
 
 ### Processo
 
