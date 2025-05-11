@@ -117,56 +117,56 @@ Durante o desenvolvimento, ferramentas como o Repl.it foram utilizadas para test
 
 ## Qualidade de software
 
-Qualidade de Software
-A qualidade de software será um dos pilares fundamentais no desenvolvimento da plataforma Ice Delícias. Para garantir que o sistema atenda às necessidades dos usuários e dos gestores da sorveteria, adotaremos como referência o modelo de qualidade definido pela norma internacional ISO/IEC 25010:2011.
+A qualidade de software será um dos pilares fundamentais no desenvolvimento da plataforma **Ice Delícias**. Para garantir que o sistema atenda às necessidades dos usuários e dos gestores da sorveteria, adotaremos como referência o modelo de qualidade definido pela norma internacional **ISO/IEC 25010:2011**.
 
 Essa norma define oito características principais de qualidade, que se desdobram em diversas subcaracterísticas. Com base nas necessidades do projeto e no perfil dos usuários, nossa equipe selecionou as seguintes subcaracterísticas como foco de atenção durante o desenvolvimento:
 
-Subcaracterísticas Selecionadas
-Usabilidade (Operacionalidade, Acessibilidade, Inteligibilidade)
+### Subcaracterísticas Selecionadas
 
-Justificativa: O sistema será utilizado por pessoas com diferentes níveis de familiaridade com tecnologia. Portanto, ele precisa ser intuitivo, fácil de usar e acessível.
+---
 
-Métricas:
+###  Usabilidade *(Operacionalidade, Acessibilidade, Inteligibilidade)*
 
-Tempo médio para completar uma tarefa comum no sistema (ex: registrar um item no estoque).
+**Justificativa:**  
+O sistema será utilizado por pessoas com diferentes níveis de familiaridade com tecnologia. Portanto, ele precisa ser intuitivo, fácil de usar e acessível.
 
-Número de cliques necessários para acessar funcionalidades principais.
+**Métricas:**
+- Tempo médio para completar uma tarefa comum no sistema (ex: registrar um item no estoque).
+- Número de cliques necessários para acessar funcionalidades principais.
+- Avaliação de usabilidade por meio de testes com usuários.
 
-Avaliação de usabilidade por meio de testes com usuários.
+---
 
-Confiabilidade (Maturidade, Tolerância a Falhas)
+###  Confiabilidade *(Maturidade, Tolerância a Falhas)*
 
-Justificativa: O sistema precisa funcionar corretamente na maior parte do tempo, mesmo em situações inesperadas.
+**Justificativa:**  
+O sistema precisa funcionar corretamente na maior parte do tempo, mesmo em situações inesperadas.
 
-Métricas:
+**Métricas:**
+- Taxa de falhas durante o uso (bugs reportados por semana).
+- Porcentagem de disponibilidade do sistema (uptime).
+- Resultados de testes automatizados.
 
-Taxa de falhas durante o uso (bugs reportados por semana).
+---
 
-Porcentagem de disponibilidade do sistema (uptime).
+###  Segurança *(Confidencialidade, Integridade, Autenticidade)*
 
-Resultados de testes automatizados.
+**Justificativa:**  
+Como o sistema lidará com dados financeiros e de estoque, é essencial garantir que informações não sejam acessadas ou alteradas por pessoas não autorizadas.
 
-Segurança (Confidencialidade, Integridade, Autenticidade)
+**Métricas:**
+- Número de vulnerabilidades encontradas em testes de segurança.
+- Validação de autenticação e autorização por meio de testes.
+- Uso de conexões criptografadas (HTTPS).
 
-Justificativa: Como o sistema lidará com dados financeiros e de estoque, é essencial garantir que informações não sejam acessadas ou alteradas por pessoas não autorizadas.
+---
 
-Métricas:
+###  Manutenibilidade *(Modificabilidade, Testabilidade)*
 
-Número de vulnerabilidades encontradas em testes de segurança.
+**Justificativa:**  
+O sistema deve ser fácil de atualizar e corrigir, facilitando sua evolução ao longo do tempo.
 
-Validação de autenticação e autorização por meio de testes.
-
-Uso de conexões criptografadas (HTTPS).
-
-Manutenibilidade (Modificabilidade, Testabilidade)
-
-Justificativa: O sistema deve ser fácil de atualizar e corrigir, facilitando sua evolução ao longo do tempo.
-
-Métricas:
-
-Cobertura de testes automatizados (% de código testado).
-
-Tempo médio para corrigir um bug identificado.
-
-Número de arquivos ou módulos afetados por cada alteração.
+**Métricas:**
+- Cobertura de testes automatizados (% de código testado).
+- Tempo médio para corrigir um bug identificado.
+- Número de arquivos ou módulos afetados por cada alteração.
