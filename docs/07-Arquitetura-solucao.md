@@ -84,18 +84,38 @@ CREATE TABLE tb_cronograma_coleta (
 
 ## Tecnologias
 
-Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+Para o desenvolvimento do software de gestão sustentável da sorveteria Ice Delícias, será utilizada uma combinação de tecnologias modernas e eficientes que permitem a criação de aplicações web responsivas, escaláveis e de fácil manutenção. A seguir, estão listadas todas as tecnologias envolvidas:
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+### Linguagens de Programação e Marcação
 
+- HTML: Estruturação semântica das páginas web.
+-CSS3: Estilização e responsividade da interface do usuário.
+- JavaScript: Lógica de interatividade do lado do cliente.
+- TypeScript: Superset do JavaScript, utilizado para tornar o código mais robusto e escalável.
+- Frameworks e Bibliotecas
+- React/Vue: Bibliotecas/frameworks JavaScript para construção de interfaces de usuário dinâmicas e reativas, possibilitando desenvolvimento modular e reutilizável.
+- Node.js: Ambiente de execução JavaScript no lado do servidor.
+- Express.js: Framework minimalista do Node.js utilizado para criar APIs RESTful.
+
+### Banco de Dados
+
+- MySQL: Para armazenar dados sobre estoque, validade de insumos e controle financeiro de forma segura e eficiente.
+
+### Ferramentas de Desenvolvimento
+- Visual Studio Code (VS Code): IDE leve e eficiente com suporte a extensões que facilitam o desenvolvimento com as tecnologias utilizadas.
+- Git e GitHub: Controle de versão e colaboração entre os membros da equipe.
+- Rider: Editor de C# com suporte a Web e bancos de dados, otimizado para ASP.NET Core e clássico desenvolvido pela JetBrains.
+- WebStorm: IDE focada no desenvolvimento de aplicações Web, especialmente em JavaScript e TypeScript desenvolvido pela JetBrains.
+- Figma: Utilizado para o protótipo de telas e planejamento de interface do usuário (UI/UX).
 
 | **Dimensão**   | **Tecnologia**  |
 | ---            | ---             |
-| Front-end      | HTML + CSS + JS + React |
-| Back-end       | Node.js         |
+| Front-end      | HTML + CSS + JS + Framework FrontEnd |
+| Back-end       | C# + ASP.NET         |
 | SGBD           | MySQL           |
 | Deploy         | Vercel          |
-
+| Protótipos | Figma |
+| IDE | Visual Studio Code, WebStorm, Rider |
 
 ## Hospedagem
 
