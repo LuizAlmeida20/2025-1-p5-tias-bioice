@@ -117,13 +117,56 @@ Durante o desenvolvimento, ferramentas como o Repl.it foram utilizadas para test
 
 ## Qualidade de software
 
-Conceituar qualidade é uma tarefa complexa, mas ela pode ser vista como um método gerencial que, por meio de procedimentos disseminados por toda a organização, busca garantir um produto final que satisfaça às expectativas dos stakeholders.
+Qualidade de Software
+A qualidade de software será um dos pilares fundamentais no desenvolvimento da plataforma Ice Delícias. Para garantir que o sistema atenda às necessidades dos usuários e dos gestores da sorveteria, adotaremos como referência o modelo de qualidade definido pela norma internacional ISO/IEC 25010:2011.
 
-No contexto do desenvolvimento de software, qualidade pode ser entendida como um conjunto de características a serem atendidas, de modo que o produto de software atenda às necessidades de seus usuários. Entretanto, esse nível de satisfação nem sempre é alcançado de forma espontânea, devendo ser continuamente construído. Assim, a qualidade do produto depende fortemente do seu respectivo processo de desenvolvimento.
+Essa norma define oito características principais de qualidade, que se desdobram em diversas subcaracterísticas. Com base nas necessidades do projeto e no perfil dos usuários, nossa equipe selecionou as seguintes subcaracterísticas como foco de atenção durante o desenvolvimento:
 
-A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características e 30 subcaracterísticas de qualidade para produtos de software. Com base nessas características e nas respectivas subcaracterísticas, identifique as subcaracterísticas que sua equipe utilizará como base para nortear o desenvolvimento do projeto de software, considerando alguns aspectos simples de qualidade. Justifique as subcaracterísticas escolhidas pelo time e elenque as métricas que permitirão à equipe avaliar os objetos de interesse.
+Subcaracterísticas Selecionadas
+Usabilidade (Operacionalidade, Acessibilidade, Inteligibilidade)
 
-> **Links úteis**:
-> - [ISO/IEC 25010:2011 - Systems and Software Engineering — Systems and Software Quality Requirements and Evaluation (SQuaRE) — System and Software Quality Models](https://www.iso.org/standard/35733.html/)
-> - [Análise sobre a ISO 9126 – NBR 13596](https://www.tiespecialistas.com.br/analise-sobre-iso-9126-nbr-13596/)
-> - [Qualidade de software - Engenharia de Software](https://www.devmedia.com.br/qualidade-de-software-engenharia-de-software-29/18209)
+Justificativa: O sistema será utilizado por pessoas com diferentes níveis de familiaridade com tecnologia. Portanto, ele precisa ser intuitivo, fácil de usar e acessível.
+
+Métricas:
+
+Tempo médio para completar uma tarefa comum no sistema (ex: registrar um item no estoque).
+
+Número de cliques necessários para acessar funcionalidades principais.
+
+Avaliação de usabilidade por meio de testes com usuários.
+
+Confiabilidade (Maturidade, Tolerância a Falhas)
+
+Justificativa: O sistema precisa funcionar corretamente na maior parte do tempo, mesmo em situações inesperadas.
+
+Métricas:
+
+Taxa de falhas durante o uso (bugs reportados por semana).
+
+Porcentagem de disponibilidade do sistema (uptime).
+
+Resultados de testes automatizados.
+
+Segurança (Confidencialidade, Integridade, Autenticidade)
+
+Justificativa: Como o sistema lidará com dados financeiros e de estoque, é essencial garantir que informações não sejam acessadas ou alteradas por pessoas não autorizadas.
+
+Métricas:
+
+Número de vulnerabilidades encontradas em testes de segurança.
+
+Validação de autenticação e autorização por meio de testes.
+
+Uso de conexões criptografadas (HTTPS).
+
+Manutenibilidade (Modificabilidade, Testabilidade)
+
+Justificativa: O sistema deve ser fácil de atualizar e corrigir, facilitando sua evolução ao longo do tempo.
+
+Métricas:
+
+Cobertura de testes automatizados (% de código testado).
+
+Tempo médio para corrigir um bug identificado.
+
+Número de arquivos ou módulos afetados por cada alteração.
