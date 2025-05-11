@@ -99,13 +99,21 @@ Apresente também uma figura explicando como as tecnologias estão relacionadas 
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foram realizados.
+A hospedagem e o lançamento da plataforma Ice Delícias serão realizados utilizando a Vercel, uma plataforma moderna e eficiente voltada para o deploy de aplicações web. A escolha da Vercel se deu por sua integração nativa com o Next.js, facilidade de configuração, deploy contínuo via GitHub e por utilizar a infraestrutura da AWS, o que garante alta performance, escalabilidade e segurança.
 
-> **Links úteis**:
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando seu site no Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+O processo de hospedagem seguirá os seguintes passos:
+
+-O código-fonte será versionado e mantido em um repositório no GitHub.
+
+-A Vercel será conectada diretamente ao repositório, permitindo deploys automáticos a cada nova atualização.
+
+-A aplicação será configurada com um domínio personalizado, com gerenciamento automático de certificados SSL pela própria plataforma.
+
+-A integração com o Next.js permitirá o uso de rotas dinâmicas, renderização híbrida e otimização automática da aplicação.
+
+Durante o desenvolvimento, ferramentas como o Repl.it foram utilizadas para testes rápidos e colaboração entre os desenvolvedores. Alternativas como GitHub Pages e Heroku chegaram a ser avaliadas, mas a equipe optou pela Vercel devido à sua compatibilidade com o stack adotado e simplicidade no processo de publicação.
+
+
 
 ## Qualidade de software
 
