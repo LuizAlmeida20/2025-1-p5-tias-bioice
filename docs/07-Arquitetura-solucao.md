@@ -1,18 +1,12 @@
 # Arquitetura da solução
 
-<span style="color:red">Pré-requisitos: <a href="05-Projeto-interface.md"> Projeto de interface</a></span>
+![Diagrama sem nome drawio](https://github.com/user-attachments/assets/004d100a-c9d8-48f0-9be5-5adb53137a22)
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
-
-![Arquitetura da Solução](images/arquitetura.png)
 
 ## Diagrama de classes
 
-O diagrama de classes ilustra graficamente a estrutura do software e como cada uma das classes estará interligada. Essas classes servem de modelo para materializar os objetos que serão executados na memória.
+![classes drawio](https://github.com/user-attachments/assets/82b2d077-4042-485f-8f61-3df6376c752d)
 
-> **Links úteis**:
-> - [Diagramas de classes - documentação da IBM](https://www.ibm.com/docs/pt-br/rational-soft-arch/9.7.0?topic=diagrams-class)
-> - [O que é um diagrama de classe UML?](https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-classe-uml)
 
 ##  Modelo de dados
 
