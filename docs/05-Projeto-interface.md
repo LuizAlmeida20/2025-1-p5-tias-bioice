@@ -3,20 +3,16 @@
 
 <span style="color:red">Pré-requisitos: <a href="02-Especificacao.md"> Especificação do projeto</a></span>
 
-Visão geral da interação do usuário pelas telas do sistema e protótipo interativo das telas com as funcionalidades que fazem parte do sistema (wireframes).
-
- Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados na <a href="02-Especificacao.md"> Especificação do projeto</a></span>.
-
  ## User flow
 
-Fluxo de usuário (user flow) é uma técnica que permite ao desenvolvedor mapear todo o fluxo de navegação do usuário na aplicação. Essa técnica serve para alinhar os caminhos e as possíveis ações que o usuário pode realizar junto com os membros da equipe.
+O usuário terá acesso inicialmente na aplicação a tela de apresentação do software que oferecerá uma forma de entrar na aplicação ou se cadastrar que direcionarão para as telas pertinentes. Destas telas ao fim do processo o usuário entrará na tela de dashboard onde poderá visualizar as informações de seu negócio e o informativo dos indicadores ecológicos cadastrados. No menu lateral será possível acessar um menu para cadastrar funcionários e lançamentos de vendas, compras, insumos e descartes. Também temos a tela das configurações onde será configurado o perfil do usuário e suas opções de salvamento dos dados.
 
-![Exemplo de user flow](images/user_flow.jpg)
+![User Flow](images/telas.png)
 
-> **Links úteis**:
+<!-- > **Links úteis**:
 > - [User flow: o quê é e como fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
 > - [User flow vs site maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-> - [Top 25 user flow tools & templates for smooth](https://www.mockplus.com/blog/post/user-flow-tools)
+> - [Top 25 user flow tools & templates for smooth](https://www.mockplus.com/blog/post/user-flow-tools) -->
 
 ### Diagrama de fluxo
 
@@ -53,28 +49,19 @@ Visão geral da interação do usuário por meio das telas do sistema. Apresente
 
 ### Tela principal do sistema
 
-Descrição da tela principal do sistema.
+Na tela inicial do sistema teremos uma breve introdução para novos clientes ou clientes que ainda não entraram em suas contas. Uma vez que o usuário entrar no sistema a aplicação salvará seus dados e a aplicação passará a sempre cair na tela de Dashboard.
 
-> Insira aqui a tela principal do sistema
+![Exemplo de diagrama de fluxo](images/wireframe/Inicial.png)
 
+### Tela de Login
 
-###  Telas do processo 1
+Na tela inicial do sistema teremos uma breve introdução para novos clientes ou clientes que ainda não entraram em suas contas. Uma vez que o usuário entrar no sistema a aplicação salvará seus dados e a aplicação passará a sempre cair na tela de Dashboard.
 
-Descrição da tela relativa à atividade 1 do processo 1.
+![Exemplo de diagrama de fluxo](images/wireframe/Logar.png)
 
-> Insira aqui a tela da atividade 1
+### Tela de Cadastro
 
-Descrição da tela relativa à atividade 2 do processo 1.
+Na tela inicial do sistema teremos uma breve introdução para novos clientes ou clientes que ainda não entraram em suas contas. Uma vez que o usuário entrar no sistema a aplicação salvará seus dados e a aplicação passará a sempre cair na tela de Dashboard.
 
-> Insira aqui a tela da atividade 2
+![Exemplo de diagrama de fluxo](images/wireframe/Cadastrar.png)
 
-
-### Telas do processo 2
-
-Descrição da tela relativa à atividade 1 do processo 2.
-
-> Insira aqui a tela da atividade 1
-
-Descrição da tela relativa à atividade 2 do processo 2.
-
-> Insira aqui a tela da atividade 2
