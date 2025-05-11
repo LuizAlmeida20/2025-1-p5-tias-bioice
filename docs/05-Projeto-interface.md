@@ -65,3 +65,21 @@ Na tela inicial do sistema teremos uma breve introdução para novos clientes ou
 
 ![Exemplo de diagrama de fluxo](images/wireframe/Cadastrar.png)
 
+### Tela de Dashboard
+
+Nesta tela o usuário pode rapidamente acompanhar seus registros financeiros e de estoque com os indicadores ecológicos.
+
+![Exemplo de diagrama de fluxo](images/wireframe/Dashboard.png)
+
+### Tela de Lançamentos
+
+Esta tela temos as tabelas com as informações do negócio para alimentar o dashboard, estes dados alimentam diretamente a base de dados da aplicação.
+
+![Exemplo de diagrama de fluxo](images/wireframe/Lançamentos.png)
+
+### Tela de Configurações
+
+Aqui o usuário pode alterar as informações básicas do negócio e também configurar a conexão com serviços de persistência dos dados como por exemplo autorizar que os dados sejam salvos na núvem.
+
+![Exemplo de diagrama de fluxo](images/wireframe/Configurações.png)
+
