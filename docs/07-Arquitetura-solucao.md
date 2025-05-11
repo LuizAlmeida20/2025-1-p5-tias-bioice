@@ -103,13 +103,13 @@ A hospedagem e o lançamento da plataforma Ice Delícias serão realizados utili
 
 O processo de hospedagem seguirá os seguintes passos:
 
--O código-fonte será versionado e mantido em um repositório no GitHub.
+- O código-fonte será versionado e mantido em um repositório no GitHub.
 
--A Vercel será conectada diretamente ao repositório, permitindo deploys automáticos a cada nova atualização.
+- A Vercel será conectada diretamente ao repositório, permitindo deploys automáticos a cada nova atualização.
 
--A aplicação será configurada com um domínio personalizado, com gerenciamento automático de certificados SSL pela própria plataforma.
+- A aplicação será configurada com um domínio personalizado, com gerenciamento automático de certificados SSL pela própria plataforma.
 
--A integração com o Next.js permitirá o uso de rotas dinâmicas, renderização híbrida e otimização automática da aplicação.
+- A integração com o Next.js permitirá o uso de rotas dinâmicas, renderização híbrida e otimização automática da aplicação.
 
 Durante o desenvolvimento, ferramentas como o Repl.it foram utilizadas para testes rápidos e colaboração entre os desenvolvedores. Alternativas como GitHub Pages e Heroku chegaram a ser avaliadas, mas a equipe optou pela Vercel devido à sua compatibilidade com o stack adotado e simplicidade no processo de publicação.
 
