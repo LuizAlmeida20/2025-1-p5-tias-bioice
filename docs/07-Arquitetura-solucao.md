@@ -33,50 +33,61 @@ O Esquema Relacional corresponde à representação dos dados em tabelas juntame
 
 ### Modelo físico
 
-Insira aqui o script de criação das tabelas do banco de dados.
-
-Veja um exemplo:
-
-```sql
--- Criação da tabela Medico
-CREATE TABLE Medico (
-    MedCodigo INTEGER PRIMARY KEY,
-    MedNome VARCHAR(100)
+```SQL
+-- Tabela de fornecedor
+CREATE TABLE tb_fornecedor (
+    id_fornecedor INT AUTO_INCREMENT PRIMARY KEY,
+    nm_fornecedor VARCHAR(255) NOT NULL,
+    dt_criado_em DATE NOT NULL,
+    dt_atualizado_em DATE NOT NULL
 );
 
--- Criação da tabela Paciente
-CREATE TABLE Paciente (
-    PacCodigo INTEGER PRIMARY KEY,
-    PacNome VARCHAR(100)
+-- Tabela de domínio para o tipo de movimentação (entrada, saída...)
+CREATE TABLE tb_tipo_movimentacao (
+    id_tipo_movimentacao INT AUTO_INCREMENT PRIMARY KEY,
+    nm_tipo_movimentacao VARCHAR(255) NOT NULL,
+    dt_criado_em DATE NOT NULL,
+    dt_atualizado_em DATE NOT NULL
 );
 
--- Criação da tabela Consulta
-CREATE TABLE Consulta (
-    ConCodigo INTEGER PRIMARY KEY,
-    MedCodigo INTEGER,
-    PacCodigo INTEGER,
-    Data DATE,
-    FOREIGN KEY (MedCodigo) REFERENCES Medico(MedCodigo),
-    FOREIGN KEY (PacCodigo) REFERENCES Paciente(PacCodigo)
+-- Tabela para registrar movimentações de produtos
+CREATE TABLE tb_movimentacao_produto (
+    id_movimentacao INT AUTO_INCREMENT PRIMARY KEY,
+    fk_produto INT NOT NULL,
+    fk_tipo_movimentacao INT NOT NULL,
+    nu_preco DECIMAL(15,2) NOT NULL,
+    nu_quantidade INT NOT NULL,
+    fk_fornecedor INT, -- Nullable
+    dt_criado_em DATE NOT NULL,
+    dt_atualizado_em DATE NOT NULL,
+    FOREIGN KEY (fk_produto) REFERENCES tb_produto(id_insumo),
+    FOREIGN KEY (fk_tipo_movimentacao) REFERENCES tb_tipo_movimentacao(id_tipo_movimentacao),
+    FOREIGN KEY (fk_fornecedor) REFERENCES tb_fornecedor(id_fornecedor)
 );
 
--- Criação da tabela Medicamento
-CREATE TABLE Medicamento (
-    MdcCodigo INTEGER PRIMARY KEY,
-    MdcNome VARCHAR(100)
+-- Tabela de usuário
+CREATE TABLE tb_usuario (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nm_email VARCHAR(255) NOT NULL,
+    ds_senha VARCHAR(50) NOT NULL,
+    fk_role INT NOT NULL,
+    FOREIGN KEY (fk_role) REFERENCES tb_fornecedor(id_role)
 );
 
--- Criação da tabela Prescricao
-CREATE TABLE Prescricao (
-    ConCodigo INTEGER,
-    MdcCodigo INTEGER,
-    Posologia VARCHAR(200),
-    PRIMARY KEY (ConCodigo, MdcCodigo),
-    FOREIGN KEY (ConCodigo) REFERENCES Consulta(ConCodigo),
-    FOREIGN KEY (MdcCodigo) REFERENCES Medicamento(MdcCodigo)
+-- Tabela para definir as permissões de cada usuário
+CREATE TABLE tb_role (
+    id_role INT AUTO_INCREMENT PRIMARY KEY,
+    nm_role VARCHAR(255) NOT NULL
+);
+
+-- Tabela para registrar e editar o dia do cronograma da coleta.
+CREATE TABLE tb_cronograma_coleta (
+    id_cronograma_coleta INT AUTO_INCREMENT PRIMARY KEY,
+    nm_dia_coleta VARCHAR(13) NOT NULL,
+    dt_criado_em DATE NOT NULL,
+    dt_atualizado_em DATE NOT NULL
 );
 ```
-Esse script deverá ser incluído em um arquivo .sql na pasta [de scripts SQL](../src/db).
 
 
 ## Tecnologias
