@@ -22,9 +22,6 @@ O diagrama de fluxo pode ser desenvolvido com “boxes” que possuem, intername
 
 ![Diagrama de fluxo - BioIce](https://github.com/user-attachments/assets/f86f8a67-2c32-4859-acb6-3678d904a858)
 
-> **Links úteis**:
-> - [Como criar um diagrama de fluxo de usuário](https://www.lucidchart.com/blog/how-to-make-a-user-flow-diagram)
-> - [Fluxograma online: seis sites para fazer gráfico sem instalar nada](https://www.techtudo.com.br/listas/2019/03/fluxograma-online-seis-sites-para-fazer-grafico-sem-instalar-nada.ghtml)
 
 ## Wireframes
 
