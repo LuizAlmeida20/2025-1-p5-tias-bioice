@@ -22,14 +22,6 @@ O diagrama de fluxo pode ser desenvolvido com “boxes” que possuem, intername
 
 ![Diagrama de fluxo - BioIce](https://github.com/user-attachments/assets/f86f8a67-2c32-4859-acb6-3678d904a858)
 
-
-## Wireframes
-
-São protótipos usados no design de interface para sugerir a estrutura de um site web e seu relacionamento entre suas páginas. Um wireframe web é uma ilustração que mostra o layout dos elementos fundamentais na interface.
-
-![Exemplo de wireframe](images/wireframe.png)
- 
-
 ## Interface do sistema
 
 Visão geral da interação do usuário por meio das telas do sistema. Apresente as principais interfaces da plataforma em sua versão final.
