@@ -59,4 +59,3 @@ A iconografia é usada para facilitar a navegação e tornar o sistema mais visu
 
 Todos os ícones são amigáveis, reconhecíveis e contribuem para uma interface moderna e acessível.
 
----nd why icons improve your web design](https://usabilla.com/blog/how-and-why-icons-improve-you-web-design/)
