@@ -17,6 +17,8 @@ O projeto de interface segue uma abordagem minimalista e colorida, priorizando c
 
 ## 2. Layout Padrão da Aplicação
 
+![image](https://github.com/user-attachments/assets/c88a44d1-c037-4e58-8457-f911fea69bdf)
+
 O layout da aplicação é padronizado para garantir consistência visual e facilidade de navegação em todas as páginas. Ele é composto por três áreas principais:
 
 - **Cabeçalho (Header):** Contém o logotipo da marca, um menu de navegação com acesso às páginas principais (Home, Cardápio, Promoções, Sobre, Contato) e, em alguns contextos, um botão de login ou carrinho de compras.
@@ -28,6 +30,8 @@ O layout da aplicação é padronizado para garantir consistência visual e faci
 ---
 
 ## 3. Identidade Visual
+
+![logo](https://github.com/user-attachments/assets/9d5be6b7-adb3-4363-989e-f3650bb042e1)
 
 A identidade visual da Ice Delícia foi pensada para refletir leveza, alegria e sabor, remetendo à experiência de consumir um sorvete em momentos felizes.
 
