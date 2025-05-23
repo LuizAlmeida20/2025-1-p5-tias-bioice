@@ -96,6 +96,7 @@ Atualizado em: 06/04/2025
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
 | Daniel        | Projetos de interface   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Daniel        | Slide   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
 | Danilo        | Processo X   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
 | Danilo        | Organização de tarefas e Sprint   | 28/04/2025     | 11/05/2025 | ✔️    | 05/05/2025      |
 | Danilo        | Descrição de telas  | 28/04/2025     | 11/05/2025 | ✔️    | 05/05/2025      |
