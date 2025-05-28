@@ -5,19 +5,20 @@
 
 ## Diagrama de classes
 
-![classes drawio](https://github.com/user-attachments/assets/82b2d077-4042-485f-8f61-3df6376c752d)
+![classes drawio(1)](https://github.com/user-attachments/assets/4672070a-9731-42a7-8473-3df335734437)
 
 
 ##  Modelo de dados
 
 ### Modelo ER
 
-![image](https://github.com/user-attachments/assets/aebccb88-f6e0-41ba-8ef0-58ebed807e2a)
+![der_Chen drawio](https://github.com/user-attachments/assets/219c2bc5-91f2-4349-888d-1e6a934583ee)
 
 
 ### Esquema relacional
 
-![der drawio(4)](https://github.com/user-attachments/assets/4b65025e-0e1f-471d-aef5-8ed35f57a226)
+![der_def drawio(3)](https://github.com/user-attachments/assets/54f6efe2-9b5e-42fd-89ef-03b250889ed8)
+
 
 ---
 
