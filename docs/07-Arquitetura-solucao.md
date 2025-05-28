@@ -1,6 +1,6 @@
 # Arquitetura da solução
 
-![Diagrama sem nome drawio](https://github.com/user-attachments/assets/004d100a-c9d8-48f0-9be5-5adb53137a22)
+![Arquitetura básica](./images/arquitetura-basica.png)
 
 
 ## Diagrama de classes
@@ -110,16 +110,16 @@ Para o desenvolvimento do software de gestão sustentável da sorveteria Ice Del
 
 ### Interação entre as tecnologias
 
-![1 drawio](https://github.com/user-attachments/assets/b87011a5-6c43-4a12-ad72-cba7652599ad)
+![arquitetura da solução](./images/arquitetura-software.png)
 
 
 
 | **Dimensão**   | **Tecnologia**  |
 | ---            | ---             |
-| Front-end      | HTML + CSS + JS + Framework FrontEnd |
-| Back-end       | C# + ASP.NET         |
+| Front-end      | Next.js (React) |
+| Back-end       | Nest.js (Node)  |
 | SGBD           | MySQL           |
-| Deploy         | Vercel          |
+| Deploy         | Vercel (Front-end)         |
 | Protótipos | Figma |
 | IDE | Visual Studio Code, WebStorm, Rider |
 
