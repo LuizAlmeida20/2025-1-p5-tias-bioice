@@ -1,10 +1,14 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { DynamicModule, Module } from '@nestjs/common';
+import { dbConnection } from '../ormconfig';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
+
+export function DatabaseOrmModule(): DynamicModule {
+  return TypeOrmModule.forRoot(dbConnection);
+}
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), DatabaseOrmModule()],
+  providers: [],
 })
 export class AppModule {}
