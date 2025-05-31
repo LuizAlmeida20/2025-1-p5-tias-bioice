@@ -1,4 +1,5 @@
 import {
+  BaseEntity,
   Column,
   Entity,
   OneToMany,
@@ -7,10 +8,10 @@ import {
 import { NivelPermissaoEnum } from './enums/nivel-permissao.enum';
 import { Produto } from '../produto/produto.entity';
 import { Insumo } from '../insumo/insumo.entity';
-import { DadosFinanceiros } from '../dados-financeiros.entity';
+import {DadosFinanceiros} from "../dados-financeiros/dados-financeiros.entity";
 
 @Entity()
-export class Usuario {
+export class Usuario extends BaseEntity {
   @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
 
