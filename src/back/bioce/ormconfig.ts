@@ -5,7 +5,7 @@ export const dbConnection: ConnectionOptions = {
   type: 'mysql',
   host: process.env.HOST,
   port: Number(process.env.PORT),
-  username: process.env.USERNAME,
+  username: process.env.DB_USERNAME,
   password: process.env.PASSWORD,
   database: process.env.DATABASE,
   entities: [__dirname + '/src/model/**/*.entity{.ts,.js}'],
