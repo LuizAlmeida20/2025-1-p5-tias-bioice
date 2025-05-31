@@ -8,7 +8,7 @@ import {
 import { Usuario } from '../usuario/usuario.entity';
 
 @Entity()
-export class Produto {
+export class Insumo {
   @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
 
@@ -18,10 +18,16 @@ export class Produto {
   @Column({ name: 'dt_validade' })
   dataValidade: Date;
 
-  @Column({ name: 'dataFab' })
-  dataFab: Date;
+  @Column({ name: 'Dt_registro' })
+  dataRegistro: Date;
 
-  @ManyToOne(() => Usuario, (usuario: Usuario) => usuario.produtos)
+  @Column({ name: 'lote' })
+  lote: string;
+
+  @Column({ name: 'Descrição' })
+  descricao: string;
+
+  @ManyToOne(() => Usuario, (usuario: Usuario) => usuario.insumos)
   @JoinColumn({ name: 'id_user_FK' })
   usuario: Usuario;
 }
