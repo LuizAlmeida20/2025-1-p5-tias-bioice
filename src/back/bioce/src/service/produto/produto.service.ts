@@ -20,10 +20,21 @@ export class ProdutoService {
         return await Produto.save(novoProduto);
     }
 
-    async exibirProdutos() {
-        return await Produto.find({
-            relations: ['usuario']
-        });
+    async exibirProdutos(pagina: number, limite: number) {
+        limite = Math.min(limite, 30);
+
+        const [produtos, total] = await Produto.findAndCount({
+            relations: ['usuario'],
+            skip: (pagina - 1) * limite,
+            take: limite
+        })
+
+        return {
+            data: produtos,
+            total,
+            pagina,
+            ultimaPagina: Math.ceil(total / limite)
+        }
     }
 
     async buscarProduto(id: number) {
@@ -46,7 +57,7 @@ export class ProdutoService {
         return await Produto.save(produto);
     }
 
-    async deletarProduto(id: number){
+    async deletarProduto(id: number) {
         return await Produto.delete(id);
     }
 }
