@@ -18,13 +18,13 @@ export class ProdutoController {
     }
 
     @Post()
-    async cadastrarProduto(@Body() dto: ProdutoDto) {
-        return await this.produtoService.cadastrarProduto(dto);
+    async cadastrarProduto(@Body() produto: ProdutoDto) {
+        return await this.produtoService.cadastrarProduto(produto);
     }
 
     @Put(':id')
-    async editarProduto(@Param('id') id: number, @Body() dto: ProdutoDto) {
-        return await this.produtoService.editarProduto(id, dto);
+    async editarProduto(@Param('id') id: number, @Body() produto: ProdutoDto) {
+        return await this.produtoService.editarProduto(id, produto);
     }
 
     @Delete(':id')
