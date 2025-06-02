@@ -1,4 +1,4 @@
-import {Body, Controller, Get, HttpStatus, Post, Res} from '@nestjs/common';
+import {Body, Controller, Get, HttpStatus, Post, Put, Res} from '@nestjs/common';
 import { CriarUsuarioDto } from '../../model/usuario/dto/criar-usuario.dto';
 import { Usuario } from '../../model/usuario/usuario.entity';
 import { UsuarioService } from '../../service/usuario/usuario.service';

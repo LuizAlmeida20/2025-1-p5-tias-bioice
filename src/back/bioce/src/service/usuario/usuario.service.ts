@@ -18,9 +18,11 @@ export class UsuarioService {
 
   async criarUsuario(criarUsuarioDto: CriarUsuarioDto): Promise<Usuario> {
     const { name, senha, email, nivelPermissao } = criarUsuarioDto;
+    const salt: string = await bcrypt.genSalt();
     const usuario: Usuario = new Usuario({
       username: name,
-      senha: bcrypt.hash(senha),
+      salt: salt,
+      senha: await bcrypt.hash(senha, salt),
       email: email,
       nivelPermissao: nivelPermissao,
     });

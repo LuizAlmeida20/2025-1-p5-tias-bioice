@@ -16,7 +16,7 @@ export class Usuario extends BaseEntity {
   constructor(partialUsuario?: Partial<Usuario>) {
     super();
     if (!partialUsuario) return;
-    const { id, username, senha, nivelPermissao } = partialUsuario;
+    const { id, username, email, senha, salt, nivelPermissao } = partialUsuario;
     if (id) {
       this.id = id;
     }
@@ -25,6 +25,12 @@ export class Usuario extends BaseEntity {
     }
     if (senha) {
       this.senha = senha;
+    }
+    if (salt) {
+      this.salt = salt;
+    }
+    if (email) {
+      this.email = email;
     }
     if (nivelPermissao) {
       this.nivelPermissao = nivelPermissao;
@@ -42,6 +48,9 @@ export class Usuario extends BaseEntity {
 
   @Column({ name: 'Senha' })
   senha: string;
+
+  @Column({ name: 'salt' })
+  salt: string;
 
   @Column({ name: 'nivel_permissao' })
   nivelPermissao: NivelPermissaoEnum;
