@@ -8,10 +8,29 @@ import {
 import { NivelPermissaoEnum } from './enums/nivel-permissao.enum';
 import { Produto } from '../produto/produto.entity';
 import { Insumo } from '../insumo/insumo.entity';
-import {DadosFinanceiros} from "../dados-financeiros/dados-financeiros.entity";
+import { DadosFinanceiros } from '../dados-financeiros/dados-financeiros.entity';
+import { UsuarioService } from '../../service/usuario/usuario.service';
 
 @Entity()
 export class Usuario extends BaseEntity {
+  constructor(partialUsuario?: Partial<Usuario>) {
+    super();
+    if (!partialUsuario) return;
+    const { id, username, senha, nivelPermissao } = partialUsuario;
+    if (id) {
+      this.id = id;
+    }
+    if (username) {
+      this.username = username;
+    }
+    if (senha) {
+      this.senha = senha;
+    }
+    if (nivelPermissao) {
+      this.nivelPermissao = nivelPermissao;
+    }
+  }
+
   @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
 
