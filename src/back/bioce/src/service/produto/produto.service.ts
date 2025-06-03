@@ -1,7 +1,8 @@
-import {BadRequestException, Injectable} from '@nestjs/common';
-import {ProdutoDto} from "../../model/produto/produto.dto";
+import {BadRequestException, HttpStatus, Injectable, NotFoundException} from '@nestjs/common';
+import {ProdutoDto} from "../../model/produto/dto/produto.dto";
 import {Produto} from "../../model/produto/produto.entity";
 import {Usuario} from "../../model/usuario/usuario.entity";
+import {MensagensProdutos} from "../../model/produto/utils/mensagens-produtos";
 
 @Injectable()
 export class ProdutoService {
@@ -21,7 +22,6 @@ export class ProdutoService {
     }
 
     async exibirProdutos(pagina: number, limite: number) {
-        limite = Math.min(limite, 30);
 
         const [produtos, total] = await Produto.findAndCount({
             relations: ['usuario'],
@@ -38,16 +38,25 @@ export class ProdutoService {
     }
 
     async buscarProduto(id: number) {
-        return await Produto.findOne({
-            where: {id: id},
-            relations: ['usuario']
-        })
+        const produto = await Produto.findOne({where: {id: id}, relations: ['usuario']});
+
+        if (!produto) {
+            throw new NotFoundException({
+                status: HttpStatus.NOT_FOUND,
+                message: MensagensProdutos.PRODUTO_INEXISTENTE
+            });
+        }
+
+        return produto;
     }
 
     async editarProduto(id: number, dto: ProdutoDto) {
         const produto = await Produto.findOne({where: {id: id}});
         if (!produto) {
-            throw new BadRequestException("Produto não encontrado!");
+            throw new NotFoundException({
+                status: HttpStatus.NOT_FOUND,
+                message: MensagensProdutos.PRODUTO_INEXISTENTE
+            });
         }
 
         produto.nome = dto.nome;
@@ -58,6 +67,14 @@ export class ProdutoService {
     }
 
     async deletarProduto(id: number) {
+        const produto = await Produto.findOne({where: {id: id}});
+        if (!produto) {
+            throw new NotFoundException({
+                status: HttpStatus.NOT_FOUND,
+                message: MensagensProdutos.PRODUTO_INEXISTENTE
+            });
+        }
+
         return await Produto.delete(id);
     }
 }

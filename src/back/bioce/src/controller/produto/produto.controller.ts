@@ -1,6 +1,7 @@
 import {Body, Controller, Delete, Get, Param, Post, Put, Query} from '@nestjs/common';
 import {ProdutoService} from "../../service/produto/produto.service";
-import {ProdutoDto} from "../../model/produto/produto.dto";
+import {ProdutoDto} from "../../model/produto/dto/produto.dto";
+import {PaginacaoDto} from "../../model/produto/dto/paginacao.dto";
 
 @Controller('produto')
 export class ProdutoController {
@@ -8,14 +9,9 @@ export class ProdutoController {
     }
 
     @Get()
-    async exibirProdutos(
-        @Query('pagina') pagina: string,
-        @Query('limite') limite: string) {
-
-        const pag = parseInt(pagina) || 1;
-        const quantidadeProdutos = parseInt(limite) || 10;
-
-        return await this.produtoService.exibirProdutos(pag, quantidadeProdutos);
+    async exibirProdutos(@Query() paginacao: PaginacaoDto) {
+        const {pagina, limite} = paginacao;
+        return await this.produtoService.exibirProdutos(pagina, limite);
     }
 
     @Get(':id')
