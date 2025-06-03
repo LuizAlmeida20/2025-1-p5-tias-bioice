@@ -11,7 +11,7 @@ import { CriarUsuarioDto } from '../../model/usuario/dto/criar-usuario.dto';
 import { Usuario } from '../../model/usuario/usuario.entity';
 import * as bcrypt from 'bcrypt';
 import { MensagensUsuario } from '../../model/usuario/utils/mensagens-usuario';
-import {EditarUsuarioDto} from "../../model/usuario/dto/editar-usuario.dto";
+import { EditarUsuarioDto } from '../../model/usuario/dto/editar-usuario.dto';
 
 @Injectable()
 export class UsuarioService {
@@ -30,9 +30,7 @@ export class UsuarioService {
     deveExistir: boolean,
   ): Promise<void> {
     const usuarioExiste: boolean =
-      await this.usuarioRepository.verificarExistenciaDoUsuario(
-        usuario,
-      );
+      await this.usuarioRepository.verificarExistenciaDoUsuario(usuario);
     if (usuarioExiste && !deveExistir) {
       throw new ConflictException({
         status: HttpStatus.CONFLICT,
@@ -47,9 +45,7 @@ export class UsuarioService {
     }
   }
 
-  async editarUsuario(
-    editarUsuarioDto: EditarUsuarioDto,
-  ): Promise<Usuario> {
+  async editarUsuario(editarUsuarioDto: EditarUsuarioDto): Promise<Usuario> {
     const usuario: Usuario =
       await this.instanciarUsuarioByDtoDeCriacao(editarUsuarioDto);
     usuario.id = editarUsuarioDto.id;

@@ -1,4 +1,4 @@
-import {IsDefined, IsInt, IsNumber, Max, Min} from 'class-validator';
+import { IsDefined, IsInt, IsNumber, Max, Min } from 'class-validator';
 import { ConstantUtils } from './classes/constant-utils.class';
 
 export class IdDto {
