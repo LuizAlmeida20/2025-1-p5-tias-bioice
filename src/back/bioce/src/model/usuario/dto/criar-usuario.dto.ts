@@ -1,6 +1,14 @@
 import { NivelPermissaoEnum } from '../enums/nivel-permissao.enum';
-import {IsDefined, IsEnum, IsNotEmpty, IsNumber, IsString, MaxLength, NotEquals} from "class-validator";
-import {ConstantUtils} from "../../../shared/classes/constant-utils.class";
+import {
+  IsDefined,
+  IsEnum,
+  IsNotEmpty,
+  IsNumber,
+  IsString,
+  MaxLength,
+  NotEquals,
+} from 'class-validator';
+import { ConstantUtils } from '../../../shared/classes/constant-utils.class';
 
 export class CriarUsuarioDto {
   @IsDefined()

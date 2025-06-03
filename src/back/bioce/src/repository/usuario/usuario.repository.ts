@@ -13,10 +13,15 @@ export class UsuarioRepository {
   async verificarExistenciaDoUsuario(
     usuario: Partial<Usuario>,
   ): Promise<boolean> {
-    const { username, email } = usuario;
-    return Usuario.createQueryBuilder('usuario')
+    const { id, username, email } = usuario;
+    const query: SelectQueryBuilder<Usuario> = Usuario.createQueryBuilder(
+      'usuario',
+    )
       .orWhere('usuario.username = :username', { username })
-      .orWhere('usuario.email = :email', { email })
-      .getExists();
+      .orWhere('usuario.email = :email', { email });
+    if (id) {
+      query.orWhere('usuario.id = :id', { id });
+    }
+    return query.getExists();
   }
 }
