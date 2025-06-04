@@ -1,54 +1,77 @@
-
--- Tabela de fornecedor
-CREATE TABLE tb_fornecedor (
-    id_fornecedor INT AUTO_INCREMENT PRIMARY KEY,
-    nm_fornecedor VARCHAR(255) NOT NULL,
-    dt_criado_em DATE NOT NULL,
-    dt_atualizado_em DATE NOT NULL
+CREATE TABLE IF NOT EXISTS metricas (
+    id           INT AUTO_INCREMENT PRIMARY KEY,
+    Descarte     VARCHAR(255) NOT NULL,
+    desperdicio  VARCHAR(255) NOT NULL,
+    financeira   VARCHAR(255) NOT NULL
 );
 
--- Tabela de domínio para o tipo de movimentação (entrada, saída...)
-CREATE TABLE tb_tipo_movimentacao (
-    id_tipo_movimentacao INT AUTO_INCREMENT PRIMARY KEY,
-    nm_tipo_movimentacao VARCHAR(255) NOT NULL,
-    dt_criado_em DATE NOT NULL,
-    dt_atualizado_em DATE NOT NULL
+CREATE TABLE IF NOT EXISTS praticas_sustentaveis (
+    id     INT AUTO_INCREMENT PRIMARY KEY,
+    nome   VARCHAR(255) NOT NULL,
+    tarefa VARCHAR(255) NOT NULL
 );
 
--- Tabela para registrar movimentações de produtos
-CREATE TABLE tb_movimentacao_produto (
-    id_movimentacao INT AUTO_INCREMENT PRIMARY KEY,
-    fk_produto INT NOT NULL,
-    fk_tipo_movimentacao INT NOT NULL,
-    nu_preco DECIMAL(15,2) NOT NULL,
-    nu_quantidade INT NOT NULL,
-    fk_fornecedor INT, -- Nullable
-    dt_criado_em DATE NOT NULL,
-    dt_atualizado_em DATE NOT NULL,
-    FOREIGN KEY (fk_produto) REFERENCES tb_produto(id_insumo),
-    FOREIGN KEY (fk_tipo_movimentacao) REFERENCES tb_tipo_movimentacao(id_tipo_movimentacao),
-    FOREIGN KEY (fk_fornecedor) REFERENCES tb_fornecedor(id_fornecedor)
+CREATE TABLE IF NOT EXISTS usuario (
+    id              INT AUTO_INCREMENT PRIMARY KEY,
+    UserName        VARCHAR(255) NOT NULL,
+    Email           VARCHAR(255) NOT NULL,
+    Senha           VARCHAR(255) NOT NULL,
+    nivel_permissao VARCHAR(255) NOT NULL
 );
 
--- Tabela de usuário
-CREATE TABLE tb_usuario (
-    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    nm_email VARCHAR(255) NOT NULL,
-    ds_senha VARCHAR(50) NOT NULL,
-    fk_role INT NOT NULL,
-    FOREIGN KEY (fk_role) REFERENCES tb_fornecedor(id_role)
+CREATE TABLE IF NOT EXISTS dados_financeiros (
+    id            INT AUTO_INCREMENT PRIMARY KEY,
+    IsEntrada     TINYINT NOT NULL,
+    id_user_FK    INT NULL,
+    valor         INT NOT NULL,
+    data_operacao DATETIME NOT NULL,
+    Descrição     VARCHAR(255) NOT NULL,
+    CONSTRAINT FK_dados_financeiros_usuario
+        FOREIGN KEY (id_user_FK) REFERENCES usuario (id)
 );
 
--- Tabela para definir as permissões de cada usuário
-CREATE TABLE tb_role (
-    id_role INT AUTO_INCREMENT PRIMARY KEY,
-    nm_role VARCHAR(255) NOT NULL
+CREATE TABLE IF NOT EXISTS insumo (
+    id           INT AUTO_INCREMENT PRIMARY KEY,
+    nome_produto VARCHAR(255) NOT NULL,
+    dt_validade  DATETIME NOT NULL,
+    Dt_registro  DATETIME NOT NULL,
+    lote         VARCHAR(255) NOT NULL,
+    Descrição    VARCHAR(255) NOT NULL,
+    id_user_FK   INT NULL,
+    CONSTRAINT FK_insumo_usuario
+        FOREIGN KEY (id_user_FK) REFERENCES usuario (id)
 );
 
--- Tabela para registrar e editar o dia do cronograma da coleta.
-CREATE TABLE tb_cronograma_coleta (
-    id_cronograma_coleta INT AUTO_INCREMENT PRIMARY KEY,
-    nm_dia_coleta VARCHAR(13) NOT NULL,
-    dt_criado_em DATE NOT NULL,
-    dt_atualizado_em DATE NOT NULL
+CREATE TABLE IF NOT EXISTS produto (
+    id           INT AUTO_INCREMENT PRIMARY KEY,
+    id_user_FK   INT NULL,
+    nome_produto VARCHAR(255) NOT NULL,
+    dt_validade  DATETIME NOT NULL,
+    dataFab      DATETIME NOT NULL,
+    CONSTRAINT FK_produto_usuario
+        FOREIGN KEY (id_user_FK) REFERENCES usuario (id)
 );
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id              INT AUTO_INCREMENT PRIMARY KEY,
+    UserName        VARCHAR(100) NOT NULL,
+    Email           VARCHAR(100) NOT NULL,
+    Senha           VARCHAR(100) NOT NULL,
+    nivel_permissao CHAR NULL,
+    salt            VARCHAR(255) NULL
+);
+
+CREATE TABLE IF NOT EXISTS insumos (
+    id           INT AUTO_INCREMENT PRIMARY KEY,
+    dt_validade  DATE NOT NULL,
+    nome_produto VARCHAR(100) NOT NULL,
+    qtd          INT NOT NULL,
+    lote         VARCHAR(50) NOT NULL,
+    descricao    TEXT NULL,
+    Dt_registro  DATE NOT NULL,
+    id_user_FK   INT NULL,
+    CONSTRAINT FK_insumos_usuarios
+        FOREIGN KEY (id_user_FK) REFERENCES usuarios (id)
+);
+
+CREATE INDEX idx_id_user_FK ON insumos (id_user_FK);
