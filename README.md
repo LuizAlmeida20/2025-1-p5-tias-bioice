@@ -1,60 +1,98 @@
-# BioIce
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+</p>
 
-`CURSO: Sistemas de Informação`
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-`DISCIPLINA: Trabalho Interdisciplinar Aplicações para Sustentabilidade`
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-`5º semestre/ANO`
+## Description
 
-O projeto "BioIce" tem como principal objetivo desenvolver um sistema que auxilie a sorveteria Ice Delícias a adotar práticas mais sustentáveis em sua operação diária. A proposta visa implementar um sistema de gestão empresarial que otimize o controle de estoque, prevenindo o desperdício de produtos perecíveis, e ofereça suporte à gestão financeira, permitindo a redução de gastos desnecessários e a manutenção de uma saúde financeira equilibrada. Além disso, o sistema contará com um módulo de incentivo à sustentabilidade, onde clientes que comprovarem a reciclagem de itens descartáveis adquiridos na sorveteria poderão receber descontos e promoções exclusivas.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-Ao integrar funcionalidades voltadas para a sustentabilidade e a eficiência operacional, o sistema busca não apenas melhorar o desempenho da empresa, mas também promover a conscientização ambiental entre os clientes e colaboradores. Com essa iniciativa, a Ice Delícias poderá reduzir seu impacto ambiental, aumentar a fidelização de clientes engajados com a causa ecológica e fortalecer sua imagem como um estabelecimento comprometido com a responsabilidade social e ambiental.
+## Project setup
 
-## Integrantes
+```bash
+$ npm install
+```
 
-* Daniel de Oliveira
-* Danilo de Oliveira
-* Humberto Roosevelt Figueredo Junior
-* Luiz Fernando Ribeiro Almeida
-* Saul Netto
-* Matheus Antão
+## Compile and run the project
 
-## Professor
+```bash
+# development
+$ npm run start
 
-* Amália Vasconcelos
+# watch mode
+$ npm run start:dev
 
-## Instruções de utilização
+# production mode
+$ npm run start:prod
+```
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+## Run tests
 
-Não deixe de informar o link onde a aplicação estará disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
+```bash
+# unit tests
+$ npm run test
 
-Se houver usuário de teste, o login e a senha também deverão ser informados aqui (por exemplo: usuário - admin / senha - admin).
+# e2e tests
+$ npm run test:e2e
 
-O link e o usuário/senha descritos acima são apenas exemplos de como tais informações deverão ser apresentadas.
+# test coverage
+$ npm run test:cov
+```
 
-# Documentação
+## Deployment
 
-<ol>
-<li><a href="docs/01-Contexto.md"> Documentação de contexto</a></li>
-<li><a href="docs/02-Especificacao.md"> Especificação do projeto</a></li>
-<li><a href="docs/03-Metodologia.md"> Metodologia</a></li>
-<li><a href="docs/04-Modelagem-processos-negocio.md"> Modelagem dos processos de negócios</a></li>
-<li><a href="docs/05-Projeto-interface.md"> Projeto de interface</a></li>
-<li><a href="docs/06-Template-padrao.md"> Template padrão da aplicação</a></li>
-<li><a href="docs/07-Arquitetura-solucao.md"> Arquitetura da solução</a></li>
-<li><a href="docs/08-Plano-testes-software.md"> Plano de testes de software</a></li>
-<li><a href="docs/09-Registro-testes-software.md"> Registro de testes de software</a></li>
-<li><a href="docs/10-Plano-testes-usabilidade.md"> Plano de testes de usabilidade</a></li>
-<li><a href="docs/11-Registro-testes-usabilidade.md"> Registro de testes de usabilidade</a></li>
-<li><a href="docs/12-Conclusao.md"> Conclusão</a></li>
-<li><a href="docs/13-Referencias.md"> Referências</a></li>
-</ol>
+When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
 
-# Código
+If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
 
-* <a href="src/README.md">Código</a>
+```bash
+$ npm install -g @nestjs/mau
+$ mau deploy
+```
 
-# Apresentação
+With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
 
-* <a href="presentation/README.md">Apresentação do projeto</a>
+## Resources
+
+Check out a few resources that may come in handy when working with NestJS:
+
+- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
+- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
+- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
+- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
+- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
+- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
+- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
+- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
