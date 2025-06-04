@@ -1,16 +1,23 @@
-import {BadRequestException, HttpStatus, Injectable, NotFoundException} from '@nestjs/common';
+import {BadRequestException, ConflictException, HttpStatus, Injectable, NotFoundException} from '@nestjs/common';
 import {ProdutoDto} from "../../model/produto/dto/produto.dto";
 import {Produto} from "../../model/produto/produto.entity";
 import {Usuario} from "../../model/usuario/usuario.entity";
 import {MensagensProdutos} from "../../model/produto/utils/mensagens-produtos";
+import {ProdutoRepository} from "../../repository/produto/produto.repository";
+import {PaginacaoDto} from "../../model/produto/dto/paginacao.dto";
 
 @Injectable()
 export class ProdutoService {
-    async cadastrarProduto(dto: ProdutoDto) {
+    constructor(private readonly produtoRepository: ProdutoRepository) {
+    }
+
+    async cadastrarProduto(dto: ProdutoDto): Promise<Produto> {
         const usuarioId = await Usuario.findOne({where: {id: dto.usuarioId}});
         if (!usuarioId) {
             throw new BadRequestException('Usuário não encontrado!');
         }
+
+        const deveExistir: boolean = false;
 
         const novoProduto = new Produto();
         novoProduto.nome = dto.nome;
@@ -18,16 +25,35 @@ export class ProdutoService {
         novoProduto.dataFab = dto.dataFab;
         novoProduto.usuario = usuarioId;
 
+        await this.validarExistenciaDoProduto(novoProduto, deveExistir);
+
         return await Produto.save(novoProduto);
     }
 
-    async exibirProdutos(pagina: number, limite: number) {
+    async validarExistenciaDoProduto(
+        produto: Partial<Produto>,
+        deveExistir: boolean,
+    ): Promise<void> {
+        const produtoExiste: boolean =
+            await this.produtoRepository.verificarExistenciaDoProduto(produto);
+        if (produtoExiste && !deveExistir) {
+            throw new ConflictException({
+                status: HttpStatus.CONFLICT,
+                message: MensagensProdutos.PRODUTO_JA_EXISTE,
+            });
+        }
+        if (!produtoExiste && deveExistir) {
+            throw new NotFoundException({
+                status: HttpStatus.NOT_FOUND,
+                message: MensagensProdutos.PRODUTO_INEXISTENTE,
+            });
+        }
+    }
 
-        const [produtos, total] = await Produto.findAndCount({
-            relations: ['usuario'],
-            skip: (pagina - 1) * limite,
-            take: limite
-        })
+    async exibirProdutos(paginacao: PaginacaoDto) {
+
+        const {pagina, limite} = paginacao;
+        const [produtos, total] = await this.produtoRepository.paginacaoProdutos(paginacao);
 
         return {
             data: produtos,
@@ -37,8 +63,8 @@ export class ProdutoService {
         }
     }
 
-    async buscarProduto(id: number) {
-        const produto = await Produto.findOne({where: {id: id}, relations: ['usuario']});
+    async buscarProduto(id: number): Promise<Produto> {
+        const produto = await this.produtoRepository.buscarProdutoPorId(id);
 
         if (!produto) {
             throw new NotFoundException({
@@ -50,8 +76,8 @@ export class ProdutoService {
         return produto;
     }
 
-    async editarProduto(id: number, dto: ProdutoDto) {
-        const produto = await Produto.findOne({where: {id: id}});
+    async editarProduto(id: number, dto: ProdutoDto): Promise<Produto> {
+        const produto = await this.produtoRepository.buscarProdutoPorId(id);
         if (!produto) {
             throw new NotFoundException({
                 status: HttpStatus.NOT_FOUND,
@@ -63,11 +89,11 @@ export class ProdutoService {
         produto.dataValidade = dto.dataValidade;
         produto.dataFab = dto.dataFab;
 
-        return await Produto.save(produto);
+        return await this.produtoRepository.salvarProduto(produto);
     }
 
     async deletarProduto(id: number) {
-        const produto = await Produto.findOne({where: {id: id}});
+        const produto = await this.produtoRepository.buscarProdutoPorId(id);
         if (!produto) {
             throw new NotFoundException({
                 status: HttpStatus.NOT_FOUND,
@@ -75,6 +101,6 @@ export class ProdutoService {
             });
         }
 
-        return await Produto.delete(id);
+        return await this.produtoRepository.deletarProdutoPorId(id);
     }
 }

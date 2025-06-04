@@ -10,8 +10,7 @@ export class ProdutoController {
 
     @Get()
     async exibirProdutos(@Query() paginacao: PaginacaoDto) {
-        const {pagina, limite} = paginacao;
-        return await this.produtoService.exibirProdutos(pagina, limite);
+        return await this.produtoService.exibirProdutos(paginacao);
     }
 
     @Get(':id')

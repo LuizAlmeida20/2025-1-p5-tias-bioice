@@ -5,5 +5,4 @@ export class UsuarioRepository {
     constructor(
 
     ) {}
-
 }
