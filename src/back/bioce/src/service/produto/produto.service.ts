@@ -27,7 +27,7 @@ export class ProdutoService {
 
         await this.validarExistenciaDoProduto(novoProduto, deveExistir);
 
-        return await Produto.save(novoProduto);
+        return await this.produtoRepository.salvarProduto(novoProduto);
     }
 
     async validarExistenciaDoProduto(
