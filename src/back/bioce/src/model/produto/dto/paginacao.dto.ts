@@ -1,14 +1,15 @@
-import {IsDefined, IsNumber, Max, Min} from 'class-validator';
+import {IsDefined, Max, Min} from 'class-validator';
+import {Type} from "class-transformer";
 
 export class PaginacaoDto {
     @IsDefined()
-    @IsNumber()
+    @Type(()=> Number)
     @Min(1)
     @Max(Number.MAX_SAFE_INTEGER)
     pagina: number;
 
     @IsDefined()
-    @IsNumber()
+    @Type(()=> Number)
     @Min(1)
     @Max(50)
     limite: number;

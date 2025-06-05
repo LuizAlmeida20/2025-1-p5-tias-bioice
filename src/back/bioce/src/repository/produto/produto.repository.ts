@@ -26,18 +26,17 @@ export class ProdutoRepository {
         })
     }
 
-    async verificarExistenciaDoProduto(
-        produto: Partial<Produto>,
-    ): Promise<boolean> {
+    async verificarExistenciaDoProduto(produto: Partial<Produto>): Promise<boolean> {
         const {id, nome, dataValidade, dataFab} = produto;
+
         const query: SelectQueryBuilder<Produto> = Produto.createQueryBuilder(
             'produto',
         )
-            .orWhere('produto.nome = :nome', {nome})
-            .orWhere('produto.dataValidade = :dataValidade', {dataValidade})
-            .orWhere('produto.dataFab = :dataFab', {dataFab});
+            .andWhere('produto.nome = :nome', {nome})
+            .andWhere('produto.dataValidade = :dataValidade', {dataValidade})
+            .andWhere('produto.dataFab = :dataFab', {dataFab});
         if (id) {
-            query.orWhere('produto.id = :id', {id});
+            query.andWhere('produto.id != :id', {id});
         }
         return query.getExists();
     }
