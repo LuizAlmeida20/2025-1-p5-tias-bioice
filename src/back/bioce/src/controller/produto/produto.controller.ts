@@ -1,7 +1,8 @@
-import {Body, Controller, Delete, Get, Param, Post, Put, Query} from '@nestjs/common';
+import {Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Put, Query} from '@nestjs/common';
 import {ProdutoService} from "../../service/produto/produto.service";
 import {ProdutoDto} from "../../model/produto/dto/produto.dto";
 import {PaginacaoDto} from "../../model/produto/dto/paginacao.dto";
+import {MensagensProdutos} from "../../model/produto/utils/mensagens-produtos";
 
 @Controller('produto')
 export class ProdutoController {
@@ -9,28 +10,53 @@ export class ProdutoController {
     }
 
     @Get()
+    @HttpCode(HttpStatus.OK)
     async exibirProdutos(@Query() paginacao: PaginacaoDto) {
-        return await this.produtoService.exibirProdutos(paginacao);
+        const produtos = await this.produtoService.exibirProdutos(paginacao);
+        return {
+            data: produtos,
+            messagem: MensagensProdutos.PRODUTOS_ENCONTRADOS
+        }
+
     }
 
     @Get(':id')
+    @HttpCode(HttpStatus.OK)
     async buscarProduto(@Param('id') id: number) {
-        return await this.produtoService.buscarProduto(id);
+        const produto = await this.produtoService.buscarProduto(id);
+        return {
+            data: produto,
+            mensagem: MensagensProdutos.PRODUTO_ECONTRADO
+        }
     }
 
     @Post()
+    @HttpCode(HttpStatus.CREATED)
     async cadastrarProduto(@Body() produto: ProdutoDto) {
-        return await this.produtoService.cadastrarProduto(produto);
+        const novoProduto = await this.produtoService.cadastrarProduto(produto);
+        return {
+            data: novoProduto,
+            mensagem: MensagensProdutos.PRODUTO_CADASTRADO
+        }
     }
 
     @Put(':id')
+    @HttpCode(HttpStatus.OK)
     async editarProduto(@Param('id') id: number, @Body() produto: ProdutoDto) {
-        return await this.produtoService.editarProduto(id, produto);
+        const produtoAtualizado = await this.produtoService.editarProduto(id, produto);
+        return {
+            data: produtoAtualizado,
+            mensagem: MensagensProdutos.PRODUTO_ATUALIZADO
+        }
     }
 
     @Delete(':id')
+    @HttpCode(HttpStatus.OK)
     async deletarProduto(@Param('id') id: number) {
-        return await this.produtoService.deletarProduto(id);
+        await this.produtoService.deletarProduto(id);
+        return {
+            mesagem: MensagensProdutos.PRODUTO_DELETADO
+        }
     }
 
 }
