@@ -1,4 +1,9 @@
-import {ConflictException,HttpStatus, Injectable, NotFoundException} from '@nestjs/common';
+import {
+  ConflictException,
+  HttpStatus,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { MensagensPraticasSustentaveis } from '../../model/praticas-sustentaveis/utils/mensagens-praticas-sustentaveis';
 import { PaginacaoPraticasSustentaveisDto } from '../../model/praticas-sustentaveis/dto/paginacao-praticas-sustentaveis.dto';
 import { PraticasSustentaveisRepository } from '../../repository/praticas-sustentaveis/praticas-sustentaveis.repository';

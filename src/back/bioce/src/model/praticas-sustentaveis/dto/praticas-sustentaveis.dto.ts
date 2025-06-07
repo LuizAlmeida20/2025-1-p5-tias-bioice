@@ -1,11 +1,11 @@
-import {IsNotEmpty, IsString} from "class-validator";
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class PraticasSustentaveisDto {
-    @IsNotEmpty()
-    @IsString()
-    nome: string;
+  @IsNotEmpty()
+  @IsString()
+  nome: string;
 
-    @IsNotEmpty()
-    @IsString()
-    tarefa: string;
+  @IsNotEmpty()
+  @IsString()
+  tarefa: string;
 }

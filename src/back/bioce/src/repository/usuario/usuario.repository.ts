@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Usuario } from '../../model/usuario/usuario.entity';
 import { SelectQueryBuilder } from 'typeorm';
-import {Count} from "../../shared/interfaces/count.interface";
+import { Count } from '../../shared/interfaces/count.interface';
 
 @Injectable()
 export class UsuarioRepository {
@@ -15,11 +15,10 @@ export class UsuarioRepository {
     usuario: Partial<Usuario>,
   ): Promise<boolean> {
     const { id, username, email } = usuario;
-    const query: SelectQueryBuilder<Usuario> = Usuario.createQueryBuilder(
-      'usuario',
-    );
+    const query: SelectQueryBuilder<Usuario> =
+      Usuario.createQueryBuilder('usuario');
     if (username) {
-      query.andWhere('usuario.username = :username', { username })
+      query.andWhere('usuario.username = :username', { username });
     }
     if (email) {
       query.andWhere('usuario.email = :email', { email });
@@ -39,8 +38,7 @@ export class UsuarioRepository {
   }
 
   async performarExclusaoLogicaDeUsuario(id: number): Promise<void> {
-    const usuario: Usuario = new Usuario({ id: id, isExcluido: true});
+    const usuario: Usuario = new Usuario({ id: id, isExcluido: true });
     await this.saveUsuario(usuario);
   }
 }
-
