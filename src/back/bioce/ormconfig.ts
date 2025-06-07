@@ -10,6 +10,7 @@ export const dbConnection: ConnectionOptions = {
   database: process.env.DATABASE,
   entities: [__dirname + '/src/model/**/*.entity{.ts,.js}'],
   synchronize: true,
+  logging: true
 };
 
 const dataSource: DataSource = new DataSource(dbConnection);

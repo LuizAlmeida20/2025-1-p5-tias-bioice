@@ -55,6 +55,9 @@ export class Usuario extends BaseEntity {
   @Column({ name: 'nivel_permissao' })
   nivelPermissao: NivelPermissaoEnum;
 
+  @Column({ name: 'isExcluido' })
+  isExcluido: boolean;
+
   @OneToMany(() => Produto, (produto: Produto) => produto.usuario)
   produtos: Produto[];
 
