@@ -10,7 +10,7 @@ import { Produto } from '../produto/produto.entity';
 import { Insumo } from '../insumo/insumo.entity';
 import {DadosFinanceiros} from "../dados-financeiros/dados-financeiros.entity";
 
-@Entity()
+@Entity({ name: 'usuario' })
 export class Usuario extends BaseEntity {
   @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
