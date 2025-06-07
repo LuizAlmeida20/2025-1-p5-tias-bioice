@@ -1,19 +1,19 @@
-import {IsDateString, IsNotEmpty, IsNumber, IsString} from "class-validator";
+import { IsDateString, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class ProdutoDto {
-    @IsNotEmpty()
-    @IsString()
-    nome: string
+  @IsNotEmpty()
+  @IsString()
+  nome: string;
 
-    @IsDateString()
-    @IsNotEmpty()
-    dataValidade: Date;
+  @IsDateString()
+  @IsNotEmpty()
+  dataValidade: Date;
 
-    @IsDateString()
-    @IsNotEmpty()
-    dataFab: Date
+  @IsDateString()
+  @IsNotEmpty()
+  dataFab: Date;
 
-    @IsNotEmpty()
-    @IsNumber()
-    usuarioId: number;
+  @IsNotEmpty()
+  @IsNumber()
+  usuarioId: number;
 }

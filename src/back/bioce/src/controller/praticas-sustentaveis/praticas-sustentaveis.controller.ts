@@ -1,4 +1,15 @@
-import {Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Put, Query,} from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Param,
+  Post,
+  Put,
+  Query,
+} from '@nestjs/common';
 import { PraticasSustentaveisDto } from '../../model/praticas-sustentaveis/dto/praticas-sustentaveis.dto';
 import { MensagensPraticasSustentaveis } from '../../model/praticas-sustentaveis/utils/mensagens-praticas-sustentaveis';
 import { PraticasSustentaveisService } from '../../service/praticas-sustentaveis/praticas-sustentaveis.service';

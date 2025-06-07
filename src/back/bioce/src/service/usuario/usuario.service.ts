@@ -13,7 +13,7 @@ import * as bcrypt from 'bcrypt';
 import { MensagensUsuario } from '../../model/usuario/utils/mensagens-usuario';
 import { EditarUsuarioDto } from '../../model/usuario/dto/editar-usuario.dto';
 import { NomeDoUsuario } from '../../model/usuario/nome-usuario.type';
-import {Count} from "../../shared/interfaces/count.interface";
+import { Count } from '../../shared/interfaces/count.interface';
 
 @Injectable()
 export class UsuarioService {
@@ -54,7 +54,7 @@ export class UsuarioService {
     const deveExistir: boolean = true;
     await this.validarExistenciaDoUsuario(
       new Usuario({ id: usuario.id }),
-      deveExistir
+      deveExistir,
     );
     return this.usuarioRepository.saveUsuario(usuario);
   }
@@ -70,7 +70,7 @@ export class UsuarioService {
       senha: await bcrypt.hash(senha, salt),
       email: email,
       nivelPermissao: nivelPermissao,
-      isExcluido: false
+      isExcluido: false,
     });
   }
 
@@ -80,7 +80,7 @@ export class UsuarioService {
     if (!usuario) {
       throw new NotFoundException({
         status: HttpStatus.NOT_FOUND,
-        message: MensagensUsuario.USUARIO_NAO_EXISTE
+        message: MensagensUsuario.USUARIO_NAO_EXISTE,
       });
     }
     await this.usuarioRepository.performarExclusaoLogicaDeUsuario(usuario.id);
@@ -88,19 +88,20 @@ export class UsuarioService {
   }
 
   async getUsuarioById(usuarioId: number): Promise<Partial<Usuario>> {
-    const usuario: Usuario | null = await this.usuarioRepository.getUserById(usuarioId);
+    const usuario: Usuario | null =
+      await this.usuarioRepository.getUserById(usuarioId);
     if (!usuario) {
       throw new NotFoundException({
         status: HttpStatus.NOT_FOUND,
         message: MensagensUsuario.USUARIO_NAO_EXISTE,
       });
     }
-    const { id, username, email, nivelPermissao} = usuario
+    const { id, username, email, nivelPermissao } = usuario;
     return new Usuario({
       id: id,
       username: username,
       email: email,
-      nivelPermissao: nivelPermissao
+      nivelPermissao: nivelPermissao,
     });
   }
 }

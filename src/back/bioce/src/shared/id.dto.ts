@@ -1,6 +1,6 @@
 import { IsDefined, IsInt, IsNumber, Max, Min } from 'class-validator';
 import { ConstantUtils } from './classes/constant-utils.class';
-import {Transform, Type} from "class-transformer";
+import { Transform, Type } from 'class-transformer';
 
 export class IdDto {
   @IsDefined()

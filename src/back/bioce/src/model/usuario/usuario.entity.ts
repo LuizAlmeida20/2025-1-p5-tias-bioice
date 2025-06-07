@@ -9,7 +9,6 @@ import { NivelPermissaoEnum } from './enums/nivel-permissao.enum';
 import { Produto } from '../produto/produto.entity';
 import { Insumo } from '../insumo/insumo.entity';
 import { DadosFinanceiros } from '../dados-financeiros/dados-financeiros.entity';
-import { UsuarioService } from '../../service/usuario/usuario.service';
 
 @Entity({ name: 'usuario' })
 export class Usuario extends BaseEntity {

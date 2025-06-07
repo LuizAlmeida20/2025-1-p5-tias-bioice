@@ -1,8 +1,10 @@
 import {
   Body,
   Controller,
-  Delete, Get,
-  HttpStatus, Param,
+  Delete,
+  Get,
+  HttpStatus,
+  Param,
   Post,
   Put,
   Res,
@@ -26,9 +28,9 @@ export class UsuarioController {
   ): Promise<Response> {
     try {
       const usuarioCriado: Usuario =
-          await this.usuarioService.criarUsuario(criarUsuarioDto);
+        await this.usuarioService.criarUsuario(criarUsuarioDto);
       return response.status(HttpStatus.CREATED).send(usuarioCriado);
-    } catch(e) {
+    } catch (e) {
       throw e;
     }
   }
@@ -40,7 +42,7 @@ export class UsuarioController {
   ): Promise<Response> {
     try {
       const usuarioEditado: Usuario =
-          await this.usuarioService.editarUsuario(editarUsuarioDto);
+        await this.usuarioService.editarUsuario(editarUsuarioDto);
       return response.status(HttpStatus.OK).send(usuarioEditado);
     } catch (e) {
       throw e;
@@ -49,11 +51,12 @@ export class UsuarioController {
 
   @Get('/:id')
   async getUserById(
-      @Param() id: IdDto,
-      @Res() response: Response,
+    @Param() id: IdDto,
+    @Res() response: Response,
   ): Promise<Response> {
     try {
-      const usuario: Partial<Usuario> = await this.usuarioService.getUsuarioById(id.id);
+      const usuario: Partial<Usuario> =
+        await this.usuarioService.getUsuarioById(id.id);
       return response.status(HttpStatus.OK).send(usuario);
     } catch (e) {
       throw e;
@@ -66,12 +69,11 @@ export class UsuarioController {
     @Res() response: Response,
   ): Promise<Response> {
     try {
-      const nomeUsuarioExcluido: string = await this.usuarioService.deleteUsuario(
-          id.id,
-      );
+      const nomeUsuarioExcluido: string =
+        await this.usuarioService.deleteUsuario(id.id);
       return response
-          .status(HttpStatus.OK)
-          .send(MensagensUsuario.USUARIO_EXCLUIDO(nomeUsuarioExcluido));
+        .status(HttpStatus.OK)
+        .send(MensagensUsuario.USUARIO_EXCLUIDO(nomeUsuarioExcluido));
     } catch (e) {
       throw e;
     }
