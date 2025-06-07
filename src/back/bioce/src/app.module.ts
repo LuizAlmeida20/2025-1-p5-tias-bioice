@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import {UsuarioModule} from "./service/usuario/usuario.module";
 import {ProdutoModule} from "./service/produto/produto.module";
+import {PraticasSustentaveisModule} from "./service/praticas-sustentaveis/praticas-sustentaveis.module";
 
 export function DatabaseOrmModule(): DynamicModule {
   return TypeOrmModule.forRoot(dbConnection);
@@ -14,7 +15,8 @@ export function DatabaseOrmModule(): DynamicModule {
       ConfigModule.forRoot({ isGlobal: true }),
       DatabaseOrmModule(),
       UsuarioModule,
-      ProdutoModule
+      ProdutoModule,
+      PraticasSustentaveisModule
   ],
   providers: [],
 })
