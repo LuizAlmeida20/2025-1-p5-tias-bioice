@@ -8,6 +8,10 @@ export class MensagensUsuario {
     return `O usuário de nome ${nome} foi excluído com sucesso`;
   }
 
+  static USUARIO_CRIADO: string = 'Usuário criado com sucesso'
+
+  static USUARIO_EDITADO: string = 'Usuário editado com sucesso'
+
   static IMPOSSIVEL_EXCLUIR_USUARIO: string =
     'Não é possível excluir o usuário informado, visto que ele possui relações com outras entidades.';
 }
