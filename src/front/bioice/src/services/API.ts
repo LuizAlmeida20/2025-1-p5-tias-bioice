@@ -1,39 +1,43 @@
 export default class API {
-	baseUrl: string | null = null
+	baseUrl: string | null = "https://two025-1-p5-tias-bioice.onrender.com/"
 	token: string | null = null
 
-	async genericFetch(url: string, method: string = "GET", body: BodyInit | null = null, token: string | null = null) {
+	async genericFetch(url: string, method: string = "GET", body: Record<string, any> | null = null) {
 		const config: RequestInit = {
 			method: "GET"
 		}
 		if (method == "POST" && body)
-			config.body = body
+			config.body = JSON.stringify(body)
 
 		config.headers = new Headers()
 		config.headers.append("Content-Type", "application/json")
 
-		if (token)
-			config.headers.append("Authentication", token)
+		if (this.token)
+			config.headers.append("Authorization", this.token)
 		return fetch(url, config).then(r => r.json())
 	}
 
 	genericGET(url: string) {
-		return this.genericFetch(url, "GET", null, this.token)
+		return this.genericFetch(url, "GET", null)
 	}
 
-	genericPOST(url: string, body: ReadableStream) {
-		return this.genericFetch(url, "POST", body, this.token)
+	genericPOST(url: string, body: Record<string, any>) {
+		return this.genericFetch(url, "POST", body)
 	}
 
-	genericPUT(url: string, body: ReadableStream) {
-		return this.genericFetch(url, "PUT", body, this.token)
+	genericPUT(url: string, body: Record<string, any>) {
+		return this.genericFetch(url, "PUT", body)
 	}
 
-	genericPATCH(url: string, body: ReadableStream) {
-		return this.genericFetch(url, "PATCH", body, this.token)
+	genericPATCH(url: string, body: Record<string, any>) {
+		return this.genericFetch(url, "PATCH", body)
 	}
 
 	genericDELETE(url: string) {
-		return this.genericFetch(url, "DELETE", null, this.token)
+		return this.genericFetch(url, "DELETE", null)
+	}
+
+	login(credentials: { email: string, password: string }) {
+		return this.genericPOST("/login", credentials)
 	}
 }

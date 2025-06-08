@@ -31,8 +31,8 @@ export default function AppLayout({
           <button
             onClick={() => setActive("Perfil")}
             className={`flex items-center gap-2 px-3 py-2 rounded w-full justify-center ${active === "Perfil"
-                ? "bg-green-100 text-green-700 font-medium"
-                : "text-gray-700 hover:bg-gray-100"
+              ? "bg-green-100 text-green-700 font-medium"
+              : "text-gray-700 hover:bg-gray-100"
               }`}
           >
             <UserCircle2 size={20} />
@@ -40,8 +40,8 @@ export default function AppLayout({
           <button
             onClick={() => setActive("Configurações")}
             className={`flex items-center gap-2 px-3 py-2 rounded w-full justify-center ${active === "Configurações"
-                ? "bg-green-100 text-green-700 font-medium"
-                : "text-gray-700 hover:bg-gray-100"
+              ? "bg-green-100 text-green-700 font-medium"
+              : "text-gray-700 hover:bg-gray-100"
               }`}
           >
             <Settings size={18} />
@@ -49,8 +49,8 @@ export default function AppLayout({
           <button
             onClick={() => setActive("Notificações")}
             className={`relative flex items-center gap-2 px-3 py-2 rounded w-full justify-center ${active === "Notificações"
-                ? "bg-green-100 text-green-700 font-medium"
-                : "text-gray-700 hover:bg-gray-100"
+              ? "bg-green-100 text-green-700 font-medium"
+              : "text-gray-700 hover:bg-gray-100"
               }`}
           >
             <Bell size={18} />
@@ -91,5 +91,23 @@ export default function AppLayout({
 
       <main className="flex-1 bg-gray-100 p-6 overflow-auto">{children}</main>
     </div>
-  );
+  )
+}
+
+
+interface NavBarButton {
+  onClick: () => void,
+  active: boolean
+}
+
+function NavBarButton({onClick, active}: NavBarButton) {
+  return <button
+    onClick={onClick}
+    className={`flex items-center gap-2 px-3 py-2 rounded w-full justify-center ${active
+      ? "bg-green-100 text-green-700 font-medium"
+      : "text-gray-700 hover:bg-gray-100"
+      }`}
+  >
+    <Settings size={18} />
+  </button>
 }
