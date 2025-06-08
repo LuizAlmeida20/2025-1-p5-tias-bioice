@@ -8,10 +8,34 @@ import {
 import { NivelPermissaoEnum } from './enums/nivel-permissao.enum';
 import { Produto } from '../produto/produto.entity';
 import { Insumo } from '../insumo/insumo.entity';
-import {DadosFinanceiros} from "../dados-financeiros/dados-financeiros.entity";
+import { DadosFinanceiros } from '../dados-financeiros/dados-financeiros.entity';
 
-@Entity()
+@Entity({ name: 'usuario' })
 export class Usuario extends BaseEntity {
+  constructor(partialUsuario?: Partial<Usuario>) {
+    super();
+    if (!partialUsuario) return;
+    const { id, username, email, senha, salt, nivelPermissao } = partialUsuario;
+    if (id) {
+      this.id = id;
+    }
+    if (username) {
+      this.username = username;
+    }
+    if (senha) {
+      this.senha = senha;
+    }
+    if (salt) {
+      this.salt = salt;
+    }
+    if (email) {
+      this.email = email;
+    }
+    if (nivelPermissao) {
+      this.nivelPermissao = nivelPermissao;
+    }
+  }
+
   @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
 
@@ -24,8 +48,14 @@ export class Usuario extends BaseEntity {
   @Column({ name: 'Senha' })
   senha: string;
 
+  @Column({ name: 'salt' })
+  salt: string;
+
   @Column({ name: 'nivel_permissao' })
   nivelPermissao: NivelPermissaoEnum;
+
+  @Column({ name: 'isExcluido' })
+  isExcluido: boolean;
 
   @OneToMany(() => Produto, (produto: Produto) => produto.usuario)
   produtos: Produto[];

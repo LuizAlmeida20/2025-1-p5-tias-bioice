@@ -1,109 +1,91 @@
-"use client"
+"use client";
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import React from "react";
+import { useRouter } from "next/navigation";
+import { Calendar, Gift, Activity, Car } from "lucide-react";
 
-export default function Home() {
-
-  const [state, setState] = useState(0)
-  useEffect(() => {
-    //
-  }, [])
+export default function HomePage() {
+  const router = useRouter();
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        {state}
-        <button className="bg-red-200" onClick={() => setState((valorAnterior) => {
-          return valorAnterior + 5
-        })}>clique</button>
-      {["a", "b"].map(item => <div>{item}</div>)}
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="bg-white min-h-screen flex flex-col font-sans">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-white to-gray-100 px-8 py-20 shadow-sm">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="max-w-xl">
+            <h1 className="text-5xl font-extrabold text-gray-800 tracking-tight">Biolce</h1>
+            <p className="mt-6 text-gray-600 text-lg leading-relaxed">
+              Transforme a forma como você organiza sua rotina. Nossa plataforma oferece
+              recursos inteligentes, intuitivos e acessíveis para seu dia a dia.
+            </p>
+            <div className="mt-8 flex gap-4">
+              <button
+                className="bg-[#37B4C3] text-white font-medium px-6 py-3 rounded-xl shadow hover:opacity-90 transition-all duration-200"
+                onClick={() => router.push("/register")}
+              >
+                Cadastre-se Agora
+              </button>
+              <button
+                className="border-2 border-[#37B4C3] text-[#37B4C3] font-medium px-6 py-3 rounded-xl hover:bg-[#e6f7f9] transition-all duration-200"
+                onClick={() => router.push("/login")}
+              >
+                Entre
+              </button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+
+      {/* Features Section */}
+      <section className="px-8 py-20 bg-white flex-grow">
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <p className="text-[#1F4F52] font-semibold tracking-wide uppercase mb-2">
+            A ferramenta que você precisa
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
+            Simples, completa e feita para o seu dia a dia
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-6xl mx-auto text-center text-gray-700">
+          <Feature
+            icon={<Calendar size={36} className="text-[#37B4C3]" />}
+            text="Organize seus compromissos de forma eficiente e prática."
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <Feature
+            icon={<Gift size={36} className="text-[#37B4C3]" />}
+            text="Acompanhe benefícios e ofertas especiais."
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <Feature
+            icon={<Activity size={36} className="text-[#37B4C3]" />}
+            text="Monitore atividades e mantenha-se produtivo."
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <Feature
+            icon={<Car size={36} className="text-[#37B4C3]" />}
+            text="Gerencie seus deslocamentos e compromissos externos."
+          />
+        </div>
+
+        <div className="mt-16 text-center">
+          <button className="bg-[#37B4C3] text-white px-8 py-3 rounded-xl shadow hover:opacity-90 transition-all duration-200">
+            Conheça
+          </button>
+        </div>
+      </section>
+
+      {/* Footer Gray Band */}
+      <footer className="bg-[#F3F5F9] h-16 w-full mt-auto" />
+    </main>
+  );
+}
+
+function Feature({ icon, text }: { icon: React.ReactNode; text: string }) {
+  return (
+    <div className="flex flex-col items-center px-4">
+      <div className="mb-4 p-4 rounded-full bg-[#e6f7f9] shadow-md">
+        {icon}
+      </div>
+      <p className="text-sm text-gray-600 leading-relaxed">{text}</p>
     </div>
   );
 }

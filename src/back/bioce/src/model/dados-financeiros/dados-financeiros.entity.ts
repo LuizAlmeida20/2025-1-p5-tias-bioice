@@ -6,9 +6,9 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import {Usuario} from "../usuario/usuario.entity";
+import { Usuario } from '../usuario/usuario.entity';
 
-@Entity()
+@Entity({ name: 'dados_financeiros' })
 export class DadosFinanceiros extends BaseEntity {
   @PrimaryGeneratedColumn({ name: 'id' })
   id: number;

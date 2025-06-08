@@ -28,17 +28,38 @@ export default function AppLayout({
 
         {/* Top Icons */}
         <div className="flex justify-center items-center gap-1.5 mb-4">
-          <button className="p-2 rounded hover:bg-gray-100">
-            <UserCircle2 size={22} />
+          <button
+            onClick={() => setActive("Perfil")}
+            className={`flex items-center gap-2 px-3 py-2 rounded w-full justify-center ${active === "Perfil"
+                ? "bg-green-100 text-green-700 font-medium"
+                : "text-gray-700 hover:bg-gray-100"
+              }`}
+          >
+            <UserCircle2 size={20} />
           </button>
-          <button className="p-2 rounded hover:bg-gray-100">
-            <Settings size={20} />
+          <button
+            onClick={() => setActive("Configurações")}
+            className={`flex items-center gap-2 px-3 py-2 rounded w-full justify-center ${active === "Configurações"
+                ? "bg-green-100 text-green-700 font-medium"
+                : "text-gray-700 hover:bg-gray-100"
+              }`}
+          >
+            <Settings size={18} />
           </button>
-          <button className="relative p-2 rounded hover:bg-gray-100">
-            <Bell size={20} />
-            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">9</span>
+          <button
+            onClick={() => setActive("Notificações")}
+            className={`relative flex items-center gap-2 px-3 py-2 rounded w-full justify-center ${active === "Notificações"
+                ? "bg-green-100 text-green-700 font-medium"
+                : "text-gray-700 hover:bg-gray-100"
+              }`}
+          >
+            <Bell size={18} />
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">
+              9
+            </span>
           </button>
         </div>
+
 
         {/* Search */}
         <div className="relative mb-4">
@@ -56,9 +77,8 @@ export default function AppLayout({
             <button
               key={item.name}
               onClick={() => setActive(item.name)}
-              className={`flex items-center gap-2 px-3 py-2 rounded ${
-                active === item.name ? "bg-green-100 text-green-700 font-medium" : "text-gray-700 hover:bg-gray-100"
-              }`}
+              className={`flex items-center gap-2 px-3 py-2 rounded ${active === item.name ? "bg-green-100 text-green-700 font-medium" : "text-gray-700 hover:bg-gray-100"
+                }`}
             >
               {item.icon}
               {item.name}
@@ -68,7 +88,7 @@ export default function AppLayout({
       </div>
 
       {/* Main content */}
-      
+
       <main className="flex-1 bg-gray-100 p-6 overflow-auto">{children}</main>
     </div>
   );
