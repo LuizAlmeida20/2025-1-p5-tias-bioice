@@ -1,376 +1,175 @@
 "use client";
 
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import RowFuncionario, { RowFuncionarioData } from "@/components/basic/RowFuncionario";
 
-type Funcionario = {
-  id: number;
-  nome: string;
-  sobrenome: string;
+type FormState = {
+  id_usuario: string;
+  username: string;
   email: string;
-  telefone: string;
-  cargo: string;
-  dataNascimento: string;
-  genero: string;
-  fotoPreview: string;
+  nivel_permissao: string;
+  password: string;
 };
 
-export default function FuncionariosPage() {
-  const [syncCloud, setSyncCloud] = useState(true);
+export default function ListaUsuarios() {
+  const [data, setData] = useState<RowFuncionarioData[]>([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [form, setForm] = useState({
-    nome: "",
-    sobrenome: "",
+  const [form, setForm] = useState<FormState>({
+    id_usuario: "",
+    username: "",
     email: "",
-    telefone: "",
-    cargo: "",
-    dataNascimento: "",
-    genero: "",
-    foto: null as File | null,
-    fotoPreview: "",
+    nivel_permissao: "",
+    password: "",
   });
 
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  useEffect(() => {
+    async function fetchData() {
+      setLoading(true);
+      setError(null);
+      try {
+        const res = await fetch(`/api/usuarios`);
+        if (!res.ok) throw new Error(`Erro: ${res.statusText}`);
+        const json = await res.json();
 
-  const [funcionarios, setFuncionarios] = useState<Funcionario[]>([]);
-
-  function handleChange(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
-    const target = e.target;
-    const name = target.name;
-
-    if (name === "foto") {
-      // Cast para garantir acesso ao files
-      const input = target as HTMLInputElement;
-      if (input.files && input.files[0]) {
-        const file = input.files[0];
-        setForm((f) => ({
-          ...f,
-          foto: file,
-          fotoPreview: URL.createObjectURL(file),
+        const formattedData: RowFuncionarioData[] = json.map((item: any) => ({
+          id_usuario: item.id || item.id_usuario,
+          username: item.username || `Usuário ${item.id}`,
+          email: item.email || "sememail@exemplo.com",
+          nivel_permissao: item.nivel_permissao ? [item.nivel_permissao] : ["usuário"],
         }));
-        return; // evita executar o código abaixo
+
+        setData(formattedData);
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
       }
     }
 
-    // Para inputs e selects comuns
-    const value = (target as HTMLInputElement | HTMLSelectElement).value;
-    setForm((f) => ({ ...f, [name]: value }));
-  }
+    fetchData();
+  }, []);
 
-  function validate() {
-    const newErrors: { [key: string]: string } = {};
-    if (!form.nome.trim()) newErrors.nome = "Nome é obrigatório.";
-    if (!form.sobrenome.trim()) newErrors.sobrenome = "Sobrenome é obrigatório.";
-    if (!form.email.trim()) newErrors.email = "Email é obrigatório.";
-    else if (!/\S+@\S+\.\S+/.test(form.email)) newErrors.email = "Email inválido.";
-    if (!form.telefone.trim()) newErrors.telefone = "Telefone é obrigatório.";
-    if (!form.cargo.trim()) newErrors.cargo = "Cargo é obrigatório.";
-    if (!form.dataNascimento.trim()) newErrors.dataNascimento = "Data de nascimento é obrigatória.";
-    if (!form.genero.trim()) newErrors.genero = "Selecione o gênero.";
-    return newErrors;
-  }
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
 
-  async function handleSubmit(e: FormEvent) {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const validationErrors = validate();
-    setErrors(validationErrors);
-    if (Object.keys(validationErrors).length === 0) {
-      setLoading(true);
-      // Simula envio de dados
-      await new Promise((r) => setTimeout(r, 1000));
 
-      // Adiciona novo funcionário na lista
-      setFuncionarios((prev) => [
-        ...prev,
-        {
-          id: Date.now(),
-          nome: form.nome.trim(),
-          sobrenome: form.sobrenome.trim(),
-          email: form.email.trim(),
-          telefone: form.telefone.trim(),
-          cargo: form.cargo.trim(),
-          dataNascimento: form.dataNascimento,
-          genero: form.genero,
-          fotoPreview: form.fotoPreview,
-        },
-      ]);
+    const newUser: RowFuncionarioData = {
+      id_usuario: Number(form.id_usuario),
+      username: form.username,
+      email: form.email,
+      nivel_permissao: form.nivel_permissao.split(",").map((p) => p.trim()),
+    };
 
-      alert("Funcionário salvo com sucesso!");
-      setLoading(false);
-      handleClear();
-    }
-  }
-
-  function handleClear() {
+    setData((prev) => [...prev, newUser]);
+    setIsModalOpen(false);
     setForm({
-      nome: "",
-      sobrenome: "",
+      id_usuario: "",
+      username: "",
       email: "",
-      telefone: "",
-      cargo: "",
-      dataNascimento: "",
-      genero: "",
-      foto: null,
-      fotoPreview: "",
+      nivel_permissao: "",
+      password: "",
     });
-    setErrors({});
-    setSyncCloud(true);
-  }
+  };
 
   return (
-    <main className="min-h-screen bg-[#F9FAFB] p-8">
-      <h1 className="text-2xl font-semibold text-gray-800 mb-6">Funcionários</h1>
+    <div className="bg-white rounded-2xl shadow-lg p-6 space-y-6">
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl font-bold text-gray-800">Usuários</h1>
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+        >
+          + Novo Usuário
+        </button>
+      </div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white max-w-3xl mx-auto p-8 rounded-xl shadow-sm"
-        noValidate
-      >
-        {/* Upload e Sincronizar */}
-        <div className="flex items-start justify-between mb-6">
-          <div className="flex gap-4 items-center">
-            <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 overflow-hidden">
-              {form.fotoPreview ? (
-                <img
-                  src={form.fotoPreview}
-                  alt="Foto do funcionário"
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <span className="text-gray-500">Foto</span>
-              )}
-            </div>
-            <div className="flex flex-col gap-2">
-              <label
-                htmlFor="foto"
-                className="cursor-pointer text-sm px-3 py-1 border border-[#37B4C3] text-[#37B4C3] rounded hover:bg-[#e6f7f9] inline-block"
-              >
-                Enviar Foto
-              </label>
-              <input
-                type="file"
-                id="foto"
-                name="foto"
-                accept="image/*"
-                onChange={handleChange}
-                className="hidden"
-              />
-              <button
-                type="button"
-                onClick={() => setForm((f) => ({ ...f, foto: null, fotoPreview: "" }))}
-                className="text-xs text-red-500 hover:underline"
-              >
-                Remover
-              </button>
-            </div>
-          </div>
-
-          <label className="flex items-center gap-2 text-sm">
-            <input
-              type="checkbox"
-              className="accent-blue-500"
-              checked={syncCloud}
-              onChange={() => setSyncCloud(!syncCloud)}
-            />
-            Sincronizar na nuvem
-          </label>
-        </div>
-
-        <hr className="mb-6" />
-
-        {/* Campos do formulário */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="text-sm text-gray-600">Nome</label>
-            <input
-              type="text"
-              name="nome"
-              value={form.nome}
-              onChange={handleChange}
-              placeholder="Digite seu nome"
-              className={`w-full px-4 py-2 mt-1 border rounded ${
-                errors.nome ? "border-red-500 bg-red-50" : "bg-gray-100"
-              }`}
-            />
-            {errors.nome && <p className="text-xs text-red-500 mt-1">{errors.nome}</p>}
-          </div>
-          <div>
-            <label className="text-sm text-gray-600">Sobrenome</label>
-            <input
-              type="text"
-              name="sobrenome"
-              value={form.sobrenome}
-              onChange={handleChange}
-              placeholder="Digite seu sobrenome"
-              className={`w-full px-4 py-2 mt-1 border rounded ${
-                errors.sobrenome ? "border-red-500 bg-red-50" : "bg-gray-100"
-              }`}
-            />
-            {errors.sobrenome && (
-              <p className="text-xs text-red-500 mt-1">{errors.sobrenome}</p>
-            )}
-          </div>
-          <div className="md:col-span-2">
-            <label className="text-sm text-gray-600">E-mail</label>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="email@exemplo.com"
-              className={`w-full px-4 py-2 mt-1 border rounded ${
-                errors.email ? "border-red-500 bg-red-50" : "bg-gray-100"
-              }`}
-            />
-            {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
-          </div>
-          <div>
-            <label className="text-sm text-gray-600">Telefone</label>
-            <input
-              type="tel"
-              name="telefone"
-              value={form.telefone}
-              onChange={handleChange}
-              placeholder="(99) 99999-9999"
-              className={`w-full px-4 py-2 mt-1 border rounded ${
-                errors.telefone ? "border-red-500 bg-red-50" : "bg-gray-100"
-              }`}
-            />
-            {errors.telefone && (
-              <p className="text-xs text-red-500 mt-1">{errors.telefone}</p>
-            )}
-          </div>
-          <div>
-            <label className="text-sm text-gray-600">Cargo</label>
-            <input
-              type="text"
-              name="cargo"
-              value={form.cargo}
-              onChange={handleChange}
-              placeholder="Digite o cargo"
-              className={`w-full px-4 py-2 mt-1 border rounded ${
-                errors.cargo ? "border-red-500 bg-red-50" : "bg-gray-100"
-              }`}
-            />
-            {errors.cargo && <p className="text-xs text-red-500 mt-1">{errors.cargo}</p>}
-          </div>
-
-          <div>
-            <label className="text-sm text-gray-600">Data de Nascimento</label>
-            <input
-              type="date"
-              name="dataNascimento"
-              value={form.dataNascimento}
-              onChange={handleChange}
-              className={`w-full px-4 py-2 mt-1 border rounded ${
-                errors.dataNascimento ? "border-red-500 bg-red-50" : "bg-gray-100"
-              }`}
-            />
-            {errors.dataNascimento && (
-              <p className="text-xs text-red-500 mt-1">{errors.dataNascimento}</p>
-            )}
-          </div>
-          <div>
-            <label className="text-sm text-gray-600">Gênero</label>
-            <select
-              name="genero"
-              value={form.genero}
-              onChange={handleChange}
-              className={`w-full px-4 py-2 mt-1 border rounded ${
-                errors.genero ? "border-red-500 bg-red-50" : "bg-gray-100"
-              }`}
-            >
-              <option value="">Selecione</option>
-              <option value="masculino">Masculino</option>
-              <option value="feminino">Feminino</option>
-              <option value="outro">Outro</option>
-            </select>
-            {errors.genero && <p className="text-xs text-red-500 mt-1">{errors.genero}</p>}
-          </div>
-        </div>
-
-        {/* Botões */}
-        <div className="mt-6 flex justify-between">
-          <button
-            type="button"
-            onClick={handleClear}
-            className="px-6 py-2 border border-gray-400 rounded hover:bg-gray-100"
-            disabled={loading}
-          >
-            Limpar
-          </button>
-
-          <button
-            type="submit"
-            className="bg-emerald-500 text-white px-6 py-2 rounded hover:opacity-90 transition flex items-center gap-2"
-            disabled={loading}
-          >
+      <div className="overflow-x-auto border rounded-xl">
+        <table className="min-w-full table-fixed text-sm text-left text-gray-700">
+          <thead className="bg-green-100 text-green-700 uppercase text-xs font-bold">
+            <tr>
+              <th className="p-4 w-10">
+                <input type="checkbox" />
+              </th>
+              <th className="p-4 w-20">Id</th>
+              <th className="p-4 w-40">Nome de usuário</th>
+              <th className="p-4 w-45">Email</th>
+              <th className="p-4 w-40">Permissões</th>
+            </tr>
+          </thead>
+          <tbody>
             {loading && (
-              <svg
-                className="animate-spin h-5 w-5 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                ></circle>
-                <path
-                  className="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-                ></path>
-              </svg>
+              <tr>
+                <td colSpan={5} className="text-center p-4">
+                  Carregando...
+                </td>
+              </tr>
             )}
-            Salvar
-          </button>
-        </div>
-      </form>
-
-      {/* Listagem de funcionários */}
-      <section className="max-w-3xl mx-auto mt-12">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">
-          Funcionários Cadastrados
-        </h2>
-
-        {funcionarios.length === 0 ? (
-          <p className="text-gray-600">Nenhum funcionário cadastrado.</p>
-        ) : (
-          <ul className="space-y-4">
-            {funcionarios.map((func) => (
-              <li
-                key={func.id}
-                className="flex items-center gap-4 bg-white p-4 rounded shadow"
-              >
-                <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
-                  {func.fotoPreview ? (
-                    <img
-                      src={func.fotoPreview}
-                      alt={`${func.nome} ${func.sobrenome}`}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <span className="text-gray-400">Foto</span>
-                  )}
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-semibold text-gray-900">
-                    {func.nome} {func.sobrenome}
-                  </span>
-                  <span className="text-gray-600">{func.cargo}</span>
-                  <span className="text-gray-500 text-sm">{func.email}</span>
-                  <span className="text-gray-500 text-sm">{func.telefone}</span>
-                </div>
-              </li>
+            {error && (
+              <tr>
+                <td colSpan={5} className="text-center p-4 text-red-600">
+                  {error}
+                </td>
+              </tr>
+            )}
+            {!loading && !error && data.map((row) => (
+              <RowFuncionario key={row.id_usuario} row={row} />
             ))}
-          </ul>
-        )}
-      </section>
-    </main>
+          </tbody>
+        </table>
+      </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-white/20 backdrop-blur-sm">
+          <div className="bg-white rounded-xl w-full max-w-md p-6 shadow-2xl">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Cadastrar Usuário</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {[
+                { label: "ID", name: "id_usuario", type: "number" },
+                { label: "Nome de usuário", name: "username", type: "text" },
+                { label: "Email", name: "email", type: "email" },
+                { label: "Permissões", name: "nivel_permissao", type: "text", placeholder: "Ex: admin, usuário" },
+                { label: "Senha", name: "password", type: "password" },
+              ].map(({ label, name, type, placeholder }) => (
+                <div key={name}>
+                  <label className="block text-sm font-medium text-gray-700">{label}</label>
+                  <input
+                    type={type}
+                    name={name}
+                    value={(form as any)[name]}
+                    onChange={handleChange}
+                    placeholder={placeholder}
+                    required
+                    className="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-600"
+                  />
+                </div>
+              ))}
+
+              <div className="flex justify-end gap-2 pt-4">
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(false)}
+                  className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+                >
+                  Salvar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
