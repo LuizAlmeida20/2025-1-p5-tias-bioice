@@ -1,8 +1,9 @@
 export default class API {
-	baseUrl: string | null = "https://two025-1-p5-tias-bioice.onrender.com/"
+	// baseUrl: string | null = "https://two025-1-p5-tias-bioice.onrender.com"
+	baseUrl: string | null = "http://localhost:3000"
 	token: string | null = null
 
-	async genericFetch(url: string, method: string = "GET", body: Record<string, number | string> | null = null) {
+	async genericFetch(uri: string, method: string = "GET", body: Record<string, number | string> | null = null) {
 		const config: RequestInit = {
 			method: method
 		}
@@ -14,7 +15,7 @@ export default class API {
 
 		if (this.token)
 			config.headers.append("Authorization", this.token)
-		return fetch(this.baseUrl + url, config).then(r => r.json())
+		return fetch(this.baseUrl + uri, config).then(r => r.json())
 	}
 
 	genericGET(url: string) {
@@ -38,10 +39,10 @@ export default class API {
 	}
 
 	login(credentials: { email: string, password: string }) {
-		return this.genericPOST("login", credentials)
+		return this.genericPOST("/login", credentials)
 	}
 
 	signup(credentials: { name: string, email: string, senha: string }) {
-		return this.genericPOST("usuario", { ...credentials, nivelPermissao: "admin" })
+		return this.genericPOST("/usuario", { ...credentials, nivelPermissao: "admin" })
 	}
 }

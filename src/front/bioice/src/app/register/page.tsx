@@ -30,19 +30,11 @@ export default function Cadastro() {
       name: form.name + " " + form.surname,
       senha: form.password
     }).then(r => {
-      console.log("Requisição feita com sucesso")
       console.log(r)
+      if (r.success) router.push("/app/dashboard")
     }).catch(r => {
-      console.log("Problema na requisição")
-      console.log(r)
-    }).finally(() => {
-      if (context)
-        context?.setUser({
-          id: 1,
-          name: "aagag",
-          email: "jagigjai"
-        })
-      router.push("/app/dashboard")
+      console.error("Problema na requisição")
+      console.error(r)
     })
   }
 

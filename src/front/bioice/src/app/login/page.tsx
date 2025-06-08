@@ -3,22 +3,27 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import Button from "@/components/basic/Button";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter()
 
   async function logar() {
-    console.log("implementando")
+    console.log("logando")
+    router.push("/app/launch")
   }
 
   return (
     <div className="min-h-screen flex bg-[#FDF9F4]">
       <div className="w-1/2 flex items-center justify-center p-10 bg-[#FDF9F4]">
         <div className="max-w-sm text-center">
-          <img
+          {/* <Image
+            width="100%"
             src="/logo.png"
             alt="Logo Biolce"
             className="w-48 mx-auto mb-4"
-          />
+          /> */}
           <h1 className="text-5xl font-bold text-[#003D3D]">Biolce</h1>
         </div>
       </div>
@@ -48,9 +53,8 @@ export default function Login() {
                 Lembrar-me
               </label>
             </div>
-            2
 
-            <Button onClick={logar}>
+            <Button onClick={logar} fullwidth>
               Entrar
             </Button>
           </form>
@@ -69,7 +73,7 @@ export default function Login() {
 
           <p className="text-sm text-gray-500 text-center mt-6">
             Ainda não possui uma conta?{" "}
-            <a href="/cadastro" className="text-[#2DB9C3] hover:underline">
+            <a href="/register" className="text-[#2DB9C3] hover:underline">
               Cadastre-se aqui.
             </a>
           </p>

@@ -9,13 +9,14 @@ import {
   Bell,
   UserCircle2,
   Search,
+  LogOut,
 } from "lucide-react";
 import NavBarButton from "@/components/basic/NavBarButton";
 import { useRouter } from "next/navigation";
 import { AppProvider } from "@/contexts/AppContext";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const [active, setActive] = useState("Lançamentos");
+  const [active, setActive] = useState("Home");
   const router = useRouter();
 
   const menuItems = [
@@ -23,6 +24,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     { name: "Lançamentos", icon: <FileText size={18} />, href: "/app/launch" },
     { name: "Funcionários", icon: <Users size={18} />, href: "/app/employee" },
     { name: "Configurações", icon: <Settings size={18} />, href: "/app/config" },
+    { name: "Sair", icon: <LogOut size={18} />, href: "/" },
   ];
 
   return <div className="flex h-screen bg-gray-100">
