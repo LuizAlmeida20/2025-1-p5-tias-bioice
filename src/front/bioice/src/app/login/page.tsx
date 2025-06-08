@@ -7,7 +7,7 @@ import Button from "@/components/basic/Button";
 export default function Login() {
 
   async function logar() {
-
+    console.log("implementando")
   }
 
   return (
@@ -50,7 +50,7 @@ export default function Login() {
             </div>
             2
 
-            <Button>
+            <Button onClick={logar}>
               Entrar
             </Button>
           </form>

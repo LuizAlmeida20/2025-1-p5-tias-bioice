@@ -8,7 +8,6 @@ type AppContextType = {
 const AppContext = createContext<AppContextType | undefined>(undefined)
 
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
-	const [user, setUser] = useState<null>(null)
 	const api = new API()
 
 	return <AppContext.Provider value={{ api }}>

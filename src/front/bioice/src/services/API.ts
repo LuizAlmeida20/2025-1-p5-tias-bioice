@@ -2,7 +2,7 @@ export default class API {
 	baseUrl: string | null = "https://two025-1-p5-tias-bioice.onrender.com/"
 	token: string | null = null
 
-	async genericFetch(url: string, method: string = "GET", body: Record<string, any> | null = null) {
+	async genericFetch(url: string, method: string = "GET", body: Record<string, number | string> | null = null) {
 		const config: RequestInit = {
 			method: "GET"
 		}
@@ -21,15 +21,15 @@ export default class API {
 		return this.genericFetch(url, "GET", null)
 	}
 
-	genericPOST(url: string, body: Record<string, any>) {
+	genericPOST(url: string, body: Record<string, number | string>) {
 		return this.genericFetch(url, "POST", body)
 	}
 
-	genericPUT(url: string, body: Record<string, any>) {
+	genericPUT(url: string, body: Record<string, number | string>) {
 		return this.genericFetch(url, "PUT", body)
 	}
 
-	genericPATCH(url: string, body: Record<string, any>) {
+	genericPATCH(url: string, body: Record<string, number | string>) {
 		return this.genericFetch(url, "PATCH", body)
 	}
 
