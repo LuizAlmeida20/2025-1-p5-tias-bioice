@@ -11,15 +11,9 @@ export class Metricas extends BaseEntity {
     if (id) {
       this.id = id;
     }
-    if (descarte) {
-      this.descarte = descarte;
-    }
-    if (financeira) {
-      this.financeira = financeira;
-    }
-    if (desperdicio) {
-      this.desperdicio = desperdicio;
-    }
+    this.descarte = descarte ? descarte : '';
+    this.financeira = financeira ? financeira : '';
+    this.desperdicio = desperdicio ? desperdicio : '';
   }
 
   @PrimaryGeneratedColumn({ name: 'id' })
