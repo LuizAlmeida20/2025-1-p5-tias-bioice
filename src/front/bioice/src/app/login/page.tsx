@@ -2,11 +2,12 @@
 
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
+import Button from "@/components/basic/Button";
 
 export default function Login() {
 
   async function logar() {
-    
+
   }
 
   return (
@@ -47,13 +48,11 @@ export default function Login() {
                 Lembrar-me
               </label>
             </div>
+            2
 
-            <button
-              type="submit"
-              className="w-full bg-[#2DB9C3] hover:bg-[#25a6af] text-white font-semibold py-2 rounded"
-            >
+            <Button>
               Entrar
-            </button>
+            </Button>
           </form>
 
           {/* Botões de login social */}

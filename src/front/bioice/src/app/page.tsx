@@ -61,9 +61,9 @@ export default function HomePage() {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="bg-[#37B4C3] text-white px-8 py-3 rounded-xl shadow hover:opacity-90 transition-all duration-200">
+          <Button>
             Conheça
-          </button>
+          </Button>
         </div>
       </section>
 
