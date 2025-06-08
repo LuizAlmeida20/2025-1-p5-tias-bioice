@@ -4,9 +4,13 @@ import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 
 export default function Login() {
+
+  async function logar() {
+    
+  }
+
   return (
     <div className="min-h-screen flex bg-[#FDF9F4]">
-      {/* Lado Esquerdo - Logo e nome */}
       <div className="w-1/2 flex items-center justify-center p-10 bg-[#FDF9F4]">
         <div className="max-w-sm text-center">
           <img
@@ -18,7 +22,6 @@ export default function Login() {
         </div>
       </div>
 
-      {/* Lado Direito - Formulário */}
       <div className="w-1/2 flex items-center justify-center p-10 bg-white">
         <div className="w-full max-w-md">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">
@@ -29,13 +32,13 @@ export default function Login() {
             <input
               type="email"
               placeholder="Email"
-              className="w-full px-4 py-2 border border-gray-300 rounded bg-gray-50"
+              className="w-full px-4 py-2 text-black border border-gray-300 rounded bg-gray-50"
             />
 
             <input
               type="password"
               placeholder="Senha"
-              className="w-full px-4 py-2 border border-gray-300 rounded bg-gray-50"
+              className="w-full px-4 py-2 text-black border border-gray-300 rounded bg-gray-50"
             />
 
             <div className="flex items-center gap-2">

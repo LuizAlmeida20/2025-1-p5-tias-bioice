@@ -3,13 +3,13 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { Calendar, Gift, Activity, Car } from "lucide-react";
+import Button from "@/components/basic/Button";
 
 export default function HomePage() {
   const router = useRouter();
 
   return (
     <main className="bg-white min-h-screen flex flex-col font-sans">
-      {/* Hero Section */}
       <section className="bg-gradient-to-r from-white to-gray-100 px-8 py-20 shadow-sm">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="max-w-xl">
@@ -19,18 +19,12 @@ export default function HomePage() {
               recursos inteligentes, intuitivos e acessíveis para seu dia a dia.
             </p>
             <div className="mt-8 flex gap-4">
-              <button
-                className="bg-[#37B4C3] text-white font-medium px-6 py-3 rounded-xl shadow hover:opacity-90 transition-all duration-200"
-                onClick={() => router.push("/register")}
-              >
+              <Button color="primary" variant="contained" onClick={() => router.push("/register")}>
                 Cadastre-se Agora
-              </button>
-              <button
-                className="border-2 border-[#37B4C3] text-[#37B4C3] font-medium px-6 py-3 rounded-xl hover:bg-[#e6f7f9] transition-all duration-200"
-                onClick={() => router.push("/login")}
-              >
+              </Button>
+              <Button color="primary" variant="border" onClick={() => router.push("/login")}>
                 Entre
-              </button>
+              </Button>
             </div>
           </div>
         </div>
