@@ -14,9 +14,6 @@ interface Props {
 export default function RowFuncionario({ row }: Props) {
   return (
     <tr className="border-t">
-      <td className="p-4">
-        <input type="checkbox" />
-      </td>
       <td className="p-4">{row.id_usuario}</td>
       <td className="p-4">{row.username}</td>
       <td className="p-4">{row.email}</td>
