@@ -1,37 +1,61 @@
+import { useEffect } from "react"
+import { useState } from "react"
+
 interface Button {
-	color?: "primary" | "secondary"
-	variant?: "contained" | "border" | ""
+	color?: "primary" | "secondary" | "error"
+	variant?: "filled" | "border" | "empty"
 	onClick?: () => void
 	children?: React.ReactNode
 }
 
-export default function Button({ color = "primary", variant = "contained", onClick = () => { }, children }: Button) {
+export default function Button({ color = "primary", variant = "filled", onClick = () => { }, children }: Button) {
+	const [className, setClassName] = useState("")
 
-	function getClassName() {
-		let color = ""
-
-		switch (color) {
-			case "secondary":
-				color += "#37c382"
-				break
-			default:
-				color += "#37B4C3"
+	useEffect(() => {
+		let cssClass = ""
+		if (variant == "filled") {
+			if (color == "primary")
+				cssClass = "bg-[#37b4c3] hover:bg-[#c7e9ec] border-[#37b4c3] shadow text-white hover:text-[#37b4c3]"
+			if (color == "secondary")
+				cssClass = "bg-[#37c382] hover:bg-[#bce9d4] border-[#37c382] shadow text-white hover:text-[#37c382]"
+			if (color == "error")
+				cssClass = "bg-[#c3374e] hover:bg-[#ebc2c9] border-[#c3374e] shadow text-white hover:text-[#c3374e]"
 		}
 
-		switch (variant) {
-			case "border":
-				return `border-2 cursor-pointer border-[${color}] text-[${color}] font-medium px-6 py-3 rounded-xl hover:bg-[#e6f7f9] transition-all duration-200`
-			case "contained":
-				return `border-2 cursor-pointer border-[${color}] bg-[${color}] text-white hover:text-[${color}] font-medium px-6 py-3 rounded-xl hover:bg-[#e6f7f9] transition-all duration-200`
-			default:
-				return ""
+		if (variant == "border") {
+			if (color == "primary")
+				cssClass = "border-[#37b4c3] hover:bg-[#c7e9ec] hover:border-[#37b4c3] text-[#37b4c3]"
+			if (color == "secondary")
+				cssClass = "border-[#37c382] hover:bg-[#bce9d4] hover:border-[#37c382] text-[#37c382]"
+			if (color == "error")
+				cssClass = "border-[#c3374e] hover:bg-[#ebc2c9] hover:border-[#c3374e] text-[#c3374e]"
 		}
-	}
 
-	return <button
-		className={getClassName()}
-		onClick={onClick}
-	>
-		{children}
-	</button>
+		if (variant == "empty") {
+			if (color == "primary")
+				cssClass = "hover:bg-[#c7e9ec] border-transparent text-[#37b4c3]"
+			if (color == "secondary")
+				cssClass = "hover:bg-[#bce9d4] border-transparent text-[#37c382]"
+			if (color == "error")
+				cssClass = "hover:bg-[#ebc2c9] border-transparent text-[#c3374e]"
+		}
+
+		setClassName(cssClass)
+	}, [])
+	// if (color == "secondary")
+	// 	colorCode = "#37c382"
+	// if (color == "error")
+	// 	colorCode = "yellow-500"
+	// if (color == "primary")
+	// 	colorCode = "blue-300"
+
+
+	return <>
+		<button
+			className={"border-2 cursor-pointer font-medium px-6 py-3 rounded-xl transition-all duration-200 " + className}
+			onClick={onClick}
+		>
+			{children}
+		</button>
+	</>
 }

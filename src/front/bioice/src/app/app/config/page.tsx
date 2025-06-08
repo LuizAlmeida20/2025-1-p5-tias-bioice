@@ -1,3 +1,7 @@
+"use client"
+
+import Button from "@/components/basic/Button";
+
 export default function ConfiguracoesPage() {
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
@@ -14,26 +18,24 @@ export default function ConfiguracoesPage() {
               <span className="material-icons">foto</span>
             </div>
             <div className="flex flex-col items-start">
-              <button className="border border-teal-500 text-teal-500 px-4 py-1.5 rounded hover:bg-teal-50 text-sm font-medium">
-                Enviar Foto
-              </button>
-              <button className="text-sm text-gray-500 mt-1 hover:underline">
-                Remover
-              </button>
-            </div>
-          </div>
+              <Button onClick={() => { }}>Enviar Foto</Button>
+              <Button variant="empty" color="error" onClick={() => { }}>Remover</Button>
 
-          {/* Toggle */}
-          <div className="flex items-center gap-3">
-            <label htmlFor="sync" className="text-sm text-gray-700">
-              Sincronizar na nuvem
-            </label>
-            <input
-              id="sync"
-              type="checkbox"
-              className="form-checkbox h-5 w-5 text-teal-500"
-              defaultChecked
-            />
+            </div>
+
+
+            {/* Toggle */}
+            <div className="flex items-center gap-3">
+              <label htmlFor="sync" className="text-sm text-gray-700">
+                Sincronizar na nuvem
+              </label>
+              <input
+                id="sync"
+                type="checkbox"
+                className="form-checkbox h-5 w-5 text-teal-500"
+                defaultChecked
+              />
+            </div>
           </div>
         </div>
 
@@ -87,9 +89,9 @@ export default function ConfiguracoesPage() {
 
           {/* Botão Salvar */}
           <div className="flex justify-end mt-8">
-            <button className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded text-sm font-medium">
+            <Button color="secondary">
               Salvar
-            </button>
+            </Button>
           </div>
         </div>
       </div>

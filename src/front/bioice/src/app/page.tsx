@@ -19,7 +19,7 @@ export default function HomePage() {
               recursos inteligentes, intuitivos e acessíveis para seu dia a dia.
             </p>
             <div className="mt-8 flex gap-4">
-              <Button color="primary" variant="contained" onClick={() => router.push("/register")}>
+              <Button color="primary" variant="filled" onClick={() => router.push("/register")}>
                 Cadastre-se Agora
               </Button>
               <Button color="primary" variant="border" onClick={() => router.push("/login")}>
