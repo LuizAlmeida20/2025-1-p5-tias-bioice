@@ -6,9 +6,10 @@ interface Button {
 	variant?: "filled" | "border" | "empty"
 	onClick?: () => void
 	children?: React.ReactNode
+	fullwidth?: boolean
 }
 
-export default function Button({ color = "primary", variant = "filled", onClick = () => { }, children }: Button) {
+export default function Button({ color = "primary", variant = "filled", onClick = () => { }, fullwidth, children }: Button) {
 	const [className, setClassName] = useState("")
 
 	useEffect(() => {
@@ -40,14 +41,10 @@ export default function Button({ color = "primary", variant = "filled", onClick 
 				cssClass = "hover:bg-[#ebc2c9] border-transparent text-[#c3374e]"
 		}
 
+		if (fullwidth) cssClass += " w-full"
+
 		setClassName(cssClass)
 	}, [])
-	// if (color == "secondary")
-	// 	colorCode = "#37c382"
-	// if (color == "error")
-	// 	colorCode = "yellow-500"
-	// if (color == "primary")
-	// 	colorCode = "blue-300"
 
 
 	return <>
@@ -55,7 +52,9 @@ export default function Button({ color = "primary", variant = "filled", onClick 
 			className={"border-2 cursor-pointer font-medium px-6 py-3 rounded-xl transition-all duration-200 " + className}
 			onClick={onClick}
 		>
-			{children}
+			<div className="flex justify-center gap-3">
+				{children}
+			</div>
 		</button>
 	</>
 }
