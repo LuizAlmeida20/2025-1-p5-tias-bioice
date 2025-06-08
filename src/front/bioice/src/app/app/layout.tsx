@@ -18,7 +18,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
   const menuItems = [
-    { name: "Home", icon: <Home size={18} />, href: "/app/home" },
+    { name: "Home", icon: <Home size={18} />, href: "/app/dashboard" },
     { name: "Lançamentos", icon: <FileText size={18} />, href: "/app/launch" },
     { name: "Funcionários", icon: <Users size={18} />, href: "/app/employee" },
     { name: "Configurações", icon: <Settings size={18} />, href: "/app/config" },
