@@ -1,20 +1,27 @@
-"use client"
+"use client";
 
 import { useState } from "react";
-import { Home, Users, FileText, Settings, Bell, UserCircle2, Search } from "lucide-react";
+import {
+  Home,
+  Users,
+  FileText,
+  Settings,
+  Bell,
+  UserCircle2,
+  Search,
+} from "lucide-react";
+import NavBarButton from "@/components/basic/NavBarButton";
+import { useRouter } from "next/navigation";
 
-export default function AppLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AppLayout({ children }: { children: React.ReactNode }) {
   const [active, setActive] = useState("Lançamentos");
+  const router = useRouter();
 
   const menuItems = [
-    { name: "Home", icon: <Home size={18} /> },
-    { name: "Lançamentos", icon: <FileText size={18} /> },
-    { name: "Funcionários", icon: <Users size={18} /> },
-    { name: "Configurações", icon: <Settings size={18} /> },
+    { name: "Home", icon: <Home size={18} />, href: "/app" },
+    { name: "Lançamentos", icon: <FileText size={18} />, href: "/app/launch" },
+    { name: "Funcionários", icon: <Users size={18} />, href: "/app/employee" },
+    { name: "Configurações", icon: <Settings size={18} />, href: "/app/config" },
   ];
 
   return (
@@ -28,38 +35,36 @@ export default function AppLayout({
 
         {/* Top Icons */}
         <div className="flex justify-center items-center gap-1.5 mb-4">
-          <button
-            onClick={() => setActive("Perfil")}
-            className={`flex items-center gap-2 px-3 py-2 rounded w-full justify-center ${active === "Perfil"
-                ? "bg-green-100 text-green-700 font-medium"
-                : "text-gray-700 hover:bg-gray-100"
-              }`}
-          >
-            <UserCircle2 size={20} />
-          </button>
-          <button
-            onClick={() => setActive("Configurações")}
-            className={`flex items-center gap-2 px-3 py-2 rounded w-full justify-center ${active === "Configurações"
-                ? "bg-green-100 text-green-700 font-medium"
-                : "text-gray-700 hover:bg-gray-100"
-              }`}
-          >
-            <Settings size={18} />
-          </button>
-          <button
-            onClick={() => setActive("Notificações")}
-            className={`relative flex items-center gap-2 px-3 py-2 rounded w-full justify-center ${active === "Notificações"
-                ? "bg-green-100 text-green-700 font-medium"
-                : "text-gray-700 hover:bg-gray-100"
-              }`}
-          >
-            <Bell size={18} />
-            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">
+          <NavBarButton
+            icon={<UserCircle2 size={20} />}
+            onClick={() => {
+              setActive("Perfil");
+              router.push("/app/perfil");
+            }}
+            active={active === "Perfil"}
+          />
+          <NavBarButton
+            icon={<Settings size={18} />}
+            onClick={() => {
+              setActive("Configurações");
+              router.push("/app/config");
+            }}
+            active={active === "Configurações"}
+          />
+          <div className="relative w-full">
+            <NavBarButton
+              icon={<Bell size={18} />}
+              onClick={() => {
+                setActive("Notificações");
+                router.push("/app/notificacoes");
+              }}
+              active={active === "Notificações"}
+            />
+            <span className="absolute top-0 right-1 bg-red-500 text-white text-xs rounded-full px-1">
               9
             </span>
-          </button>
+          </div>
         </div>
-
 
         {/* Search */}
         <div className="relative mb-4">
@@ -74,21 +79,21 @@ export default function AppLayout({
         {/* Menu */}
         <nav className="flex flex-col gap-1">
           {menuItems.map((item) => (
-            <button
+            <NavBarButton
               key={item.name}
-              onClick={() => setActive(item.name)}
-              className={`flex items-center gap-2 px-3 py-2 rounded ${active === item.name ? "bg-green-100 text-green-700 font-medium" : "text-gray-700 hover:bg-gray-100"
-                }`}
-            >
-              {item.icon}
-              {item.name}
-            </button>
+              icon={item.icon}
+              label={item.name}
+              onClick={() => {
+                setActive(item.name);
+                router.push(item.href);
+              }}
+              active={active === item.name}
+            />
           ))}
         </nav>
       </div>
 
       {/* Main content */}
-
       <main className="flex-1 bg-gray-100 p-6 overflow-auto">{children}</main>
     </div>
   );
