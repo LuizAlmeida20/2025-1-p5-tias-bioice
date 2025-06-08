@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import RowFuncionario, { RowFuncionarioData } from "@/components/basic/RowFuncionario";
 
 type FormState = {
-  id_usuario: string;
   username: string;
   email: string;
   nivel_permissao: string;
@@ -12,45 +11,28 @@ type FormState = {
 };
 
 export default function ListaUsuarios() {
-  const [data, setData] = useState<RowFuncionarioData[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [data, setData] = useState<RowFuncionarioData[]>([
+    {
+      id_usuario: 1,
+      username: "admin",
+      email: "admin@sorveteria.com",
+      nivel_permissao: ["admin"],
+    },
+    {
+      id_usuario: 2,
+      username: "usuario_teste",
+      email: "teste@sorveteria.com",
+      nivel_permissao: ["usuário"],
+    },
+  ]);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [form, setForm] = useState<FormState>({
-    id_usuario: "",
     username: "",
     email: "",
     nivel_permissao: "",
     password: "",
   });
-
-  useEffect(() => {
-    async function fetchData() {
-      setLoading(true);
-      setError(null);
-      try {
-        const res = await fetch(`/api/usuarios`);
-        if (!res.ok) throw new Error(`Erro: ${res.statusText}`);
-        const json = await res.json();
-
-        const formattedData: RowFuncionarioData[] = json.map((item: any) => ({
-          id_usuario: item.id || item.id_usuario,
-          username: item.username || `Usuário ${item.id}`,
-          email: item.email || "sememail@exemplo.com",
-          nivel_permissao: item.nivel_permissao ? [item.nivel_permissao] : ["usuário"],
-        }));
-
-        setData(formattedData);
-      } catch (err: any) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchData();
-  }, []);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -60,17 +42,19 @@ export default function ListaUsuarios() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
+    const maxId = data.reduce((max, user) => Math.max(max, user.id_usuario), 0);
     const newUser: RowFuncionarioData = {
-      id_usuario: Number(form.id_usuario),
+      id_usuario: maxId + 1,
       username: form.username,
       email: form.email,
-      nivel_permissao: form.nivel_permissao.split(",").map((p) => p.trim()),
+      nivel_permissao: [form.nivel_permissao],
     };
 
     setData((prev) => [...prev, newUser]);
     setIsModalOpen(false);
+
+    // Limpa o formulário
     setForm({
-      id_usuario: "",
       username: "",
       email: "",
       nivel_permissao: "",
@@ -94,9 +78,6 @@ export default function ListaUsuarios() {
         <table className="min-w-full table-fixed text-sm text-left text-gray-700">
           <thead className="bg-green-100 text-green-700 uppercase text-xs font-bold">
             <tr>
-              <th className="p-4 w-10">
-                <input type="checkbox" />
-              </th>
               <th className="p-4 w-20">Id</th>
               <th className="p-4 w-40">Nome de usuário</th>
               <th className="p-4 w-45">Email</th>
@@ -104,21 +85,7 @@ export default function ListaUsuarios() {
             </tr>
           </thead>
           <tbody>
-            {loading && (
-              <tr>
-                <td colSpan={5} className="text-center p-4">
-                  Carregando...
-                </td>
-              </tr>
-            )}
-            {error && (
-              <tr>
-                <td colSpan={5} className="text-center p-4 text-red-600">
-                  {error}
-                </td>
-              </tr>
-            )}
-            {!loading && !error && data.map((row) => (
+            {data.map((row) => (
               <RowFuncionario key={row.id_usuario} row={row} />
             ))}
           </tbody>
@@ -130,27 +97,71 @@ export default function ListaUsuarios() {
           <div className="bg-white rounded-xl w-full max-w-md p-6 shadow-2xl">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Cadastrar Usuário</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
-              {[
-                { label: "ID", name: "id_usuario", type: "number" },
-                { label: "Nome de usuário", name: "username", type: "text" },
-                { label: "Email", name: "email", type: "email" },
-                { label: "Permissões", name: "nivel_permissao", type: "text", placeholder: "Ex: admin, usuário" },
-                { label: "Senha", name: "password", type: "password" },
-              ].map(({ label, name, type, placeholder }) => (
-                <div key={name}>
-                  <label className="block text-sm font-medium text-gray-700">{label}</label>
-                  <input
-                    type={type}
-                    name={name}
-                    value={(form as any)[name]}
-                    onChange={handleChange}
-                    placeholder={placeholder}
-                    required
-                    className="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-600"
-                  />
-                </div>
-              ))}
+              {/* Campo Nome de usuário */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Nome de usuário</label>
+                <input
+                  type="text"
+                  name="username"
+                  value={form.username}
+                  onChange={handleChange}
+                  required
+                  className="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-600"
+                />
+              </div>
 
+              {/* Campo Email */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                  className="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-600"
+                />
+              </div>
+
+              {/* Permissões com radio buttons */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Permissões</label>
+                <div className="space-y-2">
+                  {["admin", "usuário", "gerente"].map((perm) => (
+                    <label key={perm} className="flex items-center space-x-2 text-gray-700">
+                      <input
+                        type="radio"
+                        name="nivel_permissao"
+                        value={perm}
+                        checked={form.nivel_permissao === perm}
+                        onChange={(e) =>
+                          setForm((prev) => ({
+                            ...prev,
+                            nivel_permissao: e.target.value,
+                          }))
+                        }
+                        className="text-green-600 focus:ring-green-500"
+                      />
+                      <span className="capitalize">{perm}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Campo Senha */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Senha</label>
+                <input
+                  type="password"
+                  name="password"
+                  value={form.password}
+                  onChange={handleChange}
+                  required
+                  className="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-600"
+                />
+              </div>
+
+              {/* Botões */}
               <div className="flex justify-end gap-2 pt-4">
                 <button
                   type="button"
