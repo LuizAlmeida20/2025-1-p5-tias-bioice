@@ -1,5 +1,5 @@
 import API from "@/services/API"
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext } from "react"
 
 type AppContextType = {
 	api: API
