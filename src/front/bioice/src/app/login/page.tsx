@@ -5,14 +5,18 @@ import { FaApple } from "react-icons/fa";
 import Button from "@/components/basic/Button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Login() {
   const router = useRouter()
 
   async function logar() {
-    console.log("logando")
     router.push("/app/dashboard")
   }
+
+  useEffect(() => {
+    router.push("/app/entries")
+  }, [])
 
   return (
     <div className="min-h-screen flex bg-[#FDF9F4]">

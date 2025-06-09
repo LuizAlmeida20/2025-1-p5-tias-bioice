@@ -21,11 +21,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
 
   const menuItems = [
-    { name: "Home", icon: <Home size={18} />, href: "/app/dashboard" },
+    // { name: "Home", icon: <Home size={18} />, href: "/app/dashboard" },
     { name: "Lançamentos", icon: <FileText size={18} />, href: "/app/entries" },
-    { name: "Funcionários", icon: <Users size={18} />, href: "/app/employee" },
-    { name: "Configurações", icon: <Settings size={18} />, href: "/app/config" },
-    { name: "Sair", icon: <LogOut size={18} />, href: "/" },
+    // { name: "Funcionários", icon: <Users size={18} />, href: "/app/employee" },
+    // { name: "Configurações", icon: <Settings size={18} />, href: "/app/config" },
+    // { name: "Sair", icon: <LogOut size={18} />, href: "/" },
   ];
 
   useEffect(() => {
