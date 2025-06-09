@@ -1,15 +1,19 @@
-// RowLancamento.tsx
+"use client"
+
 type Status = "Ativo" | "Inativo";
 
 export interface RowData {
-  id: number;
-  author: string;
-  role: string;
-  titles: string[];
-  status: Status;
+  id: number
+  author: string
+  role: string
+  value: number
+  description: string
+  date: Date
+  titles: string[]
+  status: Status
 }
 
-export default function RowLancamento({ row }: { row: RowData }) {
+export default function Entry({ row }: { row: RowData }) {
   return (
     <tr className="border-t hover:bg-gray-50 transition-colors">
       <td className="p-4"><input type="checkbox" /></td>
@@ -19,9 +23,18 @@ export default function RowLancamento({ row }: { row: RowData }) {
           <span className="text-xs text-gray-400">{row.role}</span>
         </div>
       </td>
-      {row.titles.map((title, i) => (
-        <td className="p-4" key={i}>{title}</td>
-      ))}
+      <td className="p-4">
+        {row.description}
+      </td>
+      <td className="p-4">
+        {row.value}
+      </td>
+      <td className="p-4">
+        {row.date.toISOString()}
+      </td>
+      <td className="p-4">
+        -
+      </td>
       <td className="p-4">
         {row.status === "Ativo" ? (
           <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-semibold">

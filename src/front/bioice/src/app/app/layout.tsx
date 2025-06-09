@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Home,
   Users,
@@ -16,16 +16,37 @@ import { useRouter } from "next/navigation";
 import { AppProvider } from "@/contexts/AppContext";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const [active, setActive] = useState("Home");
+  const [active, setActive] = useState("");
   const router = useRouter();
 
   const menuItems = [
     { name: "Home", icon: <Home size={18} />, href: "/app/dashboard" },
-    { name: "Lançamentos", icon: <FileText size={18} />, href: "/app/launch" },
+    { name: "Lançamentos", icon: <FileText size={18} />, href: "/app/entries" },
     { name: "Funcionários", icon: <Users size={18} />, href: "/app/employee" },
     { name: "Configurações", icon: <Settings size={18} />, href: "/app/config" },
     { name: "Sair", icon: <LogOut size={18} />, href: "/" },
   ];
+
+  useEffect(() => {
+    if (window.location.pathname.includes("app")) {
+      const uri = window.location.pathname.split("/")
+      switch (uri[2]) {
+        case "dashboard":
+          setActive("Home")
+          break
+        case "entries":
+          setActive("Lançamentos")
+          break
+        case "employee":
+          setActive("Funcionários")
+          break
+        case "config":
+          setActive("Configurações")
+          break
+      }
+    }
+
+  }), []
 
   return <div className="flex h-screen bg-gray-100">
     {/* Sidebar */}

@@ -11,7 +11,7 @@ export default function Login() {
 
   async function logar() {
     console.log("logando")
-    router.push("/app/launch")
+    router.push("/app/dashboard")
   }
 
   return (
