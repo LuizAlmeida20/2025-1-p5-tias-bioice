@@ -26,7 +26,7 @@ export function InputText(props: InputText) {
 			placeholder={props.placeholder}
 			value={props.value}
 			onChange={props.onChange}
-			className="w-full px-4 py-3 border border-gray-300 text-black rounded bg-gray-50 outline-[#37b4c3] transition-all duration-200 cursor-pointer"
+			className="w-full px-4 py-3 border border-gray-300 text-black rounded bg-gray-50 outline-[#37b4c3] transition-all duration-200 "
 		/>
 	</div>
 }

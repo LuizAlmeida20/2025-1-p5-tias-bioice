@@ -5,12 +5,16 @@ import { FaApple } from "react-icons/fa"
 import Button from "@/components/basic/Button"
 import { useRouter } from "next/navigation"
 // import { useAppContext } from "@/contexts/AppContext";
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, ReactNode, useState } from "react"
 import { InputText } from "@/components/basic/InputText";
+import Collapse from "@/components/basic/Collapse";
 
 export default function Login() {
   const router = useRouter()
   // const context = useAppContext()
+
+  const [open, setOpen] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const [form, setForm] = useState({
     email: "",
@@ -18,6 +22,8 @@ export default function Login() {
   })
 
   async function logar() {
+    setOpen(false)
+    setLoading(true)
     // context.api.login(form).then(r => {
     //   console.log(r)
     //   if (r.status == 201) {
@@ -26,8 +32,14 @@ export default function Login() {
     //       email: r.data.email,
     //       name: r.data.username
     //     })
-    if (form.email == "teste@teste.com" && form.password == "123456")
-      router.push("/app/dashboard")
+    setTimeout(() => {
+      if (form.email == "teste@teste.com" && form.password == "123456")
+        router.push("/app/dashboard")
+      else {
+        setOpen(true)
+        setLoading(false)
+      }
+    }, 2500)
     //   }
     // }).catch(r => console.log(r))
   }
@@ -75,18 +87,24 @@ export default function Login() {
             />
 
             <div className="flex items-center gap-2">
-              <input type="checkbox" id="lembrar" />
+              <input type="checkbox" className="accent-[#37b4c3]" id="lembrar" />
               <label htmlFor="lembrar" className="text-sm text-gray-600">
                 Mantenha-me logado
               </label>
             </div>
 
-            <Button onClick={logar} fullwidth>
+            <Button onClick={logar} loading={loading} fullwidth>
               Entrar
             </Button>
           </div>
 
-          {/* Botões de login social */}
+          <div className="text-black">
+            <Collapse in={open}>
+              <div className="p-3 my-3 shadow-md rounded bg-red-200 text-center font-bold text-red-900">
+                Erro ao logar!
+              </div>
+            </Collapse>
+          </div>
 
           <div className="mt-6 space-y-3">
             <Button variant="border" fullwidth>

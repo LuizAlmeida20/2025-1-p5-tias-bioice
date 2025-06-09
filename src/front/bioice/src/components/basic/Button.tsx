@@ -1,15 +1,17 @@
 import { useEffect } from "react"
 import { useState } from "react"
+import Spinner from "./Spinner"
 
 interface ButtonI {
+	children?: React.ReactNode
 	color?: "primary" | "secondary" | "error"
 	variant?: "filled" | "border" | "empty"
 	onClick?: () => void
-	children?: React.ReactNode
+	loading?: boolean
 	fullwidth?: boolean
 }
 
-export default function Button({ color = "primary", variant = "filled", onClick = () => { }, fullwidth, children }: ButtonI) {
+export default function Button({ color = "primary", variant = "filled", onClick = () => { }, loading, fullwidth, children }: ButtonI) {
 	const [className, setClassName] = useState("")
 
 	useEffect(() => {
@@ -47,7 +49,12 @@ export default function Button({ color = "primary", variant = "filled", onClick 
 	}, [])
 
 
-	return <>
+	return <div className="relative">
+		{loading && <div className="absolute w-full h-full bg-[#ffffffcc]">
+			<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+				<Spinner />
+			</div>
+		</div>}
 		<button
 			className={"border-2 cursor-pointer font-bold px-6 py-3 rounded-xl transition-all duration-200 " + className}
 			onClick={onClick}
@@ -56,5 +63,5 @@ export default function Button({ color = "primary", variant = "filled", onClick 
 				{children}
 			</div>
 		</button>
-	</>
+	</div>
 }
