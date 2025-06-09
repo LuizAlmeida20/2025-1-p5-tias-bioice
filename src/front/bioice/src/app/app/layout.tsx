@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 import {
   Home,
   Users,
@@ -11,9 +11,8 @@ import {
   Search,
   LogOut,
 } from "lucide-react";
-import NavBarButton from "@/components/basic/NavBarButton";
-import { useRouter, usePathname  } from "next/navigation";
-import { AppProvider } from "@/contexts/AppContext";
+import NavBarButton from "@/components/basic/NavBarButton"
+import { useRouter, usePathname  } from "next/navigation"
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const [active, setActive] = useState("")
@@ -21,11 +20,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
 
   const menuItems = [
-    // { name: "Home", icon: <Home size={18} />, href: "/app/dashboard" },
+    { name: "Home", icon: <Home size={18} />, href: "/app/dashboard" },
     { name: "Lançamentos", icon: <FileText size={18} />, href: "/app/entries" },
-    // { name: "Funcionários", icon: <Users size={18} />, href: "/app/employee" },
-    // { name: "Configurações", icon: <Settings size={18} />, href: "/app/config" },
-    // { name: "Sair", icon: <LogOut size={18} />, href: "/" },
+    { name: "Funcionários", icon: <Users size={18} />, href: "/app/employee" },
+    { name: "Configurações", icon: <Settings size={18} />, href: "/app/config" },
+    { name: "Sair", icon: <LogOut size={18} />, href: "/" },
   ];
 
   useEffect(() => {
@@ -46,8 +45,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           break
       }
     }
-
-  }, [])
+  }, [pathname])
 
   return <div className="flex h-screen bg-gray-100">
     {/* Sidebar */}

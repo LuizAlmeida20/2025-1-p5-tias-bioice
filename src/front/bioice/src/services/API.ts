@@ -1,6 +1,6 @@
 export default class API {
-	// baseUrl: string | null = "https://two025-1-p5-tias-bioice.onrender.com"
-	baseUrl: string | null = "http://localhost:3000"
+	baseUrl: string | null = "https://two025-1-p5-tias-bioice.onrender.com"
+	// baseUrl: string | null = "http://localhost:3000"
 	token: string | null = null
 
 	async genericFetch(uri: string, method: string = "GET", body: Record<string, number | string> | null = null) {
@@ -12,6 +12,7 @@ export default class API {
 
 		config.headers = new Headers()
 		config.headers.append("Content-Type", "application/json")
+		config.redirect = "follow"
 
 		if (this.token)
 			config.headers.append("Authorization", this.token)

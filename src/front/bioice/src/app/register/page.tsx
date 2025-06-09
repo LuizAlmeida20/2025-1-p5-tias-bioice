@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc"
 import { FaApple } from "react-icons/fa"
 import Button from "@/components/basic/Button"
 import { useAppContext } from "@/contexts/AppContext"
-import { ChangeEventHandler, InputHTMLAttributes, useState } from "react"
+import { ChangeEventHandler, useState } from "react"
 import { useRouter } from "next/navigation"
 
 export default function Cadastro() {
@@ -30,8 +30,16 @@ export default function Cadastro() {
       name: form.name + " " + form.surname,
       senha: form.password
     }).then(r => {
-      console.log(r)
-      if (r.success) router.push("/app/dashboard")
+      if (r.status == 201) {
+        context.setUser({
+          id: r.data.id,
+          email: r.data.email,
+          name: r.data.username
+        })
+        router.push("/app/dashboard")
+      } else {
+        console.error("erro")
+      }
     }).catch(r => {
       console.error("Problema na requisição")
       console.error(r)
@@ -43,11 +51,6 @@ export default function Cadastro() {
       {/* Lado Esquerdo - Logo e nome */}
       <div className="w-1/2 flex items-center justify-center p-10 bg-[#FDF9F4]">
         <div className="max-w-sm text-center">
-          <img
-            src="/logo.png"
-            alt="Logo Biolce"
-            className="w-48 mx-auto mb-4"
-          />
           <h1 className="text-5xl font-bold text-[#003D3D]">Biolce</h1>
         </div>
       </div>
@@ -90,10 +93,10 @@ export default function Cadastro() {
             />
 
             <div className="flex gap-3">
-              <InputText type="checkbox" />
-              {/* <label htmlFor="termos" className="text-sm text-gray-600">
+              <InputText type="checkbox" id="termos" />
+              <label htmlFor="termos" className="text-sm text-gray-600">
                 Aceito os termos de uso
-              </label> */}
+              </label>
             </div>
 
             <Button onClick={() => cadastrar()} fullwidth>
@@ -127,6 +130,7 @@ export default function Cadastro() {
 
 
 interface InputText {
+  id?: string
   placeholder?: string
   type?: string
   value?: string | number
@@ -143,6 +147,7 @@ function InputText(props: InputText) {
     </div>}
 
     <input
+      id={props.id}
       type={props.type}
       placeholder={props.placeholder}
       value={props.value}
