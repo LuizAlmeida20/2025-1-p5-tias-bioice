@@ -130,10 +130,6 @@ Atualizado em: 08/06/2025
 | Matheus       | Desenvolvimento do front-end     | 11/05/2025     | 08/06/2025 | ✔️    | 07/06/2025      |
 | Matheus       | Cadastro de funcionário    | 11/05/2025     | 08/06/2025 | ✔️    | 07/06/2025      |
 | Matheus       | Componentização das interfaces    | 11/05/2025     | 08/06/2025 | ✔️    | 07/06/2025      |
-| Luiz          | Projeto do banco de dados   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Luiz          | Arquitetura da solução   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Saul          | Projeto do banco de dados   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Saul          | Arquitetura da solução   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
 | Humberto      | Configuração do projeto | 02/06/2025     |02/06/2025 | ✔️    | 02/06/2025      |
 | Humberto      | Componentização Páginas | 02/06/2025     | 08/06/2025 | ✔️    | 08/06/2025      |
 | Humberto      | Funcionalidades básicas | 02/06/2025     | 08/06/2025 | ✔️    | 08/06/2025      |
