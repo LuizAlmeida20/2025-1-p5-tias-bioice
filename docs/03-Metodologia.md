@@ -127,8 +127,9 @@ Atualizado em: 08/06/2025
 #### Sprint 4
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| Matheus       | Projeto da solução     | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Matheus       | Tecnologias     | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Matheus       | Desenvolvimento do front-end     | 11/05/2025     | 08/06/2025 | ✔️    | 07/06/2025      |
+| Matheus       | Cadastro de funcionário    | 11/05/2025     | 08/06/2025 | ✔️    | 07/06/2025      |
+| Matheus       | Componentização das interfaces    | 11/05/2025     | 08/06/2025 | ✔️    | 07/06/2025      |
 | Luiz          | Projeto do banco de dados   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
 | Luiz          | Arquitetura da solução   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
 | Saul          | Projeto do banco de dados   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
