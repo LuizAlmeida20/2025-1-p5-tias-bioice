@@ -1,12 +1,12 @@
 "use client";
 
-import { FcGoogle } from "react-icons/fc";
-import { FaApple } from "react-icons/fa";
-import Button from "@/components/basic/Button";
-import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc"
+import { FaApple } from "react-icons/fa"
+import Button from "@/components/basic/Button"
+import { useRouter } from "next/navigation"
 // import { useAppContext } from "@/contexts/AppContext";
-import { ChangeEvent, useState } from "react";
-import { InputText } from "../register/page";
+import { ChangeEvent, useState } from "react"
+import { InputText } from "@/components/basic/InputText";
 
 export default function Login() {
   const router = useRouter()
