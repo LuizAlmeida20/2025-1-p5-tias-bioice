@@ -24,7 +24,6 @@ export class UsuarioService {
       await this.instanciarUsuarioByDtoDeCriacao(criarUsuarioDto);
     const deveExistir: boolean = false;
     await this.validarExistenciaDoUsuario(new Usuario({ username: usuario.username }), deveExistir);
-    console.log(usuario);
     const usuarioCriado: Usuario = await this.usuarioRepository.saveUsuario(usuario);
     return this.instanciarUsuarioRetirandoDadosSensiveis(usuarioCriado);
   }
