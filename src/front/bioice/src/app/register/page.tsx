@@ -20,11 +20,6 @@ export default function Cadastro() {
   const context = useAppContext()
 
   async function cadastrar() {
-    console.log("cadastrando com os seguintes dados: ", {
-      email: form.email,
-      name: form.name + " " + form.surname,
-      senha: form.password
-    })
     context.api.signup({
       email: form.email,
       name: form.name + " " + form.surname,
@@ -131,6 +126,7 @@ export default function Cadastro() {
 
 interface InputText {
   id?: string
+  name?: string
   placeholder?: string
   type?: string
   value?: string | number
@@ -138,7 +134,7 @@ interface InputText {
   loading?: boolean
 }
 
-function InputText(props: InputText) {
+export function InputText(props: InputText) {
   return <div className="relative">
     {props.loading && <div className="absolute w-full h-full bg-[#ffffffcc]">
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -148,6 +144,7 @@ function InputText(props: InputText) {
 
     <input
       id={props.id}
+      name={props.name}
       type={props.type}
       placeholder={props.placeholder}
       value={props.value}

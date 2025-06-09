@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
 
-interface Button {
+interface ButtonI {
 	color?: "primary" | "secondary" | "error"
 	variant?: "filled" | "border" | "empty"
 	onClick?: () => void
@@ -9,7 +9,7 @@ interface Button {
 	fullwidth?: boolean
 }
 
-export default function Button({ color = "primary", variant = "filled", onClick = () => { }, fullwidth, children }: Button) {
+export default function Button({ color = "primary", variant = "filled", onClick = () => { }, fullwidth, children }: ButtonI) {
 	const [className, setClassName] = useState("")
 
 	useEffect(() => {

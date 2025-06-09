@@ -3,20 +3,39 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import Button from "@/components/basic/Button";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+// import { useAppContext } from "@/contexts/AppContext";
+import { ChangeEvent, useState } from "react";
+import { InputText } from "../register/page";
 
 export default function Login() {
   const router = useRouter()
+  // const context = useAppContext()
+
+  const [form, setForm] = useState({
+    email: "",
+    password: ""
+  })
 
   async function logar() {
-    router.push("/app/dashboard")
+    // context.api.login(form).then(r => {
+    //   console.log(r)
+    //   if (r.status == 201) {
+    //     context.setUser({
+    //       id: r.data.id,
+    //       email: r.data.email,
+    //       name: r.data.username
+    //     })
+    if (form.email == "teste@teste.com" && form.password == "123456")
+      router.push("/app/dashboard")
+    //   }
+    // }).catch(r => console.log(r))
   }
 
-  useEffect(() => {
-    router.push("/app/entries")
-  }, [])
+  async function onChange(e: ChangeEvent<HTMLInputElement>) {
+    console.log(e)
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  }
 
   return (
     <div className="min-h-screen flex bg-[#FDF9F4]">
@@ -38,17 +57,21 @@ export default function Login() {
             Faça login na sua conta
           </h2>
 
-          <form className="space-y-4">
-            <input
+          <div className="space-y-4">
+            <InputText
               type="email"
+              name="email"
               placeholder="Email"
-              className="w-full px-4 py-2 text-black border border-gray-300 rounded bg-gray-50"
+              value={form.email}
+              onChange={onChange}
             />
 
-            <input
+            <InputText
               type="password"
+              name="password"
               placeholder="Senha"
-              className="w-full px-4 py-2 text-black border border-gray-300 rounded bg-gray-50"
+              value={form.password}
+              onChange={onChange}
             />
 
             <div className="flex items-center gap-2">
@@ -61,7 +84,7 @@ export default function Login() {
             <Button onClick={logar} fullwidth>
               Entrar
             </Button>
-          </form>
+          </div>
 
           {/* Botões de login social */}
           <div className="mt-6 space-y-3">
