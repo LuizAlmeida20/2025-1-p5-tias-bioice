@@ -117,7 +117,7 @@ Legenda:
 #### Sprint 4
 
 - Daniel : Responsável pelos projetos de interface.
-- Danilo : Responsável pela redação da metodologia utilizada no projeto, divisão das tarefas, banco de dados, e CRUD Práticas Sustentáveis.
+- Danilo : Responsável pela divisão das tarefas, banco de dados, CRUD Práticas Sustentáveis e Slides.
 - Matheus : Responsável pelo projeto da solução e tecnologias.
 - Luiz : Responsável pelo projeto do banco de dados e arquitetura da solução.
 - Saul : Responsável pelo projeto do banco de dados e arquitetura da solução.
