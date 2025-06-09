@@ -13,6 +13,6 @@ async function bootstrap() {
     }
   });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
-  await app.listen(process.env.PORT);
+  await app.listen(Number(process.env.PORT));
 }
 bootstrap();
