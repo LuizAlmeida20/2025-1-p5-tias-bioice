@@ -114,6 +114,31 @@ Legenda:
 - ⌛: atrasado
 - ❌: não iniciado
 
+#### Sprint 4
+
+Atualizado em: 08/06/2025
+
+| Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
+| :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
+| Daniel        | Projetos de interface   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Daniel        | Slide   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Danilo        | Processo X   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Danilo        | Organização de tarefas e Sprint   | 28/04/2025     | 11/05/2025 | ✔️    | 05/05/2025      |
+| Danilo        | Descrição de telas  | 28/04/2025     | 11/05/2025 | ✔️    | 05/05/2025      |
+| Matheus       | Projeto da solução     | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Matheus       | Tecnologias     | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Luiz          | Projeto do banco de dados   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Luiz          | Arquitetura da solução   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Saul          | Projeto do banco de dados   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Saul          | Arquitetura da solução   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Humberto          | Protótipo de telas   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Humberto          | Template padrão  | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+Legenda:
+- ✔️: terminado
+- 📝: em execução
+- ⌛: atrasado
+- ❌: não iniciado
+
 ### Processo
 
 O grupo estruturou o projeto em duas Sprints principais e está utilizando o GitHub Projects para acompanhar as tarefas, com colunas para “A fazer”, “Em andamento” e “Concluído”. O backlog foi criado com base nas histórias de usuário definidas na fase de planejamento, e as prioridades foram definidas em conjunto. Cada membro é responsável por atualizar o status das tarefas no quadro, mantendo o time alinhado. As decisões são tomadas em reuniões semanais no Microsoft Teams, e os registros ficam documentados no repositório do projeto. Até o momento, mesmo sem a codificação iniciada, o fluxo de organização está sendo seguido conforme previsto.
