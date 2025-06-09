@@ -12,12 +12,13 @@ import {
   LogOut,
 } from "lucide-react";
 import NavBarButton from "@/components/basic/NavBarButton";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname  } from "next/navigation";
 import { AppProvider } from "@/contexts/AppContext";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const [active, setActive] = useState("");
-  const router = useRouter();
+  const [active, setActive] = useState("")
+  const router = useRouter()
+  const pathname = usePathname()
 
   const menuItems = [
     { name: "Home", icon: <Home size={18} />, href: "/app/dashboard" },
@@ -28,8 +29,8 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   ];
 
   useEffect(() => {
-    if (window.location.pathname.includes("app")) {
-      const uri = window.location.pathname.split("/")
+    if (pathname.includes("app")) {
+      const uri = pathname.split("/")
       switch (uri[2]) {
         case "dashboard":
           setActive("Home")
@@ -46,7 +47,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       }
     }
 
-  }), []
+  }, [])
 
   return <div className="flex h-screen bg-gray-100">
     {/* Sidebar */}
