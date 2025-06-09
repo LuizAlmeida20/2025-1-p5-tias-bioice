@@ -134,7 +134,7 @@ Atualizado em: 08/06/2025
 | Humberto      | Componentização Páginas | 02/06/2025     | 08/06/2025 | ✔️    | 08/06/2025      |
 | Humberto      | Funcionalidades básicas | 02/06/2025     | 08/06/2025 | ✔️    | 08/06/2025      |
 | Humberto      | Tela de Registro | 02/06/2025     | 08/06/2025 | ✔️    | 08/06/2025      |
-| Humberto      | Melhorias do front  | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Humberto      | Melhorias do front  | 28/04/2025     | 08/06/2025 | ✔️    | 08/06/2025      |
 
 Legenda:
 - ✔️: terminado
