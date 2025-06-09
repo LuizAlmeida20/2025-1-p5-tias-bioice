@@ -129,7 +129,6 @@ Atualizado em: 08/06/2025
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
 | Matheus       | Projeto da solução     | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
 | Matheus       | Tecnologias     | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-<<<<<<< HEAD
 | Luiz          | Projeto do banco de dados   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
 | Luiz          | Arquitetura da solução   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
 | Saul          | Projeto do banco de dados   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
@@ -141,8 +140,6 @@ Atualizado em: 08/06/2025
 | Humberto      | Melhorias do front  | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
 
 Legenda:
-=======
->>>>>>> d7932c921074168844330af42fe94eb100c5cf7c
 - ✔️: terminado
 - 📝: em execução
 - ⌛: atrasado
