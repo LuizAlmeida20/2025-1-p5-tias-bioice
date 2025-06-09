@@ -1,12 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Calendar, Gift, Activity, Car } from "lucide-react";
 import Button from "@/components/basic/Button";
 
 export default function HomePage() {
   const router = useRouter();
+
+  useEffect(() => {
+    router.push("/app/entries")
+  }, [])
 
   return (
     <main className="bg-white min-h-screen flex flex-col font-sans">

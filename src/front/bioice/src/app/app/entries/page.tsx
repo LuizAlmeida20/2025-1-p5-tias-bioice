@@ -179,7 +179,7 @@ function ModalAddEntry({ onClose, onFinish }: any) {
 				</div>
 
 				<div>
-					<label className="block text-sm font-medium text-gray-700">Descrição</label>
+					<label className="block text-sm font-medium text-gray-700">Valor</label>
 					<MoneyInput
 						name="value"
 						value={form.value}
