@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactNode, useState } from "react"
+import { ChangeEvent, useState } from "react"
 import RowLancamento, { RowData } from "@/components/Sheets/Entry"
 import Button from "@/components/basic/Button"
 import Card from "@/components/basic/Card"
@@ -33,8 +33,6 @@ export default function Lancamentos() {
 
 
 	const [add, setAdd] = useState(false)
-	const [loading, setLoading] = useState(false)
-	const [error, setError] = useState<string | null>(null)
 
 	return <Card>
 		<div className="flex items-center justify-between">
@@ -73,22 +71,6 @@ export default function Lancamentos() {
 					</tr>
 				</thead>
 				<tbody>
-					{loading && (
-						<tr>
-							<td colSpan={7} className="text-center p-4">
-								Carregando...
-							</td>
-						</tr>
-					)}
-
-					{error && (
-						<tr>
-							<td colSpan={7} className="text-center p-4 text-red-600">
-								{error}
-							</td>
-						</tr>
-					)}
-
 					{activeTab == "Entradas"
 						? receipts.map(row => <RowLancamento key={row.id} row={row} />)
 						: expenses.map(row => <RowLancamento key={row.id} row={row} />)}
@@ -134,17 +116,25 @@ type AddEntry = {
 	value: number
 }
 
-function ModalAddEntry({ onClose, onFinish }: any) {
+interface ModalAddEntry {
+	onClose: () => void
+	onFinish: (form: AddEntry) => void
+}
+
+function ModalAddEntry({ onClose, onFinish }: ModalAddEntry) {
 	const [form, setForm] = useState<AddEntry>({
 		type: "receipt",
 		description: "",
 		value: 0
 	})
 
-	const handleChange = (e: any) => {
-		const { name, value } = e.target;
-		console.log(value)
-		setForm((prev: any) => ({ ...prev, [name]: value }));
+	const handleChange = (e?: ChangeEvent<HTMLSelectElement | HTMLTextAreaElement | HTMLInputElement>) => {
+		if (e) {
+			const { name, value } = e.target
+			console.log(value)
+
+			setForm(prev => ({ ...prev, [name]: value }))
+		}
 	}
 
 	return <div className="fixed inset-0 flex items-center justify-center z-50 bg-white/20 backdrop-blur-sm">
@@ -207,8 +197,13 @@ function ModalAddEntry({ onClose, onFinish }: any) {
 	</div>
 }
 
+interface MoneyInput {
+	name: string
+	value: string | number
+	onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void
+}
 
-export function MoneyInput({ name, value, onChange }: any) {
+export function MoneyInput({ name, value, onChange }: MoneyInput) {
 	// Formata o valor em centavos para R$ X,XX
 	const formatted = new Intl.NumberFormat("pt-BR", {
 		style: "currency",
@@ -225,7 +220,7 @@ export function MoneyInput({ name, value, onChange }: any) {
 				value: onlyNums,
 			},
 		};
-		onChange(syntheticEvent as React.ChangeEvent<HTMLInputElement>);
+		if (onChange) onChange(syntheticEvent as React.ChangeEvent<HTMLInputElement>);
 	};
 
 	return (
