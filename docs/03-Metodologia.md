@@ -116,24 +116,19 @@ Legenda:
 
 #### Sprint 4
 
+- Daniel : Responsável pelos projetos de interface.
+- Danilo : Responsável pela redação da metodologia utilizada no projeto, divisão das tarefas, organização, documentação, descrição de telas e revisão.
+- Matheus : Responsável pelo projeto da solução e tecnologias.
+- Luiz : Responsável pelo projeto do banco de dados e arquitetura da solução.
+- Saul : Responsável pelo projeto do banco de dados e arquitetura da solução.
+- Humberto: Responsável pelo protótipo de telas e template padrão da aplicação.
 Atualizado em: 08/06/2025
 
+#### Sprint 4
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| Daniel        | Projetos de interface   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Daniel        | Slide   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Danilo        | Processo X   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Danilo        | Organização de tarefas e Sprint   | 28/04/2025     | 11/05/2025 | ✔️    | 05/05/2025      |
-| Danilo        | Descrição de telas  | 28/04/2025     | 11/05/2025 | ✔️    | 05/05/2025      |
 | Matheus       | Projeto da solução     | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
 | Matheus       | Tecnologias     | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Luiz          | Projeto do banco de dados   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Luiz          | Arquitetura da solução   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Saul          | Projeto do banco de dados   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Saul          | Arquitetura da solução   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Humberto          | Protótipo de telas   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Humberto          | Template padrão  | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-Legenda:
 - ✔️: terminado
 - 📝: em execução
 - ⌛: atrasado
