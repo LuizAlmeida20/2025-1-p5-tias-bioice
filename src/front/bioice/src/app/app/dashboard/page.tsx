@@ -1,5 +1,6 @@
 "use client";
 
+import Card from "@/components/basic/Card";
 import {
   BarChart,
   Bar,
@@ -51,9 +52,9 @@ const dataInsumos = [
 
 export default function DashboardPage() {
   return (
-    <div className="p-6 space-y-6 bg-gray-100 min-h-screen">
+    <div className="text-black p-6 space-y-6 bg-gray-100 min-h-screen">
       <div className="flex flex-wrap justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
+        <h1 className="text-2xl font-bold">Dashboard</h1>
         <div className="flex items-center space-x-2 bg-white p-2 rounded-lg shadow">
           <div className="flex items-center space-x-2">
             <span className="text-sm text-gray-600">Data Inicial</span>
@@ -84,72 +85,78 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="bg-white rounded-xl shadow p-4 col-span-2">
-          <h2 className="text-lg font-semibold mb-4">Desempenho</h2>
-          <ResponsiveContainer width="100%" height={250}>
-            <BarChart data={dataDesempenho}>
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="entrada" fill={verde} />
-              <Bar dataKey="saida" fill={amarelo} />
-            </BarChart>
-          </ResponsiveContainer>
+        <div className="col-span-2">
+          <Card>
+            <h2 className="text-lg font-semibold mb-4">Desempenho</h2>
+            <ResponsiveContainer width="100%" height={250}>
+              <BarChart data={dataDesempenho}>
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey="entrada" fill={verde} />
+                <Bar dataKey="saida" fill={amarelo} />
+              </BarChart>
+            </ResponsiveContainer>
+          </Card>
         </div>
 
-        <div className="bg-white rounded-xl shadow p-4 flex flex-col items-center justify-center">
-          <h2 className="text-lg font-semibold mb-4">Meta</h2>
-          <ResponsiveContainer width="100%" height={200}>
-            <PieChart>
-              <Pie
-                data={dataMeta}
-                dataKey="value"
-                innerRadius={60}
-                outerRadius={80}
-                startAngle={90}
-                endAngle={-270}
-              >
-                {dataMeta.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.fill} />
-                ))}
-              </Pie>
-            </PieChart>
-          </ResponsiveContainer>
-          <div className="text-center text-2xl font-semibold" style={{ color: verde }}>67%</div>
-        </div>
+        <Card>
+          <div className="flex flex-col items-center justify-center">
+            <h2 className="text-lg font-semibold mb-4">Meta</h2>
+            <ResponsiveContainer width="100%" height={200}>
+              <PieChart>
+                <Pie
+                  data={dataMeta}
+                  dataKey="value"
+                  innerRadius={60}
+                  outerRadius={80}
+                  startAngle={90}
+                  endAngle={-270}
+                >
+                  {dataMeta.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.fill} />
+                  ))}
+                </Pie>
+              </PieChart>
+            </ResponsiveContainer>
+            <div className="text-center text-2xl font-semibold" style={{ color: verde }}>67%</div>
+          </div>
+        </Card>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center justify-center">
-          <h2 className="text-lg font-semibold mb-4 text-black">Consumo por Perfil</h2>
-          <ResponsiveContainer width="100%" height={200}>
-            <PieChart>
-              <Pie
-                data={dataConsumo}
-                cx="50%"
-                cy="50%"
-                innerRadius={40}
-                outerRadius={70}
-                paddingAngle={5}
-                dataKey="value"
-              >
-                {dataConsumo.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.fill} />
-                ))}
-              </Pie>
-            </PieChart>
-          </ResponsiveContainer>
-          <div className="flex gap-4 mt-4 text-sm text-black">
-            {dataConsumo.map((item, index) => (
-              <div key={index} className="flex items-center space-x-2">
-                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.fill }}></div>
-                <span>{item.name}</span>
-              </div>
-            ))}
+        <Card>
+          <div className="flex flex-col items-center justify-center">
+            <h2 className="text-lg font-semibold mb-4 text-black">Consumo por Perfil</h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <PieChart>
+                <Pie
+                  data={dataConsumo}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={80}
+                  outerRadius={120}
+                  paddingAngle={5}
+                  dataKey="value"
+                >
+                  {dataConsumo.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.fill} />
+                  ))}
+                </Pie>
+              </PieChart>
+            </ResponsiveContainer>
+            <div className="flex gap-4 mt-4 text-sm text-black">
+              {dataConsumo.map((item, index) => (
+                <div key={index} className="flex items-center space-x-2">
+                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.fill }}></div>
+                  <span>{item.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </Card>
 
-        <div className="bg-white rounded-xl shadow p-6">
+        <Card>
           <h2 className="text-lg font-semibold mb-4 text-black">Insumos Recentes</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
             {dataInsumos.map((item, index) => (
@@ -164,16 +171,15 @@ export default function DashboardPage() {
                     : (item.value / 1000).toFixed(0) + "K"}
                 </div>
                 <div
-                  className={`text-sm font-medium ${
-                    item.percentage.startsWith("-") ? "text-red-500" : "text-green-600"
-                  }`}
+                  className={`text-sm font-medium ${item.percentage.startsWith("-") ? "text-red-500" : "text-green-600"
+                    }`}
                 >
                   {item.percentage}
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        </Card>
       </div>
     </div>
   );

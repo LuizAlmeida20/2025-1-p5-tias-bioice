@@ -77,7 +77,7 @@ export default function Login() {
             <div className="flex items-center gap-2">
               <input type="checkbox" id="lembrar" />
               <label htmlFor="lembrar" className="text-sm text-gray-600">
-                Lembrar-me
+                Mantenha-me logado
               </label>
             </div>
 
@@ -87,15 +87,16 @@ export default function Login() {
           </div>
 
           {/* Botões de login social */}
+
           <div className="mt-6 space-y-3">
-            <button className="w-full flex items-center justify-center gap-2 border border-[#2DB9C3] text-[#2DB9C3] py-2 rounded font-medium">
+            <Button variant="border" fullwidth>
               <FcGoogle size={20} />
               Entrar com Google
-            </button>
-            <button className="w-full flex items-center justify-center gap-2 border border-[#2DB9C3] text-[#2DB9C3] py-2 rounded font-medium">
+            </Button>
+            <Button variant="border" fullwidth>
               <FaApple size={20} />
               Entrar com Apple
-            </button>
+            </Button>
           </div>
 
           <p className="text-sm text-gray-500 text-center mt-6">

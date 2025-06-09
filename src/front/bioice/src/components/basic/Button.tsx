@@ -49,7 +49,7 @@ export default function Button({ color = "primary", variant = "filled", onClick 
 
 	return <>
 		<button
-			className={"border-2 cursor-pointer font-medium px-6 py-3 rounded-xl transition-all duration-200 " + className}
+			className={"border-2 cursor-pointer font-bold px-6 py-3 rounded-xl transition-all duration-200 " + className}
 			onClick={onClick}
 		>
 			<div className="flex justify-center gap-3">
