@@ -139,6 +139,9 @@ Atualizado em: 08/06/2025
 | Danilo     | CRUD Práticas Sustentáveis  | 02/06/2025     | 08/06/2025 | ✔️    | 08/06/2025      |
 | Danilo     | Script SQL  | 02/06/2025     | 08/06/2025 | ✔️    | 08/06/2025      |
 | Danilo     | Slides | 02/06/2025     | 08/06/2025 | ✔️    | 08/06/2025      |
+| Daniel      | Configurações backend | 11/05/2025     | 08/06/2025 | ✔️    | 04/06/2025      |
+| Daniel      | CRUD Produtos | 20/05/2025     | 08/06/2025 | ✔️    | 04/06/2025      |
+| Daniel      | Code Review  | 01/06/2025     | 08/06/2025 | ✔️    | 08/06/2025      |
 
 
 Legenda:
