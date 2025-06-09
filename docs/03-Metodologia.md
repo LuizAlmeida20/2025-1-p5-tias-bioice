@@ -131,8 +131,12 @@ Atualizado em: 08/06/2025
 | Luiz          | Arquitetura da solução   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
 | Saul          | Projeto do banco de dados   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
 | Saul          | Arquitetura da solução   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Humberto          | Protótipo de telas   | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
-| Humberto          | Template padrão  | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+| Humberto      | Configuração do projeto | 02/06/2025     |02/06/2025 | ✔️    | 02/06/2025      |
+| Humberto      | Componentização Páginas | 02/06/2025     | 08/06/2025 | ✔️    | 08/06/2025      |
+| Humberto      | Funcionalidades básicas | 02/06/2025     | 08/06/2025 | ✔️    | 08/06/2025      |
+| Humberto      | Tela de Registro | 02/06/2025     | 08/06/2025 | ✔️    | 08/06/2025      |
+| Humberto      | Melhorias do front  | 28/04/2025     | 11/05/2025 | ✔️    | 11/05/2025      |
+
 Legenda:
 - ✔️: terminado
 - 📝: em execução
