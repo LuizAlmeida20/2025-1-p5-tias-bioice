@@ -17,7 +17,7 @@ import { EditarMetricasDto } from '../../model/metrica/dto/editar-metricas.dto';
 import {IdDto} from "../../shared/id.dto";
 import {MensagensMetricas} from "../../model/metrica/utils/metrica.mensagens";
 
-@Controller()
+@Controller('metricas')
 export class MetricaController {
   constructor(private readonly metricaService: MetricaService) {}
 
@@ -31,7 +31,10 @@ export class MetricaController {
       pagina,
       limite,
     );
-    return response.status(HttpStatus.OK).send(metricas);
+    return response.status(HttpStatus.OK).send({
+      status: HttpStatus.OK,
+      message: metricas
+    });
   }
 
   @Post()
@@ -39,9 +42,17 @@ export class MetricaController {
     @Body() criarMetricaDto: CriarMetricaDto,
     @Res() response: Response,
   ): Promise<Response> {
-    const metricasCriadas: Metricas =
-      await this.metricaService.criarMetricas(criarMetricaDto);
-    return response.status(HttpStatus.CREATED).send(metricasCriadas);
+    try {
+      const metricasCriadas: Metricas =
+        await this.metricaService.criarMetricas(criarMetricaDto);
+      return response.status(HttpStatus.CREATED).send({
+        status: HttpStatus.CREATED,
+        message: MensagensMetricas.METRICAS_CRIADAS,
+        data: metricasCriadas
+      });
+    } catch (e) {
+      throw e;
+    }
   }
 
   @Put()
@@ -51,7 +62,11 @@ export class MetricaController {
   ): Promise<Response> {
     const metricasEditadas: Metricas =
       await this.metricaService.editarMetricas(editarMetricas);
-    return response.status(HttpStatus.OK).send(metricasEditadas);
+    return response.status(HttpStatus.OK).send({
+      status: HttpStatus.OK,
+      message: MensagensMetricas.METRICAS_EDITADAS,
+      data: metricasEditadas
+    });
   }
 
   @Delete('/:id')
@@ -60,6 +75,9 @@ export class MetricaController {
       @Res() response: Response,
   ): Promise<Response> {
     await this.metricaService.deletarMetrica(id.id);
-    return response.status(HttpStatus.OK).send(MensagensMetricas.METRICA_EXCLUIDA);
+    return response.status(HttpStatus.OK).send({
+      status: HttpStatus.OK,
+      message: MensagensMetricas.METRICA_EXCLUIDA
+    });
   }
 }

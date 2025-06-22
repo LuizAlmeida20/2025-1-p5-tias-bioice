@@ -9,7 +9,7 @@ export class MetricaRepository {
   async getMetricas(pagina: number, limite: number): Promise<Metricas[]> {
     const skip: number = pagina * (limite - 1);
     return await Metricas.find({
-      skip: skip,
+      skip: pagina == 1 ? 0 : skip,
       take: limite,
     });
   }

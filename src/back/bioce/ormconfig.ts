@@ -4,7 +4,7 @@ import 'dotenv/config';
 export const dbConnection: ConnectionOptions = {
   type: 'mysql',
   host: process.env.HOST,
-  port: Number(process.env.PORT),
+  port: Number(process.env.DB_PORT),
   username: process.env.DB_USERNAME,
   password: process.env.PASSWORD,
   database: process.env.DATABASE,

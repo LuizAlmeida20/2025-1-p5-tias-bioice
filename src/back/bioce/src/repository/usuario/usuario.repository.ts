@@ -16,7 +16,8 @@ export class UsuarioRepository {
   ): Promise<boolean> {
     const { id, username, email } = usuario;
     const query: SelectQueryBuilder<Usuario> =
-      Usuario.createQueryBuilder('usuario');
+      Usuario.createQueryBuilder('usuario')
+        .where('usuario.isExcluido = false');
     if (username) {
       query.andWhere('usuario.username = :username', { username });
     }

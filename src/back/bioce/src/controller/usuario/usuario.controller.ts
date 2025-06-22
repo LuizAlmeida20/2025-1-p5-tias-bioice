@@ -29,7 +29,11 @@ export class UsuarioController {
     try {
       const usuarioCriado: Usuario =
         await this.usuarioService.criarUsuario(criarUsuarioDto);
-      return response.status(HttpStatus.CREATED).send(usuarioCriado);
+      return response.status(HttpStatus.CREATED).send({
+        status: HttpStatus.CREATED,
+        message: MensagensUsuario.USUARIO_CRIADO,
+        data: usuarioCriado
+      });
     } catch (e) {
       throw e;
     }
@@ -43,7 +47,11 @@ export class UsuarioController {
     try {
       const usuarioEditado: Usuario =
         await this.usuarioService.editarUsuario(editarUsuarioDto);
-      return response.status(HttpStatus.OK).send(usuarioEditado);
+      return response.status(HttpStatus.OK).send({
+        status: HttpStatus.OK,
+        message: MensagensUsuario.USUARIO_EDITADO,
+        data: usuarioEditado
+      });
     } catch (e) {
       throw e;
     }
@@ -57,7 +65,10 @@ export class UsuarioController {
     try {
       const usuario: Partial<Usuario> =
         await this.usuarioService.getUsuarioById(id.id);
-      return response.status(HttpStatus.OK).send(usuario);
+      return response.status(HttpStatus.OK).send({
+        status: HttpStatus.OK,
+        data: usuario
+      });
     } catch (e) {
       throw e;
     }
@@ -73,7 +84,10 @@ export class UsuarioController {
         await this.usuarioService.deleteUsuario(id.id);
       return response
         .status(HttpStatus.OK)
-        .send(MensagensUsuario.USUARIO_EXCLUIDO(nomeUsuarioExcluido));
+        .send({
+          status: HttpStatus.OK,
+          message: MensagensUsuario.USUARIO_EXCLUIDO(nomeUsuarioExcluido)
+        });
     } catch (e) {
       throw e;
     }
