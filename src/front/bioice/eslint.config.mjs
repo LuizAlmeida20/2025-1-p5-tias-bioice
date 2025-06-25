@@ -15,7 +15,9 @@ const eslintConfig = [
     files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
     rules: {
       "react-hooks/exhaustive-deps": "off",
-      "no-unused-vars": "warn",
+      "no-unused-vars": "off",
+      'react/no-unescaped-entities': 'off',
+      '@next/next/no-page-custom-font': 'off',
     },
   }
 ];

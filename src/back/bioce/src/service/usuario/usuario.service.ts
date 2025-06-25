@@ -21,8 +21,9 @@ export class UsuarioService {
     const usuario: Usuario =
       await this.instanciarUsuarioByDtoDeCriacao(criarUsuarioDto);
     const deveExistir: boolean = false;
-    await this.validarExistenciaDoUsuario(usuario, deveExistir);
-    return await this.usuarioRepository.saveUsuario(usuario);
+    await this.validarExistenciaDoUsuario(new Usuario({ username: usuario.username }), deveExistir);
+    const usuarioCriado: Usuario = await this.usuarioRepository.saveUsuario(usuario);
+    return this.instanciarUsuarioRetirandoDadosSensiveis(usuarioCriado);
   }
 
   async validarExistenciaDoUsuario(
@@ -54,7 +55,8 @@ export class UsuarioService {
       new Usuario({ id: usuario.id }),
       deveExistir,
     );
-    return this.usuarioRepository.saveUsuario(usuario);
+    const usuarioEditado: Usuario = await this.usuarioRepository.saveUsuario(usuario);
+    return this.instanciarUsuarioRetirandoDadosSensiveis(usuarioEditado);
   }
 
   async instanciarUsuarioByDtoDeCriacao(
@@ -75,7 +77,7 @@ export class UsuarioService {
   async deleteUsuario(id: number): Promise<NomeDoUsuario> {
     const usuario: Usuario | null =
       await this.usuarioRepository.findOneById(id);
-    if (!usuario) {
+    if (!usuario || usuario.isExcluido) {
       throw new NotFoundException({
         status: HttpStatus.NOT_FOUND,
         message: MensagensUsuario.USUARIO_NAO_EXISTE,
@@ -88,18 +90,30 @@ export class UsuarioService {
   async getUsuarioById(usuarioId: number): Promise<Partial<Usuario>> {
     const usuario: Usuario | null =
       await this.usuarioRepository.getUserById(usuarioId);
-    if (!usuario) {
+    if (!usuario || usuario.isExcluido) {
       throw new NotFoundException({
         status: HttpStatus.NOT_FOUND,
         message: MensagensUsuario.USUARIO_NAO_EXISTE,
       });
     }
-    const { id, username, email, nivelPermissao } = usuario;
+    const { id, username, email, nivelPermissao, isExcluido } = usuario;
     return new Usuario({
       id: id,
       username: username,
       email: email,
       nivelPermissao: nivelPermissao,
+      isExcluido: isExcluido
+    });
+  }
+
+  instanciarUsuarioRetirandoDadosSensiveis(usuario: Usuario): Usuario {
+    const { id, username, email, nivelPermissao, isExcluido } = usuario;
+    return new Usuario({
+      id: id,
+      username: username,
+      email: email,
+      nivelPermissao: nivelPermissao,
+      isExcluido: isExcluido
     });
   }
 }

@@ -9,13 +9,13 @@ import { NivelPermissaoEnum } from './enums/nivel-permissao.enum';
 import { Produto } from '../produto/produto.entity';
 import { Insumo } from '../insumo/insumo.entity';
 import { DadosFinanceiros } from '../dados-financeiros/dados-financeiros.entity';
-
-@Entity({ name: 'usuario' })
+ @Entity({ name: 'usuario' })
 export class Usuario extends BaseEntity {
   constructor(partialUsuario?: Partial<Usuario>) {
     super();
     if (!partialUsuario) return;
-    const { id, username, email, senha, salt, nivelPermissao } = partialUsuario;
+    const { id, username, email, senha, salt, nivelPermissao, isExcluido } = partialUsuario;
+    this.isExcluido = !!isExcluido;
     if (id) {
       this.id = id;
     }

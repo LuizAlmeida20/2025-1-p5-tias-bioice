@@ -15,6 +15,12 @@ export class MetricaService {
 
   async criarMetricas(criarMetricaDto: CriarMetricaDto): Promise<Metricas> {
     const { financeira, desperdicio, descarte } = criarMetricaDto;
+    if (!financeira && !desperdicio && !descarte) {
+      throw new BadRequestException({
+        status: HttpStatus.BAD_REQUEST,
+        message: MensagensMetricas.AO_MENOS_UMA_METRICA_DEVE_SER_INFORMADA
+      })
+    }
     const metricaEntity: Metricas = new Metricas({
       desperdicio: desperdicio,
       financeira: financeira,
