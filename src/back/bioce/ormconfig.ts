@@ -1,7 +1,9 @@
-import {ConnectionOptions, DataSource} from "typeorm";
+import { DataSource, DataSourceOptions } from 'typeorm';
 import 'dotenv/config';
 
-export const dbConnection: ConnectionOptions = {
+const isPrimaryDown = process.env.DB_FAILOVER === 'true';
+
+export const dbConnection: DataSourceOptions = {
   type: 'mysql',
   host: process.env.HOST,
   port: Number(process.env.PORT),
@@ -10,8 +12,25 @@ export const dbConnection: ConnectionOptions = {
   database: process.env.DATABASE,
   entities: [__dirname + '/src/model/**/*.entity{.ts,.js}'],
   synchronize: true,
-  logging: true
+  logging: true,
 };
 
-const dataSource: DataSource = new DataSource(dbConnection);
+export const supabaseConfig: DataSourceOptions = {
+  type: 'postgres',
+  host: process.env.SUPABASE_HOST, // like 'db.xyz.supabase.co'
+  port: 5432,
+  username: process.env.SUPABASE_USER,
+  password: process.env.SUPABASE_PASSWORD,
+  database: process.env.SUPABASE_DB,
+  entities: [__dirname + '/src/model/**/*.entity{.ts,.js}'],
+  synchronize: true,
+  logging: true,
+  ssl: {
+    rejectUnauthorized: false, // <--- ADD THIS LINE
+  },
+};
+
+const dataSource: DataSource = new DataSource(
+  isPrimaryDown ? supabaseConfig : dbConnection,
+);
 export default dataSource;

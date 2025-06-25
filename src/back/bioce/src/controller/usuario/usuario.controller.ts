@@ -16,10 +16,14 @@ import { Response } from 'express';
 import { IdDto } from '../../shared/id.dto';
 import { EditarUsuarioDto } from '../../model/usuario/dto/editar-usuario.dto';
 import { MensagensUsuario } from '../../model/usuario/utils/mensagens-usuario';
+import { DataSource } from 'typeorm';
 
 @Controller('usuario')
 export class UsuarioController {
-  constructor(private readonly usuarioService: UsuarioService) {}
+  constructor(
+    private readonly usuarioService: UsuarioService,
+    private dataSource: DataSource
+  ) { }
 
   @Post()
   async criarUsuario(
@@ -54,10 +58,17 @@ export class UsuarioController {
     @Param() id: IdDto,
     @Res() response: Response,
   ): Promise<Response> {
+    const connectionDetails = {
+      name: this.dataSource.name,
+      type: this.dataSource.options.type,
+      database: this.dataSource.options.database,
+      isConnected: this.dataSource.isInitialized,
+    };
+
     try {
       const usuario: Partial<Usuario> =
         await this.usuarioService.getUsuarioById(id.id);
-      return response.status(HttpStatus.OK).send(usuario);
+      return response.status(HttpStatus.OK).send({ ...usuario, connectionDetails });
     } catch (e) {
       throw e;
     }

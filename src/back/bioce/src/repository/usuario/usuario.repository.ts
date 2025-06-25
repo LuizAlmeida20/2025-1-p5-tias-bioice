@@ -1,14 +1,18 @@
 import { Injectable } from '@nestjs/common';
 import { Usuario } from '../../model/usuario/usuario.entity';
-import { SelectQueryBuilder } from 'typeorm';
-import { Count } from '../../shared/interfaces/count.interface';
+import { DataSource, SelectQueryBuilder } from 'typeorm';
 
 @Injectable()
 export class UsuarioRepository {
-  constructor() {}
+  constructor(private dataSource: DataSource) {}
 
   async saveUsuario(usuario: Usuario): Promise<Usuario> {
-    return await Usuario.save(usuario);
+    const ret = await Usuario.save(usuario);
+    console.log('está salvando o usuário');
+    console.log(this.dataSource);
+    console.log(ret);
+
+    return ret;
   }
 
   async verificarExistenciaDoUsuario(
