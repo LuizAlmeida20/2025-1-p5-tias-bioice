@@ -3,72 +3,112 @@ import {
     Controller,
     Delete,
     Get,
-    HttpCode,
     HttpStatus,
     Param,
     Post,
     Put,
-    Query,
+    Query, Res,
 } from '@nestjs/common';
-
-import { InsumoDto } from '../../model/insumo/dto/insumo.dto';
-import { PaginacaoDto } from '../../model/insumo/dto/paginacao.dto';
+import {Response} from 'express';
+import {CriarInsumoDto} from "../../model/insumo/dto/criar-insumo.dto";
+import {PaginacaoDto} from "../../shared/dto/paginacao.dto";
 import {InsumoService} from "../../service/insumo/insumo.service";
 import {MensagensInsumos} from "../../model/insumo/utils/mensgens-insumos";
+import {IdDto} from "../../shared/dto/id.dto";
 
 @Controller('insumo')
 export class InsumoController {
-    constructor(private readonly insumoService: InsumoService) {}
-
-    @Get()
-    @HttpCode(HttpStatus.OK)
-    async exibirInsumo(@Query() paginacao: PaginacaoDto) {
-        const insumos = await this.insumoService.exibirInsumo(paginacao);
-        return {
-            data: insumos,
-            messagem: MensagensInsumos.INSUMO_ENCONTRADOS,
-        };
+    constructor(private readonly insumoService: InsumoService) {
     }
 
-    @Get(':id')
-    @HttpCode(HttpStatus.OK)
-    async buscarInsumo(@Param('id') id: number) {
-        const insumo = await this.insumoService.buscarInsumo(id);
-        return {
-            data: insumo,
-            mensagem: MensagensInsumos.INSUMO_ECONTRADO,
-        };
+    @Get()
+    async exibirInsumosPaginado(
+        @Query() paginacao: PaginacaoDto,
+        @Res() response: Response,
+    ): Promise<Response> {
+        try {
+            const insumos = await this.insumoService.exibirInsumoPaginado(paginacao);
+            return response.status(HttpStatus.OK).send({
+                status: HttpStatus.OK,
+                message: MensagensInsumos.INSUMO_ENCONTRADOS,
+                data: insumos
+            });
+        } catch (e) {
+            throw (e);
+        }
+    }
+
+    @Get('/:id')
+    async buscarInsumoPorId(
+        @Param() id: IdDto,
+        @Res() response: Response,
+    ): Promise<Response> {
+        try {
+            const insumo = await this.insumoService.buscarInsumoPorId(id.id);
+            return response.status(HttpStatus.OK).send({
+                status: HttpStatus.OK,
+                message: MensagensInsumos.INSUMO_ECONTRADO,
+                data: insumo
+            });
+        } catch (e) {
+            throw (e);
+        }
+
     }
 
     @Post()
-    @HttpCode(HttpStatus.CREATED)
-    async cadastrarInsumo(@Body() insumo: InsumoDto) {
-        const novoInsumo = await this.insumoService.cadastrarInsumo(insumo);
-        return {
-            data: novoInsumo,
-            mensagem: MensagensInsumos.INSUMO_CADASTRADO,
-        };
+    async cadastrarInsumo(
+        @Body() insumo: CriarInsumoDto,
+        @Res() response: Response,
+    ): Promise<Response> {
+        try {
+            const novoInsumo = await this.insumoService.cadastrarInsumo(insumo);
+            return response.status(HttpStatus.CREATED).send({
+                status: HttpStatus.CREATED,
+                message: MensagensInsumos.INSUMO_CADASTRADO,
+                data: novoInsumo
+            });
+        } catch (e) {
+            throw (e);
+        }
+
     }
 
-    @Put(':id')
-    @HttpCode(HttpStatus.OK)
-    async editarInsumo(@Param('id') id: number, @Body() insumo: InsumoDto) {
-        const insumoAtulizado = await this.insumoService.editarInsumo(
-            id,
-            insumo,
-        );
-        return {
-            data: insumoAtulizado,
-            mensagem: MensagensInsumos.INSUMO_ATUALIZADO,
-        };
+    @Put('/:id')
+    async editarInsumo(
+        @Param() id: IdDto,
+        @Body() insumo: CriarInsumoDto,
+        @Res() response: Response,
+    ): Promise<Response> {
+        try {
+            const insumoAtulizado = await this.insumoService.editarInsumo(
+                id.id,
+                insumo,
+            );
+            return response.status(HttpStatus.OK).send({
+                status: HttpStatus.OK,
+                message: MensagensInsumos.INSUMO_ATUALIZADO,
+                data: insumoAtulizado
+            });
+        } catch (e) {
+            throw (e);
+        }
+
     }
 
-    @Delete(':id')
-    @HttpCode(HttpStatus.OK)
-    async deletarInsumo(@Param('id') id: number) {
-        await this.insumoService.deletarInsumo(id);
-        return {
-            mesagem: MensagensInsumos.INSUMO_DELETADO,
-        };
+    @Delete('/:id')
+    async deletarInsumo(
+        @Param() id: IdDto,
+        @Res() response: Response,
+    ): Promise<Response> {
+        try {
+            await this.insumoService.deletarInsumo(id.id);
+            return response.status(HttpStatus.OK).send({
+                status: HttpStatus.OK,
+                message: MensagensInsumos.INSUMO_DELETADO
+            });
+        } catch (e) {
+            throw (e);
+        }
     }
 }
