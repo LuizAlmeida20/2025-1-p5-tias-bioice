@@ -4,6 +4,7 @@ import {InsumoService} from "../../service/insumo/insumo.service";
 import {InsumoRepository} from "../../repository/insumo/insumo.repository";
 
 @Module({
+    imports: [],
     controllers: [InsumoController],
     providers: [InsumoService, InsumoRepository],
 })

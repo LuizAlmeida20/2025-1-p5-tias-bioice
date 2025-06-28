@@ -1,6 +1,6 @@
 import {IsDateString, IsNotEmpty, IsNumber, IsString} from 'class-validator';
 
-export class InsumoDto {
+export class CriarInsumoDto {
     @IsNotEmpty()
     @IsString()
     nome: string;
