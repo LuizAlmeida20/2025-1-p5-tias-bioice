@@ -19,7 +19,7 @@ export class InsumoDto {
 
     @IsString()
     @IsNotEmpty()
-    descriacao: string;
+    descricao: string;
 
     @IsNotEmpty()
     @IsNumber()

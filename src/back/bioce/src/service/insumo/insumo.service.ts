@@ -29,7 +29,7 @@ export class InsumoService {
         novoInsumo.dataValidade = dto.dataValidade;
         novoInsumo.dataRegistro = dto.dataRegistro;
         novoInsumo.lote = dto.lote;
-        novoInsumo.descricao = dto.descriacao;
+        novoInsumo.descricao = dto.descricao;
 
         novoInsumo.usuario = usuarioId;
 
@@ -97,7 +97,7 @@ export class InsumoService {
         insumo.dataValidade = dto.dataValidade;
         insumo.dataRegistro = dto.dataRegistro;
         insumo.lote = dto.lote;
-        insumo.descricao = dto.descriacao;
+        insumo.descricao = dto.descricao;
 
         return await this.insumoService.salvarInsumo(insumo);
     }

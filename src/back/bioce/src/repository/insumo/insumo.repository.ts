@@ -34,11 +34,11 @@ export class InsumoRepository {
         const query: SelectQueryBuilder<Insumo> = Insumo.createQueryBuilder(
             'insumo',
         )
-            .andWhere('insumo.nome = :nome', { nome })
-            .andWhere('insumo.dataValidade = :dataValidade', { dataValidade })
-            .andWhere('insumo.dataResgistro = :dataRegistro', { dataRegistro })
+            .andWhere('insumo.nome_produto = :nome', { nome })
+            .andWhere('insumo.dt_validade = :dataValidade', { dataValidade })
+            .andWhere('insumo.Dt_registro = :dataRegistro', { dataRegistro })
             .andWhere('insumo.lote = :lote', { lote })
-            .andWhere('insumo.descricao = :descricao', { descricao });
+            .andWhere('insumo.Descrição = :descricao', { descricao });
         if (id) {
             query.andWhere('insumo.id != :id', { id });
         }
