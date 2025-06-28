@@ -120,7 +120,6 @@ O projeto está restrito aos itens apresentados na tabela a seguir.
 |003| O sistema deve ser desenvolvido utilizando tecnologias acessíveis e de fácil manutenção pela equipe.      |
 |004| O banco de dados deve ser compatível com soluções gratuitas ou de baixo custo para viabilizar a implantação no cliente.      |
 |005| As funcionalidades devem priorizar a simplicidade e usabilidade, garantindo que os funcionários da sorveteria consigam operar o sistema sem necessidade de treinamento avançado |
-      |
 
 ## Diagrama de casos de uso
 
