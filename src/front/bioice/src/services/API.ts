@@ -13,6 +13,7 @@ export default class API {
 		config.headers = new Headers()
 		config.headers.append("Content-Type", "application/json")
 		config.redirect = "follow"
+		config.signal = AbortSignal.timeout(20000)
 
 		if (this.token)
 			config.headers.append("Authorization", this.token)

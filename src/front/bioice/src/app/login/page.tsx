@@ -8,10 +8,11 @@ import { useRouter } from "next/navigation"
 import { ChangeEvent, ReactNode, useState } from "react"
 import { InputText } from "@/components/basic/InputText";
 import Collapse from "@/components/basic/Collapse";
+import { useAppContext } from "@/contexts/AppContext";
 
 export default function Login() {
   const router = useRouter()
-  // const context = useAppContext()
+  const context = useAppContext()
 
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -24,24 +25,23 @@ export default function Login() {
   async function logar() {
     setOpen(false)
     setLoading(true)
-    // context.api.login(form).then(r => {
-    //   console.log(r)
-    //   if (r.status == 201) {
-    //     context.setUser({
-    //       id: r.data.id,
-    //       email: r.data.email,
-    //       name: r.data.username
-    //     })
-    setTimeout(() => {
-      if (form.email == "teste@teste.com" && form.password == "123456")
-        router.push("/app/dashboard")
-      else {
-        setOpen(true)
-        setLoading(false)
+    context.api.login(form).then(r => {
+      console.log("Login response:", r)
+      console.log(r)
+      if (r.status == 201) {
+        context.setUser({
+          id: r.data.id,
+          email: r.data.email,
+          name: r.data.username
+        })
+
+        setTimeout(() => router.push("/app/dashboard"), 1000)
       }
-    }, 2500)
-    //   }
-    // }).catch(r => console.log(r))
+    }).catch(r => {
+      setOpen(true)
+      setLoading(false)
+      console.log(r)
+    })
   }
 
   async function onChange(e: ChangeEvent<HTMLInputElement>) {
@@ -76,14 +76,28 @@ export default function Login() {
               placeholder="Email"
               value={form.email}
               onChange={onChange}
+              onKeyDown={e => {
+                console.log("apertou tecla")
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  document.getElementById("password")?.focus();
+                }
+              }}
             />
 
             <InputText
+              id="password"
               type="password"
               name="password"
               placeholder="Senha"
               value={form.password}
               onChange={onChange}
+              onKeyDown={e => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  logar();
+                }
+              }}
             />
 
             <div className="flex items-center gap-2">
@@ -93,7 +107,11 @@ export default function Login() {
               </label>
             </div>
 
-            <Button onClick={logar} loading={loading} fullwidth>
+            <Button
+              onClick={logar}
+              loading={loading}
+              fullwidth
+            >
               Entrar
             </Button>
           </div>

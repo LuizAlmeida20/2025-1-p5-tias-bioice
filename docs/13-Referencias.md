@@ -9,7 +9,3 @@ ELMASRI, Ramez; NAVATHE, Sham. **_Sistemas de banco de dados_**. 7. ed. São Pau
 RUSSELL, Stuart J.; NORVIG, Peter. **_Inteligência artificial: uma abordagem moderna_**. 4. ed. Rio de Janeiro: LTC, 2022.
 
 SUTHERLAND, Jeffrey Victor; SUTHERLAND, J. J. **_Scrum: a arte de fazer o dobro do trabalho na metade do tempo_**. Rio de Janeiro: Sextante, 2019. 254 p.
-
-> **Links úteis**:
-> - [Padrão PUC Minas de normalização ABNT](http://portal.pucminas.br/biblioteca/documentos/GUIA-COMPLETO-ABNT-Elaborar-formatar-trabalho-cientificoNOVO.pdf)
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/)
