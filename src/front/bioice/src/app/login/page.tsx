@@ -4,8 +4,8 @@ import { FcGoogle } from "react-icons/fc"
 import { FaApple } from "react-icons/fa"
 import Button from "@/components/basic/Button"
 import { useRouter } from "next/navigation"
-// import { useAppContext } from "@/contexts/AppContext";
-import { ChangeEvent, ReactNode, useState } from "react"
+
+import { ChangeEvent, useState } from "react"
 import { InputText } from "@/components/basic/InputText";
 import Collapse from "@/components/basic/Collapse";
 import { useAppContext } from "@/contexts/AppContext";
@@ -16,17 +16,21 @@ export default function Login() {
 
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [msg, setMsg] = useState("")
 
   const [form, setForm] = useState({
     email: "",
     password: ""
   })
 
+  const errors: any = {
+    404: "Usuário não encontrado"
+  }
+
   async function logar() {
     setOpen(false)
     setLoading(true)
     context.api.login(form).then(r => {
-      console.log("Login response:", r)
       console.log(r)
       if (r.status == 201) {
         context.setUser({
@@ -36,16 +40,15 @@ export default function Login() {
         })
 
         setTimeout(() => router.push("/app/dashboard"), 1000)
-      }
-    }).catch(r => {
+      } else throw errors[r.statusCode] ?? "Não foi possível se conectar."
+    }).catch(err => setTimeout(() => {
+      setMsg(err)
       setOpen(true)
       setLoading(false)
-      console.log(r)
-    })
+    }, 1000))
   }
 
   async function onChange(e: ChangeEvent<HTMLInputElement>) {
-    console.log(e)
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
@@ -119,7 +122,7 @@ export default function Login() {
           <div className="text-black">
             <Collapse in={open}>
               <div className="p-3 my-3 shadow-md rounded bg-red-200 text-center font-bold text-red-900">
-                Erro ao logar!
+                {msg ?? "Erro ao logar!"}
               </div>
             </Collapse>
           </div>
