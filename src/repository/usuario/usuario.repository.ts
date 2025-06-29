@@ -1,14 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { Usuario } from '../../model/usuario/usuario.entity';
-import { SelectQueryBuilder } from 'typeorm';
-import { Count } from '../../shared/interfaces/count.interface';
+import { DataSource, SelectQueryBuilder } from 'typeorm';
+import {FindOptionsWhere} from "typeorm/find-options/FindOptionsWhere";
 
 @Injectable()
 export class UsuarioRepository {
-  constructor() {}
+  constructor(private dataSource: DataSource) {}
 
   async saveUsuario(usuario: Usuario): Promise<Usuario> {
-    return await Usuario.save(usuario);
+    const ret = await Usuario.save(usuario);
+    console.log('está salvando o usuário');
+    console.log(this.dataSource);
+    console.log(ret);
+
+    return ret;
   }
 
   async verificarExistenciaDoUsuario(
@@ -41,5 +46,11 @@ export class UsuarioRepository {
   async performarExclusaoLogicaDeUsuario(id: number): Promise<void> {
     const usuario: Usuario = new Usuario({ id: id, isExcluido: true });
     await this.saveUsuario(usuario);
+  }
+
+  async buscarUsuario(whereClause: FindOptionsWhere<Usuario>): Promise<Usuario | null> {
+    return await Usuario.findOne({
+      where: whereClause
+    });
   }
 }
