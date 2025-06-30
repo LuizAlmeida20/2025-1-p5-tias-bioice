@@ -128,6 +128,7 @@ export class UsuarioService {
     const usuario: Usuario | null = await this.usuarioRepository.buscarUsuario({
       email: email
     });
+
     if (!usuario) {
       throw new UnauthorizedException({
         status: HttpStatus.UNAUTHORIZED,
