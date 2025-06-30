@@ -90,10 +90,18 @@ export class DadosFinanceirosService {
         }
     }
 
-    async exibirDadosFinanceirosPaginado(paginacao: PaginacaoDto) {
+    async exibirDadosFinanceirosPaginado(
+        paginacao: PaginacaoDto,
+        filtrarPorDespesas: boolean,
+        filtrarPorEntradas: boolean
+    ) {
         const { pagina, limite } = paginacao;
         const [dadosFinanceiros, total] =
-            await this.dadoFinanceiroRepository.paginacaoDadosFinanceiros(paginacao);
+            await this.dadoFinanceiroRepository.paginacaoDadosFinanceiros(
+                paginacao,
+                filtrarPorDespesas,
+                filtrarPorEntradas
+            );
 
         return {
             data: dadosFinanceiros,

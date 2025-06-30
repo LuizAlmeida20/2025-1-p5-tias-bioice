@@ -5,6 +5,7 @@ import {DadosFinanceiros} from '../../model/dados-financeiros/dados-financeiros.
 import {
     InsumosProdutosDadosFinanceirosEntity
 } from '../../model/insumos-produtos-dados-financerios/insumos-produtos-dados-financerios.entity';
+import {FindOptionsWhere} from "typeorm/find-options/FindOptionsWhere";
 
 
 @Injectable()
@@ -22,11 +23,31 @@ export class DadosFinanceirosRepository {
             .getOne();
     }
 
-    async paginacaoDadosFinanceiros(paginacao: PaginacaoDto) {
-        const {pagina, limite} = paginacao;
+    async paginacaoDadosFinanceiros(
+        paginacao: PaginacaoDto,
+        filtrarPorDespesas: boolean,
+        filtrarPorEntradas: boolean
+    ) {
+        const { pagina, limite } = paginacao;
+        let whereClause: FindOptionsWhere<DadosFinanceiros> = {};
+        if (filtrarPorEntradas) {
+            whereClause = { isEntrada: true };
+        }
+        if (filtrarPorDespesas) {
+            whereClause = { isEntrada: false };
+        }
+        const quantidadeDeFiltros: number = Object.keys(whereClause).length;
 
+        if (quantidadeDeFiltros == 0 || quantidadeDeFiltros == 2) {
+            return await DadosFinanceiros.findAndCount({
+                relations: ['usuario'],
+                skip: (pagina - 1) * limite,
+                take: limite,
+            });
+        }
         return await DadosFinanceiros.findAndCount({
             relations: ['usuario'],
+            where: whereClause,
             skip: (pagina - 1) * limite,
             take: limite,
         });

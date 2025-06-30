@@ -15,6 +15,8 @@ import {IdDto} from "../../shared/dto/id.dto";
 import {DadosFinanceirosService} from "../../service/dados-financeiros/dados-financeiros.service";
 import {MensagensDadosFinanceiros} from "../../model/dados-financeiros/utils/mensagens-dados-financeiros";
 import {CriarDadosFinanceirosDto} from "../../model/dados-financeiros/dto/criar-dados-financeiros.dto";
+import {FiltrarPorDespesaDto} from "../../model/dados-financeiros/dto/filtrar-por-despesa.dto";
+import {FiltrarPorEntradasDto} from "../../model/dados-financeiros/dto/filtrar-por-entradas.dto";
 
 @Controller('dados-financeiros')
 export class DadosFinanceirosController {
@@ -24,10 +26,16 @@ export class DadosFinanceirosController {
     @Get()
     async exibirDadosFinanceirosPaginado(
         @Query() paginacao: PaginacaoDto,
+        @Query() filtrarPorDespesas: FiltrarPorDespesaDto,
+        @Query() filtrarPorEntradas: FiltrarPorEntradasDto,
         @Res() response: Response,
     ): Promise<Response> {
         try {
-            const dadosFinaceiros = await this.dadosFinanceirosService.exibirDadosFinanceirosPaginado(paginacao);
+            console.log(">>>>>>>>>>>>>>>>>>>>>")
+            console.log("filtrarPorDespesas >>>>", filtrarPorDespesas)
+            console.log("filtrarPorEntradas >>>>", filtrarPorEntradas)
+            // console.log("Quantidade de filtros >>>>", quantidadeDeFiltros)
+            const dadosFinaceiros = await this.dadosFinanceirosService.exibirDadosFinanceirosPaginado(paginacao, filtrarPorDespesas.filtrarPorDespesas, filtrarPorEntradas.filtrarPorEntradas);
             return response.status(HttpStatus.OK).send({
                 status: HttpStatus.OK,
                 message: MensagensDadosFinanceiros.DADO_FINACEIRO_ECONTRADO,
